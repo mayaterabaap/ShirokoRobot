@@ -37,7 +37,7 @@ from telegram import Update
 from telegram.constants import ParseMode, ChatType
 from telegram.ext import CommandHandler, MessageHandler, CallbackContext
 from telegram.helpers import escape_markdown
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.handlers import CMD_STARTERS
 from ShirokoRobot.modules.helper_funcs.misc import is_module_loaded
 from ShirokoRobot.modules.helper_funcs.alternate import send_message
@@ -142,8 +142,8 @@ if is_module_loaded(FILENAME):
                                user.id,
                                need_admin=True)
         if conn:
-            chat = CUTIEPII_PTB.bot.getChat(conn)
-            chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+            chat = SHIROKO_PTB.bot.getChat(conn)
+            chat_name = SHIROKO_PTB.bot.getChat(conn).title
         else:
             if update.effective_message.chat.type == ChatType.PRIVATE:
                 send_message(
@@ -189,9 +189,9 @@ if is_module_loaded(FILENAME):
                                user.id,
                                need_admin=True)
         if conn:
-            chat = CUTIEPII_PTB.bot.getChat(conn)
+            chat = SHIROKO_PTB.bot.getChat(conn)
             chat_id = conn
-            chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+            chat_name = SHIROKO_PTB.bot.getChat(conn).title
         else:
             if update.effective_message.chat.type == ChatType.PRIVATE:
                 send_message(
@@ -258,7 +258,7 @@ if is_module_loaded(FILENAME):
                                user.id,
                                need_admin=True)
         if conn:
-            chat = CUTIEPII_PTB.bot.getChat(conn)
+            chat = SHIROKO_PTB.bot.getChat(conn)
             chat_id = conn
         else:
             if update.effective_message.chat.type == ChatType.PRIVATE:
@@ -301,14 +301,14 @@ if is_module_loaded(FILENAME):
   ➛ /listcmds*:* list all possible toggleable commands
     """
 
-    CUTIEPII_PTB.add_handler(CommandHandler(
+    SHIROKO_PTB.add_handler(CommandHandler(
         "disable", disable, block=False))  # , filters=filters.ChatType.GROUPS)
-    CUTIEPII_PTB.add_handler(CommandHandler(
+    SHIROKO_PTB.add_handler(CommandHandler(
         "enable", enable, block=False))  # , filters=filters.ChatType.GROUPS)
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CommandHandler(["cmds", "disabled"], commands,
                        block=False))  # , filters=filters.ChatType.GROUPS)
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CommandHandler("listcmds", list_cmds,
                        block=False))  # , filters=filters.ChatType.GROUPS)
 

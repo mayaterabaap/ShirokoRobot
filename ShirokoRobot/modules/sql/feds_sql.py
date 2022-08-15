@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import ast
 import threading
 
-from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot import SHIROKO_PTB, LOGGER
 from ShirokoRobot.modules.sql import BASE, SESSION
 from telegram.error import BadRequest, Forbidden
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
@@ -664,7 +664,7 @@ async def get_fed_log(fed_id):
         return False
     if fed_setting.get("flog"):
         try:
-            await CUTIEPII_PTB.bot.get_chat(fed_setting.get("flog"))
+            await SHIROKO_PTB.bot.get_chat(fed_setting.get("flog"))
         except (BadRequest, Forbidden):
             set_fed_log(fed_id, None)
             return False

@@ -4,7 +4,7 @@ import ShirokoRobot.modules.helper_funcs.git_api as api
 import ShirokoRobot.modules.sql.github_sql as sql
 
 from ShirokoRobot.modules.sql.clear_cmd_sql import get_clearcmd
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.misc import delete
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
@@ -259,20 +259,20 @@ def deletion(update: Update, context: CallbackContext, delmsg):
 
 __mod_name__ = "Git"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("git", getRelease, admin_ok=True, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("fetch", cmdFetch, admin_ok=True, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("saverepo", saveRepo, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("delrepo", delRepo, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("saverepo", saveRepo, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("delrepo", delRepo, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("listrepo", listRepo, admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("gitver", getVer, admin_ok=True, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("changelog",
                               changelog,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(MessageHandler(r"^&[^\s]+", hashFetch, block=False))
+SHIROKO_PTB.add_handler(MessageHandler(r"^&[^\s]+", hashFetch, block=False))

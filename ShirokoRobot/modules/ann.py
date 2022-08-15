@@ -10,7 +10,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, ChatMemberHandler
 
 import ShirokoRobot.modules.sql.log_channel_sql as logsql
-from ShirokoRobot import OWNER_ID, CUTIEPII_PTB
+from ShirokoRobot import OWNER_ID, SHIROKO_PTB
 from ShirokoRobot.modules.log_channel import loggable
 
 import ShirokoRobot.modules.sql.logger_sql as sql
@@ -365,16 +365,16 @@ async def botstatchanged(update: Update):
                     id] = update.effective_chat.get_member(1241223850)
 
 
-CUTIEPII_PTB.add_handler(ChatMemberHandler(chatmemberupdates,
+SHIROKO_PTB.add_handler(ChatMemberHandler(chatmemberupdates,
                                            ChatMemberHandler.CHAT_MEMBER),
                          group=-21)
-CUTIEPII_PTB.add_handler(ChatMemberHandler(mychatmemberupdates,
+SHIROKO_PTB.add_handler(ChatMemberHandler(mychatmemberupdates,
                                            ChatMemberHandler.MY_CHAT_MEMBER),
                          group=-23)
-CUTIEPII_PTB.add_handler(ChatMemberHandler(botstatchanged,
+SHIROKO_PTB.add_handler(ChatMemberHandler(botstatchanged,
                                            ChatMemberHandler.MY_CHAT_MEMBER),
                          group=-25)
-CUTIEPII_PTB.add_handler(ChatMemberHandler(admincacheupdates,
+SHIROKO_PTB.add_handler(ChatMemberHandler(admincacheupdates,
                                            ChatMemberHandler.CHAT_MEMBER),
                          group=-22)
 """

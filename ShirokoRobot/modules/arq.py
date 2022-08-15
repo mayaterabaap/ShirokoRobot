@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from pyrogram import filters
 
-from ShirokoRobot import pgram, arq, CUTIEPII_PTB
+from ShirokoRobot import pgram, arq, SHIROKO_PTB
 
 
 @pgram.on_message(filters.command("arq"))

@@ -41,7 +41,7 @@ from telegram.constants import ParseMode
 from telegram.error import BadRequest
 from telegram.ext import filters, CommandHandler
 from telegram.helpers import escape_markdown
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.string_handling import markdown_parser
 from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
@@ -56,7 +56,7 @@ def get_rules(update: Update):
 
 # Do not async - not from a handler
 async def send_rules(update, chat_id, from_pm=False):
-    bot = CUTIEPII_PTB.bot
+    bot = SHIROKO_PTB.bot
     user = update.effective_user  # type: Optional[User]
     message = update.effective_message
     try:
@@ -153,17 +153,17 @@ def __chat_settings__(chat_id):
 
 __mod_name__ = "Rules"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("rules",
                    get_rules,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setrules",
                    set_rules,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("clearrules",
                    clear_rules,
                    filters=filters.ChatType.GROUPS,

@@ -10,7 +10,7 @@ from contextlib import suppress
 from io import BytesIO
 from ShirokoRobot import (DEV_USERS, LOGGER, OWNER_ID, SUDO_USERS,
                             SUPPORT_USERS, WHITELIST_USERS, JOIN_LOGGER,
-                            CUTIEPII_PTB, SUPPORT_CHAT)
+                            SHIROKO_PTB, SUPPORT_CHAT)
 from ShirokoRobot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin as u_admin,
@@ -58,14 +58,14 @@ VALID_WELCOME_FORMATTERS = [
 ]
 
 ENUM_FUNC_MAP = {
-    sql.Types.TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.BUTTON_TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.STICKER.value: CUTIEPII_PTB.bot.send_sticker,
-    sql.Types.DOCUMENT.value: CUTIEPII_PTB.bot.send_document,
-    sql.Types.PHOTO.value: CUTIEPII_PTB.bot.send_photo,
-    sql.Types.AUDIO.value: CUTIEPII_PTB.bot.send_audio,
-    sql.Types.VOICE.value: CUTIEPII_PTB.bot.send_voice,
-    sql.Types.VIDEO.value: CUTIEPII_PTB.bot.send_video,
+    sql.Types.TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.BUTTON_TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.STICKER.value: SHIROKO_PTB.bot.send_sticker,
+    sql.Types.DOCUMENT.value: SHIROKO_PTB.bot.send_document,
+    sql.Types.PHOTO.value: SHIROKO_PTB.bot.send_photo,
+    sql.Types.AUDIO.value: SHIROKO_PTB.bot.send_audio,
+    sql.Types.VOICE.value: SHIROKO_PTB.bot.send_voice,
+    sql.Types.VIDEO.value: SHIROKO_PTB.bot.send_video,
 }
 
 VERIFIED_USER_WAITLIST = {}
@@ -84,7 +84,7 @@ async def send(update, message, keyboard, backup_message):
     # Clean service welcome
     if cleanserv:
         with contextlib.suppress(BadRequest):
-            await CUTIEPII_PTB.bot.delete_message(chat.id,
+            await SHIROKO_PTB.bot.delete_message(chat.id,
                                                   update.message.message_id)
         reply = False
     try:
@@ -184,7 +184,7 @@ async def new_member(update: Update,
 
         if new_mem.id == bot.id and user.id not in DEV_USERS:
             try:
-                tXt = "You Can't Add Me Because, You Are Not Member Of @Black_Knights_Union!"
+                tXt = "You Can't Add Me Because, You Are Not Member Of @ShirokoRobotUpdates!"
                 member = bot.get_chat_member(-1001151980503, user.id)
                 if member.status in ("kicked", "left"):
                     with suppress(BadRequest):
@@ -219,7 +219,7 @@ async def new_member(update: Update,
         # Clean service welcome
         if cleanserv:
             with contextlib.suppress(BadRequest):
-                await CUTIEPII_PTB.bot.delete_message(
+                await SHIROKO_PTB.bot.delete_message(
                     chat.id, update.message.message_id)
             reply = False
 
@@ -280,7 +280,7 @@ async def new_member(update: Update,
                             url=f"https://telegram.dog/{SUPPORT_CHAT}"),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://telegram.dog/Black_Knights_Union"),
+                            url="https://telegram.dog/ShirokoRobotUpdates"),
                     ]], ),
                 )
                 creator = None
@@ -564,7 +564,7 @@ async def new_member(update: Update,
 
         if welcome_bool:
             if media_wel:
-                if ENUM_FUNC_MAP[welc_type] == CUTIEPII_PTB.bot.send_sticker:
+                if ENUM_FUNC_MAP[welc_type] == SHIROKO_PTB.bot.send_sticker:
                     sent = ENUM_FUNC_MAP[welc_type](
                         chat.id,
                         cust_content,
@@ -638,7 +638,7 @@ async def left_member(update: Update,
     # Clean service welcome
     if cleanserv:
         with contextlib.suppress(BadRequest):
-            await CUTIEPII_PTB.bot.delete_message(chat.id,
+            await SHIROKO_PTB.bot.delete_message(chat.id,
                                                   update.message.message_id)
         reply = False
 
@@ -1261,64 +1261,64 @@ def __chat_settings__(chat_id, user_id):
                                                       goodbye_pref))
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS,
                    new_member,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.StatusUpdate.LEFT_CHAT_MEMBER,
                    left_member,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("welcome",
                    welcome,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("goodbye",
                    goodbye,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setwelcome",
                    set_welcome,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setgoodbye",
                    set_goodbye,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("resetwelcome",
                    reset_welcome,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("resetgoodbye",
                    reset_goodbye,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("welcomemute",
                    welcomemute,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("cleanservice",
                    cleanservice,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("cleanwelcome",
                    clean_welcome,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("welcomehelp", welcome_help))
-CUTIEPII_PTB.add_handler(CommandHandler("welcomemutehelp", welcome_mute_help))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("welcomehelp", welcome_help))
+SHIROKO_PTB.add_handler(CommandHandler("welcomemutehelp", welcome_mute_help))
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(user_button, pattern=r"user_join_", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(user_captcha_button,
                          pattern=r"user_captchajoin_\([\d\-]+,\d+\)_\(\d{4}\)",
                          block=False))

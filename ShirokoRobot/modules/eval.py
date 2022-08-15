@@ -46,7 +46,7 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
-from ShirokoRobot import DEV_USERS, LOGGER, CUTIEPII_PTB
+from ShirokoRobot import DEV_USERS, LOGGER, SHIROKO_PTB
 from ShirokoRobot import pgram
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 
@@ -234,8 +234,8 @@ async def clear(update: Update, context: CallbackContext) -> None:
     await send("Cleared locals.", bot, update)
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(("x", "ex", "exe", "py"), execute, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("clearlocals", clear, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("clearlocals", clear, block=False))
 
 __mod_name__ = "Eval Module"

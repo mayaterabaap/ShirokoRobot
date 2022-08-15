@@ -43,7 +43,7 @@ from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
 from ShirokoRobot.modules.helper_funcs.alternate import send_action
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
-from ShirokoRobot import CUTIEPII_PTB, pgram, StartTime
+from ShirokoRobot import SHIROKO_PTB, pgram, StartTime
 from ShirokoRobot.__main__ import GDPR
 
 from bs4 import BeautifulSoup
@@ -570,30 +570,30 @@ Bass Boosting
 ➛ /bassboost*:* Reply To Music Bass Boost.
 """
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("echo",
                               echo,
                               filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("markdownhelp", markdown_help, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("gdpr",
                    gdpr,
                    filters=PTB_Cutiepii_Filters.ChatType.PRIVATE,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(mkdown_btn, pattern=r"mkhelp_", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("source",
                    src,
                    filters=PTB_Cutiepii_Filters.ChatType.PRIVATE,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("rmeme", rmemes, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("status", status, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("imdb", imdb, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("imdb", imdb, block=False))
 
 __mod_name__ = "Extras"
 __command_list__ = ["id", "echo", "source", "rmeme", "status"]

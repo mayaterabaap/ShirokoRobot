@@ -38,7 +38,7 @@ from telegram.ext import filters, CallbackContext, CommandHandler, CallbackQuery
 from telegram.helpers import mention_html
 from telegram.constants import ParseMode
 from ShirokoRobot import (BAN_STICKER, DEV_USERS, ERROR_LOGS, SUDO_USERS,
-                            OWNER_ID, WHITELIST_USERS, LOGGER, CUTIEPII_PTB)
+                            OWNER_ID, WHITELIST_USERS, LOGGER, SHIROKO_PTB)
 
 from ShirokoRobot.modules.helper_funcs.chat_status import connection_status, dev_plus, is_user_admin
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user_and_text
@@ -769,24 +769,24 @@ __help__ = """
 ➛ /unmute <userhandle>*:* unmutes a user. Can also be used as a reply, muting the replied to user.
 """
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(['ban', 'dban', 'sban', 'dsban'], ban, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler(["tban"], temp_ban, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler(["kick", "punch"], kick, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("unban", unban, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler(["tban"], temp_ban, block=False))
+SHIROKO_PTB.add_handler(CommandHandler(["kick", "punch"], kick, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("unban", unban, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler(['selfunban', 'roar'], selfunban, block=False))
-CUTIEPII_PTB.add_handler(CallbackQueryHandler(unbanb_btn, pattern=r"unbanb_"))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CallbackQueryHandler(unbanb_btn, pattern=r"unbanb_"))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["kickme", "punchme"],
                               kickme,
                               filters=filters.ChatType.GROUPS,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("snipe",
                    snipe,
                    filters=filters.User(SUDO_USERS),
                    block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("banme", banme, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("banme", banme, block=False))
 
 __mod_name__ = "Bans/Mutes"

@@ -34,7 +34,7 @@ from functools import wraps
 import asyncio
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from ShirokoRobot.modules.helper_funcs.misc import is_module_loaded
-from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot import LOGGER, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin, AdminPerms
 
 FILENAME = __name__.rsplit(".", 1)[-1]
@@ -207,7 +207,7 @@ if is_module_loaded(FILENAME):
     def __chat_settings__(chat_id, user_id):
         if log_channel := sql.get_chat_log_channel(chat_id):
             log_channel_info = asyncio.get_running_loop().run_until_complete(
-                CUTIEPII_PTB.bot.get_chat(log_channel))
+                SHIROKO_PTB.bot.get_chat(log_channel))
             return f"This group has all it's logs sent to: {escape_markdown(log_channel_info.title)} (`{log_channel}`)"
         return "No log channel is set for this group!"
 
@@ -296,14 +296,14 @@ async def log_setting_callback(update: Update,
 
     cb.answer("Idk what to do")
 
-    CUTIEPII_PTB.add_handler(CommandHandler("logchannel", logging,
+    SHIROKO_PTB.add_handler(CommandHandler("logchannel", logging,
                                             block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CallbackQueryHandler(unbanb_btn, pattern=r"unbanb_"))
-    CUTIEPII_PTB.add_handler(CommandHandler("unsetlog", unsetlog, block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(CommandHandler("unsetlog", unsetlog, block=False))
+    SHIROKO_PTB.add_handler(
         CommandHandler("logsettings", unsetlog, block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CallbackQueryHandler(log_setting_callback,
                              pattern=r"log_tog_.*",
                              block=False))

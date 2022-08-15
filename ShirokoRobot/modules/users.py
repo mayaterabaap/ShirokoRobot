@@ -39,7 +39,7 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import MessageHandler, CommandHandler, CallbackContext, filters
 
 import ShirokoRobot.modules.sql.users_sql as sql
-from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot import SHIROKO_PTB, LOGGER
 
 USERS_GROUP = 4
 CHAT_GROUP = 10
@@ -62,7 +62,7 @@ async def get_user_id(username):
         return users[0]["_id"]
     for user_obj in users:
         try:
-            userdat = await CUTIEPII_PTB.bot.get_chat(user_obj["_id"])
+            userdat = await SHIROKO_PTB.bot.get_chat(user_obj["_id"])
             if userdat.username == username:
                 return userdat.id
 
@@ -206,15 +206,15 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["broadcastall", "broadcastusers", "broadcastgroups"],
                    broadcast,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.ALL & filters.ChatType.GROUPS,
                    log_user,
                    block=False))
-#CUTIEPII_PTB.add_handler(MessageHandler(filters.ALL & filters.ChatType.GROUPS, chat_checker))
-CUTIEPII_PTB.add_handler(CommandHandler("groups", chats, block=False))
+#SHIROKO_PTB.add_handler(MessageHandler(filters.ALL & filters.ChatType.GROUPS, chat_checker))
+SHIROKO_PTB.add_handler(CommandHandler("groups", chats, block=False))
 
 __mod_name__ = "Users"

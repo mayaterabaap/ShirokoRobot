@@ -16,7 +16,7 @@ from ShirokoRobot.modules.log_channel import loggable
 
 from ShirokoRobot.modules.helper_funcs.chat_status import connection_status
 from ShirokoRobot.modules.cron_jobs import j
-from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot import LOGGER, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
@@ -278,18 +278,18 @@ async def raidactiontime(update: Update,
             parse_mode=ParseMode.HTML)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("raid", setRaid, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("raid", setRaid, block=False))
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(enable_raid_cb, pattern=r"enable_raid=", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(disable_raid_cb,
                          pattern=r"disable_raid=",
                          block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(disable_raid_cb, pattern=r"cancel_raid=",
                          block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("raidtime", raidtime, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("raidtime", raidtime, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("raidactiontime", raidactiontime, block=False))
 
 __mod_name__ = "AntiRaid"

@@ -40,7 +40,7 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler, filters
 
-from ShirokoRobot import telethn, CUTIEPII_PTB, BOT_ID, LOGGER
+from ShirokoRobot import telethn, SHIROKO_PTB, BOT_ID, LOGGER
 from ShirokoRobot.modules.sql.clear_cmd_sql import get_clearcmd
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.telethn.chatstatus import (
@@ -243,7 +243,7 @@ PURGETO_HANDLER = purgeto_messages, events.NewMessage(pattern="^[!/]purgeto$")
 DEL_HANDLER = delete_messages, events.NewMessage(pattern="^[!/]del$")
 
 #PTB CMDs
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("purgefrom", purgefrom, filters=filters.ChatType.GROUPS))
 
 telethn.add_event_handler(*PURGE_HANDLER)

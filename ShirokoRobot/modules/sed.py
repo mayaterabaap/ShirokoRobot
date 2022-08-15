@@ -34,7 +34,7 @@ import regex
 import telegram
 
 
-from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot import LOGGER, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleMessageHandler
 from ShirokoRobot.modules.helper_funcs.regex_helper import infinite_loop_check
 from telegram import Update
@@ -166,5 +166,5 @@ If you want to use these characters, make sure you escape them!
 
 __mod_name__ = "Sed/Regex"
 
-CUTIEPII_PTB.add_handler(DisableAbleMessageHandler(filters.Regex(f's([{"".join(DELIMITERS)}]).*?\\1.*'), sed, friendly="sed", block=False))
+SHIROKO_PTB.add_handler(DisableAbleMessageHandler(filters.Regex(f's([{"".join(DELIMITERS)}]).*?\\1.*'), sed, friendly="sed", block=False))
 """

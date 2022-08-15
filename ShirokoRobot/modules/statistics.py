@@ -41,7 +41,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.helpers import escape_markdown
 
-from ShirokoRobot import StartTime, CUTIEPII_PTB
+from ShirokoRobot import StartTime, SHIROKO_PTB
 from ShirokoRobot.__main__ import STATS
 from ShirokoRobot.modules.sql import SESSION
 from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
@@ -113,7 +113,7 @@ async def stats(update: Update):
         await message.reply_text(
             status + "\n*╔═━「 Bot statistics*: 」\n" +
             "\n".join([mod.__stats__() for mod in STATS]) +
-            "\n\n✦ [Support](https://telegram.dog/Black_Knights_Union_Support) | ✦ [Updates](https://telegram.dog/Black_Knights_Union)\n\n"
+            "\n\n✦ [Support](https://telegram.dog/{SUPPORT_CHAT}) | ✦ [Updates](https://telegram.dog/ShirokoRobotUpdates)\n\n"
             + "╘═━「 by [Awesome-RJ](https://github.com/Awesome-RJ) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
@@ -123,7 +123,7 @@ async def stats(update: Update):
         await message.reply_text(
             ((("\n*╔═━「 Bot statistics*: 」\n" + "\n".join(mod.__stats__()
                                                           for mod in STATS)) +
-              "\n\n✦ [Support](https://telegram.dog/Black_Knights_Union_Support) | ✦ [Updates](https://telegram.dog/Black_Knights_Union)\n\n"
+              "\n\n✦ [Support](https://telegram.dog/{SUPPORT_CHAT}) | ✦ [Updates](https://telegram.dog/ShirokoRobotUpdates)\n\n"
               ) + "╘═━「 by [Awesome-RJ](https://github.com/Awesome-RJ) 」\n"),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
@@ -151,9 +151,9 @@ async def pingCallback(update: Update):
     await query.answer(f'Pong! {ping_time}ms')
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["stats", "statistics"], stats, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(pingCallback, pattern=r"pingCB", block=False))
 
 __mod_name__ = "statistics"

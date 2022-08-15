@@ -33,7 +33,7 @@ import re
 import requests
 from time import sleep
 
-from ShirokoRobot import BOT_ID, CUTIEPII_PTB, DEV_USERS
+from ShirokoRobot import BOT_ID, SHIROKO_PTB, DEV_USERS
 from ShirokoRobot.modules.helper_funcs.chat_status import (
     is_user_admin, )
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
@@ -157,19 +157,19 @@ Chatbot utilizes the Brainshop's API and allows Shiroko Robot 愛 to talk and pr
 ➛ /chatbot*:* Shows chatbot control panel
 """
 
-CUTIEPII_PTB.add_handler(CommandHandler("chatbot", chatbot_toggle,
+SHIROKO_PTB.add_handler(CommandHandler("chatbot", chatbot_toggle,
                                         block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(chatbot_handle_callq,
                          pattern=r"chatbot_",
                          block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.TEXT &
                    (~filters.Regex(r"^#[^\s]+") & ~filters.Regex(r"^!")
                     & ~filters.Regex(r"^\/")),
                    chatbot,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("listaichats",
                    list_chatbot_chats,
                    filters=filters.User(DEV_USERS),

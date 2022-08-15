@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import subprocess
 
-from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot import LOGGER, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import Update
 from telegram.constants import ParseMode
@@ -76,7 +76,7 @@ async def shell(update: Update, context: CallbackContext) -> None:
         await message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler(["sh"], shell, block=False))
+SHIROKO_PTB.add_handler(CommandHandler(["sh"], shell, block=False))
 
 __mod_name__ = "Shell"
 __command_list__ = ["sh"]

@@ -37,7 +37,7 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.constants import ParseMode
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 
@@ -99,5 +99,5 @@ async def covid(update: Update, context: CallbackContext) -> None:
             "Try again in few times, maybe API are go down")
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["covid", "corona"], covid, block=False))

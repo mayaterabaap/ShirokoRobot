@@ -39,7 +39,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 from psycopg2 import errors as sqlerrors
 
-from ShirokoRobot import TOKEN, CUTIEPII_PTB, DEV_USERS, OWNER_ID, LOGGER
+from ShirokoRobot import TOKEN, SHIROKO_PTB, DEV_USERS, OWNER_ID, LOGGER
 
 
 class ErrorsDict(dict):
@@ -147,6 +147,6 @@ async def list_errors(update: Update,
     await update.effective_message.reply_text(msg, parse_mode=ParseMode.HTML)
 """
 
-CUTIEPII_PTB.add_error_handler(error_callback)
+SHIROKO_PTB.add_error_handler(error_callback)
 
-# CUTIEPII_PTB.add_handler(CommandHandler("errors", list_errors, block=False))
+# SHIROKO_PTB.add_handler(CommandHandler("errors", list_errors, block=False))

@@ -1,34 +1,3 @@
-"""
-BSD 2-Clause License
-
-Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021-2022, Awesome-RJ, [ https://github.com/Awesome-RJ ]
-Copyright (c) 2021-2022, Yūki • Black Knights Union, [ https://github.com/Awesome-RJ/CutiepiiRobot ]
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
-
 import contextlib
 import html
 import json
@@ -51,7 +20,7 @@ from ShirokoRobot import (
     SUPPORT_CHAT,
     HELP_IMG,
     GROUP_START_IMG,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     StartTime,
     pgram,
 )
@@ -137,7 +106,7 @@ buttons = [
         InlineKeyboardButton(text="🚑 Support",
                              url=f"https://telegram.dog/{SUPPORT_CHAT}"),
         InlineKeyboardButton(text="📢 Updates",
-                             url="https://telegram.dog/Black_Knights_Union")
+                             url="https://telegram.dog/ShirokoRobotUpdates")
     ],
 ]
 
@@ -248,7 +217,7 @@ async def start(update: Update, context: CallbackContext):
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
-                chat = await CUTIEPII_PTB.bot.getChat(match[1])
+                chat = await SHIROKO_PTB.bot.getChat(match[1])
 
                 if await is_user_admin(update, update.effective_user.id):
                     send_settings(match[1], update.effective_user.id, False)
@@ -282,7 +251,7 @@ async def start(update: Update, context: CallbackContext):
                 ),
                 InlineKeyboardButton(
                     text="📢 Updates",
-                    url="https://telegram.dog/Black_Knights_Union",
+                    url="https://telegram.dog/ShirokoRobotUpdates",
                 ),
             ]]),
         )
@@ -354,7 +323,7 @@ async def help_button(update: Update, context: CallbackContext) -> None:
                                          callback_data="help_back"),
                     InlineKeyboardButton(
                         text="[► Support ◄]",
-                        url="https://t.me/Black_Knights_Union_Support")
+                        url=f"https://t.me/{SUPPORT_CHAT}")
                 ]]),
             )
 
@@ -479,7 +448,7 @@ async def send_settings(context: CallbackContext,
             )
 
     elif CHAT_SETTINGS:
-        chat_name = await CUTIEPII_PTB.bot.getChat(chat_id).title
+        chat_name = await SHIROKO_PTB.bot.getChat(chat_id).title
         await context.bot.send_message(
             user_id,
             text=
@@ -630,10 +599,10 @@ async def donate(update: Update, context: CallbackContext) -> None:
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="📢 Updates",
-                        url="https://telegram.dog/Black_Knights_Union"),
+                        url="https://telegram.dog/ShirokoRobotUpdates"),
                     InlineKeyboardButton(
                         text="🚑 Support",
-                        url="https://telegram.dog/Black_Knights_Union_Support")
+                        url=f"https://telegram.dog/{SUPPORT_CHAT}")
                 ]]),
             )
         except Forbidden:
@@ -660,38 +629,38 @@ async def migrate_chats(update: Update):
 
 
 def main():
-    CUTIEPII_PTB.add_error_handler(error_callback)
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_error_handler(error_callback)
+    SHIROKO_PTB.add_handler(
         DisableAbleCommandHandler("test", test, block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         DisableAbleCommandHandler("start", start, block=False))
 
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         DisableAbleCommandHandler("help", get_help, block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CallbackQueryHandler(help_button, pattern=r"help_.*", block=False))
 
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         DisableAbleCommandHandler("settings", get_settings, block=False))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CallbackQueryHandler(settings_button, pattern=r"stngs_", block=False))
 
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(
         CallbackQueryHandler(cutiepii_callback_data,
                              pattern=r"cutiepii_",
                              block=False))
-    CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("donate", donate))
-    CUTIEPII_PTB.add_handler(
+    SHIROKO_PTB.add_handler(DisableAbleCommandHandler("donate", donate))
+    SHIROKO_PTB.add_handler(
         MessageHandler(filters.StatusUpdate.MIGRATE,
                        migrate_chats,
                        block=False))
 
     if WEBHOOK:
         LOGGER.info("Using webhooks.")
-        CUTIEPII_PTB.run_webhook(listen="127.0.0.1", port=PORT, url_path=TOKEN)
+        SHIROKO_PTB.run_webhook(listen="127.0.0.1", port=PORT, url_path=TOKEN)
 
     else:
-        CUTIEPII_PTB.run_polling(allowed_updates=Update.ALL_TYPES,
+        SHIROKO_PTB.run_polling(allowed_updates=Update.ALL_TYPES,
                                  stop_signals=None)
         LOGGER.info(
             "Shiroko Robot started, Using long polling. | BOT: [@ShirokoRobot]"

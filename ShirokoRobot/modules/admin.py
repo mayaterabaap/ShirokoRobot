@@ -1,34 +1,3 @@
-"""
-BSD 2-Clause License
-
-Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021-2022, Awesome-RJ, [ https://github.com/Awesome-RJ ]
-Copyright (c) 2021-2022, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
-
 import os
 import html
 import contextlib
@@ -52,7 +21,7 @@ from telethon import *
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from ShirokoRobot import SUDO_USERS, TOKEN, CUTIEPII_PTB, LOGGER, pgram, telethn
+from ShirokoRobot import SUDO_USERS, TOKEN, SHIROKO_PTB, LOGGER, pgram, telethn
 from ShirokoRobot.modules.helper_funcs.msg_types import get_message_type
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
@@ -75,14 +44,14 @@ from ShirokoRobot.modules.log_channel import loggable
 from ShirokoRobot.events import register as CUTIEPII
 
 ENUM_FUNC_MAP = {
-    'Types.TEXT': CUTIEPII_PTB.bot.send_message,
-    'Types.BUTTON_TEXT': CUTIEPII_PTB.bot.send_message,
-    'Types.STICKER': CUTIEPII_PTB.bot.send_sticker,
-    'Types.DOCUMENT': CUTIEPII_PTB.bot.send_document,
-    'Types.PHOTO': CUTIEPII_PTB.bot.send_photo,
-    'Types.AUDIO': CUTIEPII_PTB.bot.send_audio,
-    'Types.VOICE': CUTIEPII_PTB.bot.send_voice,
-    'Types.VIDEO': CUTIEPII_PTB.bot.send_video,
+    'Types.TEXT': SHIROKO_PTB.bot.send_message,
+    'Types.BUTTON_TEXT': SHIROKO_PTB.bot.send_message,
+    'Types.STICKER': SHIROKO_PTB.bot.send_sticker,
+    'Types.DOCUMENT': SHIROKO_PTB.bot.send_document,
+    'Types.PHOTO': SHIROKO_PTB.bot.send_photo,
+    'Types.AUDIO': SHIROKO_PTB.bot.send_audio,
+    'Types.VOICE': SHIROKO_PTB.bot.send_voice,
+    'Types.VIDEO': SHIROKO_PTB.bot.send_video,
 }
 
 
@@ -386,7 +355,7 @@ async def promote_button(update: Update,
             if mode == "demote":
                 user_id = query.data.split("_")[2]
                 user_member = await chat.get_member(user_id)
-                await CUTIEPII_PTB.bot.promote_chat_member(
+                await SHIROKO_PTB.bot.promote_chat_member(
                     chat.id,
                     user_id,
                     can_change_info=False,
@@ -479,7 +448,7 @@ async def promoteanon(update: Update,
     try:
         if title:
             await bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             is_anonymous=True,
@@ -576,7 +545,7 @@ async def promote(update: Update, context: CallbackContext) -> Optional[str]:
     #    can_promote_members = True
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             can_change_info=bot_member.can_change_info,
@@ -686,7 +655,7 @@ async def midpromote(update: Update,
     #    can_promote_members = True
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             can_delete_messages=bot_member.can_delete_messages,
@@ -790,7 +759,7 @@ async def lowpromote(update: Update,
     #    can_promote_members = True
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             can_delete_messages=bot_member.can_delete_messages,
@@ -982,7 +951,7 @@ async def middemote(update: Update, context: CallbackContext) -> Optional[str]:
         return
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             can_change_info=True,
@@ -1062,7 +1031,7 @@ async def demote(update: Update, context: CallbackContext) -> Optional[str]:
         return
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             can_change_info=False,
@@ -1156,7 +1125,7 @@ async def demoteanon(update: Update,
     # the perms may be not same as old ones if the bot doesn't have the rights to change them but can't do anything about it
 
     try:
-        await CUTIEPII_PTB.bot.promote_chat_member(
+        await SHIROKO_PTB.bot.promote_chat_member(
             chat.id,
             user_id,
             is_anonymous=False,
@@ -1585,9 +1554,9 @@ async def permanent_pin_set(update: Update, context: CallbackContext) -> str:
 
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
+        chat = SHIROKO_PTB.bot.getChat(conn)
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
         if not args:
             get_permapin = sql.get_permapin(chat_id)
             text_maker = f"Cleanlinked is currently set to: `{bool(int(get_permapin))}`"
@@ -1743,89 +1712,89 @@ async def unpinallbtn(update: Update, context: CallbackContext) -> None:
             ))
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setdesc",
                    set_desc,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setsticker",
                    set_sticker,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setgpic",
                    setchatpic,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("delgpic",
                    rmchatpic,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setgtitle",
                    setchat_title,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("pin",
                    pin,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("unpin",
                    unpin,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("unpinall",
                    unpinall,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("permapin",
                    permapin,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("cleanlinked",
                    permanent_pin_set,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(unpinallbtn, pattern=r"unpinallbtn_", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("pinned",
                    pinned,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                    block=False))
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("invitelink", invite, block=False))
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("promote", promote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(promote_button, pattern=r"admin_", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("fullpromote", fullpromote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("lowpromote", lowpromote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("midpromote", midpromote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("setanon", promoteanon, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("demote", demote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("middemote", middemote, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("unsetanon", demoteanon, block=False))
 
-CUTIEPII_PTB.add_handler(CommandHandler("title", set_title, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("title", set_title, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("admincache",
                    refresh_admin,
                    filters=PTB_Cutiepii_Filters.ChatType.GROUPS,

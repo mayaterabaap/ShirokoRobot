@@ -3,7 +3,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
 import ShirokoRobot.modules.sql.private_notes as sql
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 
 
@@ -47,5 +47,5 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("privatenotes", privatenotes, block=False))

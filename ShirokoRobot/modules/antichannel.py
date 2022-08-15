@@ -32,7 +32,7 @@ import html
 from telegram import Update
 from telegram.ext import filters, CallbackContext
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
@@ -75,7 +75,7 @@ async def eliminate_channel(update: Update, context: CallbackContext) -> None:
                                        chat_id=chat.id)
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("antichannel",
                               set_antichannel,
                               filters=filters.ChatType.GROUPS,

@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import os
 
 from time import sleep
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
 from ShirokoRobot.modules.sql.users_sql import get_user_com_chats
@@ -78,5 +78,5 @@ async def get_user_common_chats(update: Update,
         os.remove("common_chats.txt")
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("getchats", get_user_common_chats, block=False))

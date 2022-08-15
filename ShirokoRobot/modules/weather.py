@@ -37,7 +37,7 @@ from telethon.tl import functions
 from telethon.tl import types
 
 from ShirokoRobot.events import register
-from ShirokoRobot import OPENWEATHERMAP_ID, CUTIEPII_PTB, telethn as tbot
+from ShirokoRobot import OPENWEATHERMAP_ID, SHIROKO_PTB, telethn as tbot
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 
@@ -243,5 +243,5 @@ async def _(event):
             await event.reply(file=out_file)
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("weather", weather, block=False))

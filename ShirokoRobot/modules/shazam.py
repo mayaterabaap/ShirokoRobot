@@ -36,7 +36,7 @@ from pyrogram import filters
 from json import JSONDecodeError
 
 from ShirokoRobot.utils.pluginhelpers import admins_only, edit_or_reply, fetch_audio
-from ShirokoRobot import pgram, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot import pgram, SUPPORT_CHAT, SHIROKO_PTB
 
 
 @pgram.on_message(

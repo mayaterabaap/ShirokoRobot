@@ -6,7 +6,7 @@ from telegram import Chat, Update, ChatMember, InlineKeyboardButton, InlineKeybo
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext as Ctx, CallbackQueryHandler as CBHandler
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 
 from .admin_status_helpers import (
 	ADMINS_CACHE as A_CACHE,
@@ -47,7 +47,7 @@ def bot_admin_check(permission: AdminPerms = None):
 			try:  # try to get from cache
 				bot_member = B_CACHE[chat.id]
 			except KeyError:  # if not in cache, get from API and save to cache
-				bot_member = CUTIEPII_PTB.bot.getChatMember(chat.id, bot_id)
+				bot_member = SHIROKO_PTB.bot.getChatMember(chat.id, bot_id)
 				B_CACHE[chat.id] = bot_member
 
 			if permission:  # if a perm is required, check for it
@@ -106,7 +106,7 @@ async def get_mem_from_cache(user_id: int, chat_id: int) -> ChatMember:
 				if i.user.id == user_id: return i
 
 		except KeyError:
-			admins = await CUTIEPII_PTB.bot.getChatAdministrators(chat_id)
+			admins = await SHIROKO_PTB.bot.getChatAdministrators(chat_id)
 			A_CACHE[chat_id] = admins
 			for i in admins:
 				if i.user.id == user_id: return i
@@ -214,4 +214,4 @@ def perm_callback_check(upd: Update, _: Ctx):
 
     return cb[1](cb[0][0], cb[0][1])  # return func(update, context)
 
-CUTIEPII_PTB.add_handler(CBHandler(perm_callback_check, pattern = "anonCB", block=False))
+SHIROKO_PTB.add_handler(CBHandler(perm_callback_check, pattern = "anonCB", block=False))

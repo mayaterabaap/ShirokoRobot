@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import random
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 
@@ -250,7 +250,7 @@ async def react(update: Update):
         await message.reply_text(react)
 
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("react", react,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("react", react,
                                                    block=False))
 
 __command_list__ = ["react"]

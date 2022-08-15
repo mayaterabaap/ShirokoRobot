@@ -36,7 +36,7 @@ import requests
 from bs4 import BeautifulSoup
 from telethon import events
 
-from ShirokoRobot import telethn, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot import telethn, SUPPORT_CHAT, SHIROKO_PTB
 
 
 @telethn.on(events.NewMessage(pattern="^/book (.*)"))

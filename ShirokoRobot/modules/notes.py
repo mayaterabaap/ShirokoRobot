@@ -53,7 +53,7 @@ from telegram.ext import (
 from telegram.helpers import escape_markdown, mention_markdown
 
 import ShirokoRobot.modules.sql.notes_sql as sql
-from ShirokoRobot import SUDO_USERS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot import SUDO_USERS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.chat_status import connection_status, user_admin
 from ShirokoRobot.modules.helper_funcs.handlers import MessageHandlerChecker
@@ -72,14 +72,14 @@ MYVIDEO_MATCHER = re.compile(r"^###video(!photo)?###:")
 MYVIDEONOTE_MATCHER = re.compile(r"^###video_note(!photo)?###:")
 
 ENUM_FUNC_MAP = {
-    sql.Types.TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.BUTTON_TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.STICKER.value: CUTIEPII_PTB.bot.send_sticker,
-    sql.Types.DOCUMENT.value: CUTIEPII_PTB.bot.send_document,
-    sql.Types.PHOTO.value: CUTIEPII_PTB.bot.send_photo,
-    sql.Types.AUDIO.value: CUTIEPII_PTB.bot.send_audio,
-    sql.Types.VOICE.value: CUTIEPII_PTB.bot.send_voice,
-    sql.Types.VIDEO.value: CUTIEPII_PTB.bot.send_video,
+    sql.Types.TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.BUTTON_TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.STICKER.value: SHIROKO_PTB.bot.send_sticker,
+    sql.Types.DOCUMENT.value: SHIROKO_PTB.bot.send_document,
+    sql.Types.PHOTO.value: SHIROKO_PTB.bot.send_photo,
+    sql.Types.AUDIO.value: SHIROKO_PTB.bot.send_audio,
+    sql.Types.VOICE.value: SHIROKO_PTB.bot.send_voice,
+    sql.Types.VIDEO.value: SHIROKO_PTB.bot.send_video,
 }
 
 
@@ -203,7 +203,7 @@ async def get(update: Update,
                         reply_markup=keyboard,
                     )
                 elif ENUM_FUNC_MAP[
-                        note.msgtype] == CUTIEPII_PTB.bot.send_sticker:
+                        note.msgtype] == SHIROKO_PTB.bot.send_sticker:
                     ENUM_FUNC_MAP[note.msgtype](
                         chat_id,
                         note.file,
@@ -551,7 +551,7 @@ def __import_data__(chat_id, data):
         with BytesIO(str.encode("\n".join(failures))) as output:
             output.name = "failed_imports.txt"
             asyncio.get_running_loop().run_until_complete(
-                CUTIEPII_PTB.bot.send_document(
+                SHIROKO_PTB.bot.send_document(
                     chat_id,
                     document=output,
                     filename="failed_imports.txt",
@@ -602,16 +602,16 @@ A button can be added to a note by using standard markdown link syntax - the lin
 
 __mod_name__ = "Notes"
 
-CUTIEPII_PTB.add_handler(CommandHandler("get", cmd_get, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("get", cmd_get, block=False))
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.Regex(r"^#[\w\-]+(?!\n)$"), hash_get, block=False))
-CUTIEPII_PTB.add_handler(MessageHandler(filters.Regex(r"^/\d+$"), slash_get, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("save", save, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("clear", clear, block=False))
+SHIROKO_PTB.add_handler(MessageHandler(filters.Regex(r"^/\d+$"), slash_get, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("save", save, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("clear", clear, block=False))
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["notes", "saved"], list_notes, admin_ok=True, block=False))
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("removeallnotes", clearall, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("removeallnotes", clearall, block=False))
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(clearall_btn, pattern=r"notes_.*", block=False))

@@ -13,7 +13,7 @@ from telegram.ext import (
 )
 from telegram.helpers import escape_markdown, mention_html
 
-from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS, LOGGER
+from ShirokoRobot import SHIROKO_PTB, SUDO_USERS, LOGGER
 from ShirokoRobot.modules.helper_funcs.msg_types import get_filter_type
 from ShirokoRobot.modules.helper_funcs.misc import build_keyboard_parser
 from ShirokoRobot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
@@ -36,15 +36,15 @@ from ShirokoRobot.modules.helper_funcs.admin_status import (
 HANDLER_GROUP = 10
 
 ENUM_FUNC_MAP = {
-    sql.Types.TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.BUTTON_TEXT.value: CUTIEPII_PTB.bot.send_message,
-    sql.Types.STICKER.value: CUTIEPII_PTB.bot.send_sticker,
-    sql.Types.DOCUMENT.value: CUTIEPII_PTB.bot.send_document,
-    sql.Types.PHOTO.value: CUTIEPII_PTB.bot.send_photo,
-    sql.Types.AUDIO.value: CUTIEPII_PTB.bot.send_audio,
-    sql.Types.VOICE.value: CUTIEPII_PTB.bot.send_voice,
-    sql.Types.VIDEO.value: CUTIEPII_PTB.bot.send_video,
-    # sql.Types.VIDEO_NOTE.value: CUTIEPII_PTB.bot.send_video_note
+    sql.Types.TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.BUTTON_TEXT.value: SHIROKO_PTB.bot.send_message,
+    sql.Types.STICKER.value: SHIROKO_PTB.bot.send_sticker,
+    sql.Types.DOCUMENT.value: SHIROKO_PTB.bot.send_document,
+    sql.Types.PHOTO.value: SHIROKO_PTB.bot.send_photo,
+    sql.Types.AUDIO.value: SHIROKO_PTB.bot.send_audio,
+    sql.Types.VOICE.value: SHIROKO_PTB.bot.send_voice,
+    sql.Types.VIDEO.value: SHIROKO_PTB.bot.send_video,
+    # sql.Types.VIDEO_NOTE.value: SHIROKO_PTB.bot.send_video_note
 }
 
 
@@ -59,7 +59,7 @@ async def list_handlers(update: Update, context: CallbackContext) -> None:
                            need_admin=False)
     if conn is not False:
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
         filter_list = "*Filter in {}:*\n"
     else:
         chat_id = update.effective_chat.id
@@ -96,7 +96,7 @@ async def list_handlers(update: Update, context: CallbackContext) -> None:
     )
 
 
-# NOT ASYNC BECAUSE CUTIEPII_PTB HANDLER RAISED
+# NOT ASYNC BECAUSE SHIROKO_PTB HANDLER RAISED
 
 
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
@@ -112,7 +112,7 @@ async def filters(update, context) -> None:  # sourcery no-metrics
     conn = await connected(context.bot, update, chat, user.id)
     if conn is not False:
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         chat_name = "local filters" if chat.type == "private" else chat.title
@@ -140,9 +140,9 @@ async def filters(update, context) -> None:  # sourcery no-metrics
 
     # Add the filter
     # Note: perhaps handlers can be removed somehow using sql.get_chat_filters
-    for handler in CUTIEPII_PTB.handlers.get(HANDLER_GROUP, []):
+    for handler in SHIROKO_PTB.handlers.get(HANDLER_GROUP, []):
         if handler.filters == (keyword, chat_id):
-            CUTIEPII_PTB.remove_handler(handler, HANDLER_GROUP)
+            SHIROKO_PTB.remove_handler(handler, HANDLER_GROUP)
 
     text, file_type, file_id = get_filter_type(msg)
     if not msg.reply_to_message and len(extracted) >= 2:
@@ -220,7 +220,7 @@ async def filters(update, context) -> None:  # sourcery no-metrics
         return f"<b>{escape(chat.title or chat.id)}:</b>\n"
 
 
-# NOT ASYNC BECAUSE CUTIEPII_PTB HANDLER RAISE
+# NOT ASYNC BECAUSE SHIROKO_PTB HANDLER RAISE
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 async def stop_filter(update, context) -> str:
@@ -232,7 +232,7 @@ async def stop_filter(update, context) -> str:
     conn = await connected(context.bot, update, chat, user.id)
     if conn is not False:
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         chat_name = "Local filters" if chat.type == "private" else chat.title
@@ -362,7 +362,7 @@ async def reply_filter(
                                 LOGGER.exception(
                                     f"Failed to send message: {excp.message}")
                 elif ENUM_FUNC_MAP[
-                        filt.file_type] == CUTIEPII_PTB.bot.send_sticker:
+                        filt.file_type] == SHIROKO_PTB.bot.send_sticker:
                     ENUM_FUNC_MAP[filt.file_type](
                         chat.id,
                         filt.file_id,
@@ -582,21 +582,21 @@ doin?
 Check `/markdownhelp` to know more!
 """
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("filter", filters))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("stop", stop_filter))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("filter", filters))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("stop", stop_filter))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["removeallfilters", "stopall"],
                               rmall_filters,
                               filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(rmall_callback, pattern=r"filters_.*", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("filters",
                               list_handlers,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(PTB_Cutiepii_Filters.TEXT
                    & ~PTB_Cutiepii_Filters.UpdateType.EDITED_MESSAGE,
                    reply_filter,

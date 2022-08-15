@@ -33,7 +33,7 @@ import html
 import contextlib
 import ShirokoRobot.modules.sql.moderators_sql as sql
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
@@ -159,12 +159,12 @@ async def modr(update: Update, context: CallbackContext) -> None:
 
 __mod_name__ = "Moderation"
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("addmod", mod, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("addmod", mod, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("rmmod", dismod, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("modlist", modd, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("modcheck", modr, block=False))
 
 __command_list__ = [

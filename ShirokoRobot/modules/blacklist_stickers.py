@@ -32,7 +32,7 @@ import html
 import ShirokoRobot.modules.sql.blsticker_sql as sql
 
 from typing import Optional
-from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot import LOGGER, SHIROKO_PTB
 from ShirokoRobot.modules.connection import connected
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.alternate import send_message
@@ -94,7 +94,7 @@ async def add_blackliststicker(update: Update,
     bot = context.bot
     if conn := await connected(bot, chat, chat, user.id):
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -182,7 +182,7 @@ async def unblackliststicker(update: Update, context: CallbackContext) -> None:
     bot = context.bot
     if conn := await connected(bot, chat, chat, user.id):
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -269,9 +269,9 @@ async def blacklist_mode(update: Update, context: CallbackContext) -> None:
     bot, args = context.bot, context.args
     conn = await connected(bot, chat, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
+        chat = SHIROKO_PTB.bot.getChat(conn)
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             send_message(
@@ -483,22 +483,22 @@ def __stats__():
 
 __mod_name__ = "Stickers Blacklist"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("blsticker",
                               blackliststicker,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("addblsticker",
                               add_blackliststicker,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["unblsticker", "rmblsticker"],
                    unblackliststicker,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("blstickermode", blacklist_mode, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.Sticker.ALL & filters.ChatType.GROUPS,
                    del_blackliststicker,
                    block=False))

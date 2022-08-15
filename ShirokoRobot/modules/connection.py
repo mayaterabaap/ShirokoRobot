@@ -38,7 +38,7 @@ from telegram.ext import (CommandHandler, CallbackQueryHandler,
                           CallbackContext)
 
 import ShirokoRobot.modules.sql.connection_sql as sql
-from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS, DEV_USERS
+from ShirokoRobot import SHIROKO_PTB, SUDO_USERS, DEV_USERS
 from ShirokoRobot.modules.helper_funcs import admin_status
 
 from ShirokoRobot.modules.helper_funcs.alternate import send_message
@@ -99,8 +99,8 @@ async def connection_chat(update: Update, context: CallbackContext) -> None:
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
 
     if conn:
-        chat = await CUTIEPII_PTB.bot.getChat(conn)
-        chat_name = await CUTIEPII_PTB.bot.getChat(conn).title
+        chat = await SHIROKO_PTB.bot.getChat(conn)
+        chat_name = await SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type != "private":
             return
@@ -149,7 +149,7 @@ async def connect_chat(
             if (isadmin) or (isallow and ismember) or (user.id in SUDO_USERS):
                 if connection_status := sql.connect(
                         update.effective_message.from_user.id, connect_chat):
-                    conn_chat = await CUTIEPII_PTB.bot.getChat(await connected(
+                    conn_chat = await SHIROKO_PTB.bot.getChat(await connected(
                         context.bot, update, chat, user.id, need_admin=False))
                     chat_name = conn_chat.title
                     send_message(
@@ -182,7 +182,7 @@ async def connect_chat(
                                    user.id,
                                    need_admin=False)
             if conn:
-                connectedchat = await CUTIEPII_PTB.bot.getChat(conn)
+                connectedchat = await SHIROKO_PTB.bot.getChat(conn)
                 text = f"You are currently connected to *{connectedchat.title}* (`{conn}`)"
                 buttons.append(
                     InlineKeyboardButton(text="🔌 Disconnect",
@@ -234,7 +234,7 @@ async def connect_chat(
         if (isadmin) or (isallow and ismember) or (user.id in SUDO_USERS):
             if connection_status := sql.connect(
                     update.effective_message.from_user.id, chat.id):
-                chat_name = await CUTIEPII_PTB.bot.getChat(chat.id).title
+                chat_name = await SHIROKO_PTB.bot.getChat(chat.id).title
                 send_message(
                     update.effective_message,
                     f"Successfully connected to *{chat_name}*.",
@@ -355,7 +355,7 @@ async def connect_button(update: Update, context: CallbackContext) -> None:
         if (isadmin) or (isallow and ismember) or (user.id in SUDO_USERS):
             if connection_status := sql.connect(query.from_user.id,
                                                 target_chat):
-                conn_chat = await CUTIEPII_PTB.bot.getChat(await connected(
+                conn_chat = await SHIROKO_PTB.bot.getChat(await connected(
                     context.bot, update, chat, user.id, need_admin=False))
                 chat_name = conn_chat.title
                 await query.message.edit_text(
@@ -388,16 +388,16 @@ async def connect_button(update: Update, context: CallbackContext) -> None:
         connect_chat(update, context)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("connect", connect_chat, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("connect", connect_chat, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("connection", connection_chat, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("disconnect", disconnect_chat, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("allowconnect", allow_connections, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("helpconnect", help_connect_chat, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(connect_button, pattern=r"connect", block=False))
 
 __mod_name__ = "Connection"

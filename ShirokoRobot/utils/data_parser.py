@@ -4,7 +4,7 @@ import time
 
 from bs4 import BeautifulSoup
 from ShirokoRobot.utils.helper import cflag, make_it_rw, pos_no, return_json_senpai, day_, season_
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from jikanpy import AioJikan

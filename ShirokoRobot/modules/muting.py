@@ -47,7 +47,7 @@ from ShirokoRobot import (
     SUPPORT_USERS,
     OWNER_ID,
     WHITELIST_USERS,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     LOGGER,
 )
 from ShirokoRobot.modules.log_channel import loggable
@@ -370,7 +370,7 @@ async def temp_nomedia(update: Update, context: CallbackContext) -> str:
 
     conn = await connected(bot, chat, chat, user.id)
     if conn is not False:
-        chatD = await CUTIEPII_PTB.bot.getChat(conn)
+        chatD = await SHIROKO_PTB.bot.getChat(conn)
     elif chat.type == "private":
         sys.exit(1)
     else:
@@ -464,7 +464,7 @@ async def media(update: Update, context: CallbackContext) -> str:
 
     conn = await connected(bot, chat, chat, user.id)
     if conn is not False:
-        chatD = await CUTIEPII_PTB.bot.getChat(conn)
+        chatD = await SHIROKO_PTB.bot.getChat(conn)
     elif chat.type == "private":
         sys.exit(1)
     else:
@@ -517,7 +517,7 @@ async def nomedia(update: Update, context: CallbackContext) -> str:
 
     conn = await connected(bot, chat, chat, user.id)
     if conn is not False:
-        chatD = await CUTIEPII_PTB.bot.getChat(conn)
+        chatD = await SHIROKO_PTB.bot.getChat(conn)
     elif chat.type == "private":
         sys.exit(1)
     else:
@@ -561,23 +561,23 @@ async def nomedia(update: Update, context: CallbackContext) -> str:
     return ""
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("mute", mute, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("unmute", unmute, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("mute", mute, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("unmute", unmute, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler(['tmute', 'tempmute'], temp_mute, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["trestrict", "temprestrict"],
                               temp_nomedia,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["restrict", "nomedia"],
                               nomedia,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("unrestrict", media, admin_ok=True, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(button, pattern=r"cb_unmute", block=False))
 
 __mod_name__ = "Muting"

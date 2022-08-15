@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import requests
 
-from ShirokoRobot import CASH_API_KEY, CUTIEPII_PTB
+from ShirokoRobot import CASH_API_KEY, SHIROKO_PTB
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CommandHandler
@@ -94,6 +94,6 @@ Example:
 Output: `1.0 USD = 75.505 INR`
 """
 
-CUTIEPII_PTB.add_handler(CommandHandler("cash", convert, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("cash", convert, block=False))
 
 __command_list__ = ["cash"]

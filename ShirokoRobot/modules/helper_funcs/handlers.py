@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import ShirokoRobot.modules.sql.blacklistusers_sql as sql
 
 from ShirokoRobot import ALLOW_EXCL
-from ShirokoRobot import DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, CUTIEPII_PTB
+from ShirokoRobot import DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, SHIROKO_PTB
 
 from telegram import Update
 import telegram.ext as tg
@@ -121,7 +121,7 @@ class CustomCommandHandler(tg.CommandHandler):
                 return False
 
 
-    def collect_additional_context(self, context, update, CUTIEPII_PTB, check_result):
+    def collect_additional_context(self, context, update, SHIROKO_PTB, check_result):
         if isinstance(check_result, bool):
             context.args = update.effective_message.text.split()[1:]
         else:

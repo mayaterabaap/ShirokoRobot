@@ -15,7 +15,7 @@ from telegram.helpers import mention_html
 from urllib.parse import quote as urlquote
 from bs4 import BeautifulSoup
 
-from ShirokoRobot import REDIS, CUTIEPII_PTB, telethn, LOGGER
+from ShirokoRobot import REDIS, SHIROKO_PTB, telethn, LOGGER
 from ShirokoRobot.events import register as Shiroko
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
@@ -913,26 +913,26 @@ Stickers made easy with stickers module!
 
 __mod_name__ = "Stickers"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("stickerid", stickerid, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("getsticker", getsticker, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("kang", kang, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("kang", kang, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("delsticker", delsticker, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["addfsticker", "afs"],
                               add_fvrtsticker,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["removefsticker", "rfs"],
                               remove_fvrtsticker,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["myfsticker", "mfs"],
                               list_fvrtsticker,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("stickers", cb_sticker, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(cbs_callback, pattern="cbs_", block=False))

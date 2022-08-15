@@ -33,7 +33,7 @@ from telegram import Update, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, filters, CommandHandler
 
-from ShirokoRobot import LOGGER, CUTIEPII_PTB, SUDO_USERS
+from ShirokoRobot import LOGGER, SHIROKO_PTB, SUDO_USERS
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user_and_text
 from ShirokoRobot.modules.helper_funcs.admin_status import (
@@ -543,8 +543,8 @@ async def recho(update: Update, context: CallbackContext) -> None:
             await message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
 """
-CUTIEPII_PTB.add_handler(CommandHandler("rban", rban, filters=filters.User(SUDO_USERS), block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("runban", runban, filters=filters.User(SUDO_USERS), block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("rpunch", rkick, filters=filters.User(SUDO_USERS), block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("rmute", rmute, filters=filters.User(SUDO_USERS), block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("runmute", runmute, filters=filters.User(SUDO_USERS), block=False))
+SHIROKO_PTB.add_handler(CommandHandler("rban", rban, filters=filters.User(SUDO_USERS), block=False))
+SHIROKO_PTB.add_handler(CommandHandler("runban", runban, filters=filters.User(SUDO_USERS), block=False))
+SHIROKO_PTB.add_handler(CommandHandler("rpunch", rkick, filters=filters.User(SUDO_USERS), block=False))
+SHIROKO_PTB.add_handler(CommandHandler("rmute", rmute, filters=filters.User(SUDO_USERS), block=False))
+SHIROKO_PTB.add_handler(CommandHandler("runmute", runmute, filters=filters.User(SUDO_USERS), block=False))

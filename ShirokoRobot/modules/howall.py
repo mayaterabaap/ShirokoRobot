@@ -33,7 +33,7 @@ from .. import telethn as asst
 from telethon import Button, events
 
 BUTTON = [[
-    Button.url("❓ What Is This", "https://t.me/Black_Knights_Union/195")
+    Button.url("❓ What Is This", "https://t.me/ShirokoRobotUpdates/195")
 ]]
 HOT = "https://telegra.ph/file/daad931db960ea40c0fca.gif"
 SMEXY = "https://telegra.ph/file/a23e9fd851fb6bc771686.gif"

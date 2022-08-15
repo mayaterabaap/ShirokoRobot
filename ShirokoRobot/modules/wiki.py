@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import wikipedia
 import re
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 
 from telegram.ext import CommandHandler
 from telegram.error import BadRequest
@@ -75,4 +75,4 @@ async def wiki(update: Update, context: CallbackContext) -> None:
             )
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("wiki", wiki, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("wiki", wiki, block=False))

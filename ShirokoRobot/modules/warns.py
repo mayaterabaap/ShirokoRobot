@@ -34,7 +34,7 @@ import ShirokoRobot.modules.sql.rules_sql as rules_sql
 
 from typing import Optional
 
-from ShirokoRobot import BAN_STICKER, DEV_USERS, OWNER_ID, SUDO_USERS, WHITELIST_USERS, CUTIEPII_PTB
+from ShirokoRobot import BAN_STICKER, DEV_USERS, OWNER_ID, SUDO_USERS, WHITELIST_USERS, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 from ShirokoRobot.modules.helper_funcs.extraction import (
@@ -574,7 +574,7 @@ async def warns(update: Update, context: CallbackContext) -> None:
 
 
 @bot_admin_check(AdminPerms.CAN_RESTRICT_MEMBERS)
-# CUTIEPII_PTB handler stop - do not async
+# SHIROKO_PTB handler stop - do not async
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
 async def add_warn_filter(update: Update, context: CallbackContext) -> None:
     chat: Optional[Chat] = update.effective_chat
@@ -598,9 +598,9 @@ async def add_warn_filter(update: Update, context: CallbackContext) -> None:
     content = extracted[1]
 
     # Note: perhaps handlers can be removed somehow using sql.get_chat_filters
-    for handler in CUTIEPII_PTB.handlers.get(WARN_HANDLER_GROUP, []):
+    for handler in SHIROKO_PTB.handlers.get(WARN_HANDLER_GROUP, []):
         if handler.filters == (keyword, chat.id):
-            CUTIEPII_PTB.remove_handler(handler, WARN_HANDLER_GROUP)
+            SHIROKO_PTB.remove_handler(handler, WARN_HANDLER_GROUP)
 
     sql.add_warn_filter(chat.id, keyword, content)
 
@@ -806,51 +806,51 @@ be a sentence, encompass it with quotes, as such*:* `/addwarn "very angry" This 
 
 __mod_name__ = "Warnings"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["swarn", "dwarn", "dswarn", "warn"],
                    warn_user,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["resetwarn", "resetwarns"],
                    reset_warns,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-#CUTIEPII_PTB.add_handler(CommandHandler(["rmwarn", "unwarn"], remove_warns, filters=filters.ChatType.GROUPS, block=False)
-CUTIEPII_PTB.add_handler(
+#SHIROKO_PTB.add_handler(CommandHandler(["rmwarn", "unwarn"], remove_warns, filters=filters.ChatType.GROUPS, block=False)
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(button, pattern=r"rm_warn", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("warns",
                               warns,
                               filters=filters.ChatType.GROUPS,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("addwarn",
                    add_warn_filter,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["nowarn", "stopwarn"],
                    remove_warn_filter,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["warnlist", "warnfilters"],
                               list_warn_filters,
                               filters=filters.ChatType.GROUPS,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.TEXT & filters.ChatType.GROUPS &
                    (~filters.UpdateType.EDITED_MESSAGE),
                    reply_filter,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("warnlimit",
                    set_warn_limit,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("strongwarn",
                    set_warn_strength,
                    filters=filters.ChatType.GROUPS,

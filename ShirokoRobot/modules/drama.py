@@ -6,7 +6,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 
 url = "https://mydramalist.com/"
 
@@ -172,6 +172,6 @@ async def casts_button(update: Update, context: CallbackContext) -> None:
         await context.bot.answer_callback_query(query.id)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("Drama", drama))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("Drama", drama))
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(casts_button, pattern=r"drama-cast-detail.*"))

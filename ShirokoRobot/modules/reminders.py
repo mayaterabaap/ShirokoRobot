@@ -34,7 +34,7 @@ import io
 import re
 import time
 
-from ShirokoRobot import SUDO_USERS, CUTIEPII_PTB
+from ShirokoRobot import SUDO_USERS, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.string_handling import (
     extract_time_seconds,
@@ -138,7 +138,7 @@ async def reminders(update: Update, context: CallbackContext) -> None:
         text = re.sub(html_tags, "", text)
         with io.BytesIO(str.encode(text)) as file:
             file.name = f"reminders_{chat.id}.txt"
-            await CUTIEPII_PTB.bot.send_document(
+            await SHIROKO_PTB.bot.send_document(
                 chat_id=update.effective_chat.id,
                 document=file,
                 caption="Click to get the list of all reminders in this chat.",
@@ -233,7 +233,7 @@ async def check_reminds(update: Update, context: CallbackContext) -> None:
             r = sql.REMINDERS[t]
             for a in r:
                 try:
-                    user = await CUTIEPII_PTB.bot.get_chat(a["user_id"])
+                    user = await SHIROKO_PTB.bot.get_chat(a["user_id"])
                     text = f"""{mention_html(user.id, user.first_name)}'s reminder:\n{markdown_to_html(a["message"])}"""
 
                     await context.bot.send_message(a["chat_id"],
@@ -279,15 +279,15 @@ This will print a reminder with the text after 2 hours
 Removes the reminder of the said timestamp ID
 """
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["remind", "reminder"], remind, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(["reminds", "reminders"], reminders, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("clearreminder", clearreminder, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("clearallreminders", clearallreminders, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(clearallremindersbtn,
                          pattern=r"clearremind_",
                          block=False))

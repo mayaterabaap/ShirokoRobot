@@ -19,7 +19,7 @@ from ShirokoRobot import (
     SUPPORT_CHAT,
     TIGER_USERS,
     WHITELIST_USERS,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     SUDO_USERS,
 )
 from ShirokoRobot.modules.helper_funcs.chat_status import (
@@ -549,25 +549,25 @@ you and your groups by removing spam flooders as quickly as possible.
 *Note:* Users can appeal gbans or report spammers at @{SUPPORT_CHAT}
 """
 
-CUTIEPII_PTB.add_handler(CommandHandler("gban", gban, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("ungban", ungban, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("gbanlist", gbanlist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("gban", gban, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("ungban", ungban, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("gbanlist", gbanlist, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("antispam",
                    gbanstat,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("checkgb",
                    check_gbans,
                    filters=filters.User(OWNER_ID),
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("cleangb",
                    clear_gbans,
                    filters=filters.User(OWNER_ID),
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler((filters.ALL & filters.ChatType.GROUPS),
                    enforce_gban,
                    block=False))

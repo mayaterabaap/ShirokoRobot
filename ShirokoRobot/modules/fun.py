@@ -38,7 +38,7 @@ import telegram
 import ShirokoRobot.modules.fun_strings as fun_strings
 
 from pyrogram import filters as cutiepii_pyro
-from ShirokoRobot import SUPPORT_USERS, SUDO_USERS, pgram, CUTIEPII_PTB
+from ShirokoRobot import SUPPORT_USERS, SUDO_USERS, pgram, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin
 
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
@@ -809,63 +809,63 @@ __help__ = """
 ➛ /police*:* 🚓
 """
 """
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleMessageHandler(filters.Regex(r"(?i)(goodmorning|good morning)"),
                               goodmorning,
                               friendly="goodmorning"))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleMessageHandler(filters.Regex(r"(?i)(goodnight|good night)"),
                               goodnight,
                               friendly="goodnight"))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleMessageHandler(filters.Regex(r"(?i)^shiroko\?"),
                               shiroko,
                               friendly="decide"))
                               """
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("sanitize", sanitize, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("runs", runs, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("slap", slap, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("pat", pat, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("roll", roll, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("toss", toss, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("shrug", shrug,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("runs", runs, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("slap", slap, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("pat", pat, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("roll", roll, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("toss", toss, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("shrug", shrug,
                                                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("bluetext", bluetext, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("rlg", rlg, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("rlg", rlg, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("decide", decide, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("8ball", eightball, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("table", table,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("table", table,
                                                    block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("shout", shout,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("shout", shout,
                                                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("weebify", weebify, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("gbun", gbun, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("gbam", gbam, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("gbun", gbun, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("gbam", gbam, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("cuddle", cuddle, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("flirt", flirt,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("flirt", flirt,
                                                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("romance", romance, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("uwu", uwu, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("owo", owo, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("kill", kill, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("love", love, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("hack", hack, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("bombs", bombs,
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("uwu", uwu, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("owo", owo, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("kill", kill, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("love", love, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("hack", hack, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("bombs", bombs,
                                                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("moonanimation", moonanimation, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("clockanimation", clockanimation, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("blockanimation", blockanimation, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("earthanimation", earthanimation, block=False))
 
 __mod_name__ = "Fun"

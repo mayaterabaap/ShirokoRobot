@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import importlib
 import collections
 
-from ShirokoRobot import CUTIEPII_PTB, telethn
+from ShirokoRobot import SHIROKO_PTB, telethn
 from ShirokoRobot.__main__ import CHAT_SETTINGS, DATA_EXPORT, DATA_IMPORT, HELPABLE, IMPORTED, MIGRATEABLE, STATS, USER_INFO, USER_SETTINGS
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from telegram import Update
@@ -68,13 +68,13 @@ async def load(update: Update):
         handlers = imported_module.__handlers__
         for handler in handlers:
             if not isinstance(handler, tuple):
-                CUTIEPII_PTB.add_handler(handler)
+                SHIROKO_PTB.add_handler(handler)
             elif isinstance(handler[0], collections.Callable):
                 callback, telethon_event = handler
                 telethn.add_event_handler(callback, telethon_event)
             else:
                 handler_name, priority = handler
-                CUTIEPII_PTB.add_handler(handler_name, priority)
+                SHIROKO_PTB.add_handler(handler_name, priority)
     else:
         IMPORTED.pop(imported_module.__mod_name__.lower())
         await load_messasge.edit_text("The module cannot be loaded.")
@@ -143,13 +143,13 @@ async def unload(update: Update):
                     "This module can't be unloaded!")
                 return
             if not isinstance(handler, tuple):
-                CUTIEPII_PTB.remove_handler(handler)
+                SHIROKO_PTB.remove_handler(handler)
             elif isinstance(handler[0], collections.Callable):
                 callback, telethon_event = handler
                 telethn.remove_event_handler(callback, telethon_event)
             else:
                 handler_name, priority = handler
-                CUTIEPII_PTB.remove_handler(handler_name, priority)
+                SHIROKO_PTB.remove_handler(handler_name, priority)
     else:
         await unload_messasge.edit_text("The module cannot be unloaded.")
         return
@@ -200,9 +200,9 @@ async def listmodules(update: Update):
     await message.reply_text(module_list, parse_mode=ParseMode.HTML)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("load", load, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("unload", unload, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("load", load, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("unload", unload, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("listmodules", listmodules, block=False))
 
 __mod_name__ = "Modules"

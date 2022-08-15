@@ -9,7 +9,7 @@ from telegram.helpers import mention_html
 
 from ShirokoRobot.modules.helper_funcs.admin_status import user_is_admin
 from ShirokoRobot.modules.sql.notes_sql import Buttons
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 
 BTN_LINK_REGEX = re.compile(
     r"(?<!\\)\[(.+?)\]\(((?!b(?:utto|t)nurl:).+?)\)|(?m)^(\n?\[(.+?)\]\(b(?:utto|t)nurl:(?:/*)?(.+?)(:same)?\))$"
@@ -30,14 +30,14 @@ class Types(IntEnum):
 
 
 ENUM_FUNC_MAP = {
-    Types.TEXT.value: CUTIEPII_PTB.bot.send_message,
-    Types.BUTTON_TEXT.value: CUTIEPII_PTB.bot.send_message,
-    Types.STICKER.value: CUTIEPII_PTB.bot.send_sticker,
-    Types.DOCUMENT.value: CUTIEPII_PTB.bot.send_document,
-    Types.PHOTO.value: CUTIEPII_PTB.bot.send_photo,
-    Types.AUDIO.value: CUTIEPII_PTB.bot.send_audio,
-    Types.VOICE.value: CUTIEPII_PTB.bot.send_voice,
-    Types.VIDEO.value: CUTIEPII_PTB.bot.send_video,
+    Types.TEXT.value: SHIROKO_PTB.bot.send_message,
+    Types.BUTTON_TEXT.value: SHIROKO_PTB.bot.send_message,
+    Types.STICKER.value: SHIROKO_PTB.bot.send_sticker,
+    Types.DOCUMENT.value: SHIROKO_PTB.bot.send_document,
+    Types.PHOTO.value: SHIROKO_PTB.bot.send_photo,
+    Types.AUDIO.value: SHIROKO_PTB.bot.send_audio,
+    Types.VOICE.value: SHIROKO_PTB.bot.send_voice,
+    Types.VIDEO.value: SHIROKO_PTB.bot.send_video,
 }
 
 VALID_FORMATTERS = [

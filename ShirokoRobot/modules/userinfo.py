@@ -59,7 +59,7 @@ from ShirokoRobot import (
     TIGER_USERS,
     WHITELIST_USERS,
     INFOPIC,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     ubot,
     telethn,
     pgram,
@@ -224,7 +224,7 @@ def hpmanager(user):
         if not user.username:
             new_hp -= no_by_per(total_hp, 25)
         try:
-            CUTIEPII_PTB.bot.get_user_profile_photos(user.id).photos[0][-1]
+            SHIROKO_PTB.bot.get_user_profile_photos(user.id).photos[0][-1]
         except IndexError:
             # no profile photo ==> -25% of hp
             new_hp -= no_by_per(total_hp, 25)
@@ -482,7 +482,7 @@ else:return
 
 
     if disaster_level_present:
-        text += ' [<a href="https://telegram.dog/Black_Knights_Union/35">?</a>]'.format(
+        text += ' [<a href="https://telegram.dog/ShirokoRobotUpdates/35">?</a>]'.format(
             await bot.username,
         )
 
@@ -518,10 +518,10 @@ else:return
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/Black_Knights_Union/33"
+                                "Health", url="https://t.me/ShirokoRobotUpdates/33"
                             ),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Black_Knights_Union/35"
+                                "Disaster", url="https://t.me/ShirokoRobotUpdates/35"
                             ),
                         ],
                         [
@@ -539,10 +539,10 @@ else:return
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/Black_Knights_Union/33"
+                                "Health", url="https://t.me/ShirokoRobotUpdates/33"
                             ),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Black_Knights_Union/35"
+                                "Disaster", url="https://t.me/ShirokoRobotUpdates/35"
                             ),
                         ],
                         [
@@ -723,10 +723,10 @@ async def info(update: Update, context: CallbackContext) -> None:
                         [
                             InlineKeyboardButton(
                                 "Health",
-                                url="https://t.me/Black_Knights_Union/33"),
+                                url="https://t.me/ShirokoRobotUpdates/33"),
                             InlineKeyboardButton(
                                 "Disaster",
-                                url="https://t.me/Black_Knights_Union/35"),
+                                url="https://t.me/ShirokoRobotUpdates/35"),
                         ],
                         [
                             InlineKeyboardButton(" [❌] ",
@@ -745,10 +745,10 @@ async def info(update: Update, context: CallbackContext) -> None:
                         [
                             InlineKeyboardButton(
                                 "Health",
-                                url="https://t.me/Black_Knights_Union/33"),
+                                url="https://t.me/ShirokoRobotUpdates/33"),
                             InlineKeyboardButton(
                                 "Disaster",
-                                url="https://t.me/Black_Knights_Union/35"),
+                                url="https://t.me/ShirokoRobotUpdates/35"),
                         ],
                         [
                             InlineKeyboardButton(" [❌] ",
@@ -1086,17 +1086,17 @@ When marked as AFK, any mentions will be replied to with a message stating that 
  - brb <reason>: Same as the afk command, but not a command.\n
 
 *What is that health thingy?*
- Come and see [HP System explained](https://telegram.dog/Black_Knights_Union/33)
+ Come and see [HP System explained](https://telegram.dog/ShirokoRobotUpdates/33)
 
 """
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("setbio", set_about_bio, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("bio", about_bio, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("id", get_id, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("gifid", gifid, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("info", info, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("setme", set_about_me, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("me", about_me, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("setbio", set_about_bio, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("bio", about_bio, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("id", get_id, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("gifid", gifid, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("info", info, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("setme", set_about_me, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("me", about_me, block=False))
 
 __mod_name__ = "Info & AFK"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]

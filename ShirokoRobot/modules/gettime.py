@@ -34,7 +34,7 @@ import pycountry
 from typing import List
 
 from requests import get
-from ShirokoRobot import TIME_API_KEY, CUTIEPII_PTB
+from ShirokoRobot import TIME_API_KEY, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.constants import ParseMode
@@ -126,7 +126,7 @@ async def gettime(update: Update, context: CallbackContext) -> None:
     )
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("time", gettime, block=False))
 
 __mod_name__ = "Time"

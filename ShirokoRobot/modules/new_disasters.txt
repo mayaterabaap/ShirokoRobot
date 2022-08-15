@@ -10,7 +10,7 @@ from telegram.error import BadRequest, TelegramError, Forbidden
 from telegram.ext import CommandHandler, MessageHandler, filters
 from telegram.helpers import mention_html
 from telegram.ext import CallbackContext
-from ShirokoRobot import CUTIEPII_PTB, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
+from ShirokoRobot import SHIROKO_PTB, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus, support_plus, whitelist_plus
 from ShirokoRobot.modules.log_channel import gloggable
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
@@ -393,14 +393,14 @@ SUPPORTLIST_HANDLER = CommandHandler(("supportlist"),
 WHITELISTLIST_HANDLER = CommandHandler(("whitelistlist"),
                                        whitelistlist)
 
-CUTIEPII_PTB.add_handler(SUDO_HANDLER)
-CUTIEPII_PTB.add_handler(UNSUDO_HANDLER)
-CUTIEPII_PTB.add_handler(SUPPORT_HANDLER)
-CUTIEPII_PTB.add_handler(UNSUPPORT_HANDLER)
-CUTIEPII_PTB.add_handler(WHITELIST_HANDLER)
-CUTIEPII_PTB.add_handler(UNWHITELIST_HANDLER)
+SHIROKO_PTB.add_handler(SUDO_HANDLER)
+SHIROKO_PTB.add_handler(UNSUDO_HANDLER)
+SHIROKO_PTB.add_handler(SUPPORT_HANDLER)
+SHIROKO_PTB.add_handler(UNSUPPORT_HANDLER)
+SHIROKO_PTB.add_handler(WHITELIST_HANDLER)
+SHIROKO_PTB.add_handler(UNWHITELIST_HANDLER)
 
-CUTIEPII_PTB.add_handler(DEVLIST_HANDLER)
-CUTIEPII_PTB.add_handler(SUDOLIST_HANDLER)
-CUTIEPII_PTB.add_handler(SUPPORTLIST_HANDLER)
-CUTIEPII_PTB.add_handler(WHITELISTLIST_HANDLER)
+SHIROKO_PTB.add_handler(DEVLIST_HANDLER)
+SHIROKO_PTB.add_handler(SUDOLIST_HANDLER)
+SHIROKO_PTB.add_handler(SUPPORTLIST_HANDLER)
+SHIROKO_PTB.add_handler(WHITELISTLIST_HANDLER)

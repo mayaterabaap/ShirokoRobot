@@ -33,7 +33,7 @@ from requests import get
 from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.error import BadRequest
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 
@@ -70,6 +70,6 @@ async def ud(update: Update, context: CallbackContext) -> None:
         await msg.reply_text(f"Error! {err.message}")
 
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler(["ud"], ud, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler(["ud"], ud, block=False))
 
 __command_list__ = ["ud"]

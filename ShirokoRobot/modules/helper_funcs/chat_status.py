@@ -42,7 +42,7 @@ from ShirokoRobot import (
     SUPPORT_USERS,
     TIGER_USERS,
     WHITELIST_USERS,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     OWNER_ID,
 )
 
@@ -124,7 +124,7 @@ async def is_user_admin(update: Update,
             # KeyError happened means cache is deleted,
             # so query bot api again and return user status
             # while saving it in cache for future usage...
-            chat_admins = await CUTIEPII_PTB.bot.getChatAdministrators(chat.id)
+            chat_admins = await SHIROKO_PTB.bot.getChatAdministrators(chat.id)
             admin_list = [x.user.id for x in chat_admins]
             ADMIN_CACHE[chat.id] = admin_list
 
@@ -380,7 +380,7 @@ def connection_status(func):
                                    update.effective_chat,
                                    update.effective_user.id,
                                    need_admin=False):
-            chat = await CUTIEPII_PTB.bot.getChat(conn)
+            chat = await SHIROKO_PTB.bot.getChat(conn)
             await update.__setattr__("_effective_chat", chat)
         elif update.effective_message.chat.type == ChatType.PRIVATE:
             await update.effective_message.reply_text(

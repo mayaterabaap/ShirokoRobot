@@ -36,7 +36,7 @@ from telethon import events, Button
 from telegram.constants import ParseMode
 
 BUTTON = [[
-    Button.url("❓ What Is This", "https://t.me/Black_Knights_Union/195")
+    Button.url("❓ What Is This", "https://t.me/ShirokoRobotUpdates/195")
 ]]
 COMET = "https://telegra.ph/file/713fbfbdde25cc1726866.mp4"
 STAR = "https://telegra.ph/file/ad90b44c551cec31df76b.mp4"

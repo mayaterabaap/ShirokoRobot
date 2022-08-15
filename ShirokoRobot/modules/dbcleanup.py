@@ -33,7 +33,7 @@ import ShirokoRobot.modules.sql.global_bans_sql as gban_sql
 import ShirokoRobot.modules.sql.users_sql as user_sql
 
 from time import sleep
-from ShirokoRobot import DEV_USERS, OWNER_ID, CUTIEPII_PTB
+from ShirokoRobot import DEV_USERS, OWNER_ID, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Forbidden
@@ -218,8 +218,8 @@ async def callback_button(update: Update, context: CallbackContext) -> None:
 DB_CLEANUP_HANDLER = CommandHandler("dbcleanup", dbcleanup)
 BUTTON_HANDLER = CallbackQueryHandler(callback_button, pattern="db_.*")
 
-CUTIEPII_PTB.add_handler(DB_CLEANUP_HANDLER)
-CUTIEPII_PTB.add_handler(BUTTON_HANDLER)
+SHIROKO_PTB.add_handler(DB_CLEANUP_HANDLER)
+SHIROKO_PTB.add_handler(BUTTON_HANDLER)
 
 __mod_name__ = "DB Cleanup"
 

@@ -36,7 +36,7 @@ from telegram import Update
 from telegram.constants import ChatAction
 from telegram.ext import CallbackContext
 
-from ShirokoRobot import SUPPORT_CHAT, WALL_API, CUTIEPII_PTB
+from ShirokoRobot import SUPPORT_CHAT, WALL_API, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.alternate import send_action
 
@@ -86,4 +86,4 @@ async def wall(update: Update, context: CallbackContext) -> None:
             timeout=60,
         )
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("wall", wall, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("wall", wall, block=False))

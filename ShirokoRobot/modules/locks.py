@@ -45,7 +45,7 @@ from alphabet_detector import AlphabetDetector
 from ShirokoRobot.modules.helper_funcs.chat_status import connection_status
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.sql.approve_sql import is_approved
-from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot import SHIROKO_PTB, LOGGER
 from ShirokoRobot.modules.log_channel import loggable
 from ShirokoRobot.modules.helper_funcs.alternate import send_message
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
@@ -478,7 +478,7 @@ async def build_lock_message(chat_id):
              "pdf = f`{locks.pdf}`", "txt = f`{locks.txt}`",
              "xml = f`{locks.xml}`", "zip = f`{locks.zip}`"))
 
-    permissions = await CUTIEPII_PTB.bot.get_chat(chat_id).permissions
+    permissions = await SHIROKO_PTB.bot.get_chat(chat_id).permissions
     permslist = [
         f"messages = `{permissions.can_send_messages}`",
         f"media = `{permissions.can_send_media_messages}`",
@@ -511,7 +511,7 @@ async def list_locks(update: Update, context: CallbackContext) -> None:
     # Connection check
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = await CUTIEPII_PTB.bot.getChat(conn)
+        chat = await SHIROKO_PTB.bot.getChat(conn)
         chat_name = chat.title
     else:
         if update.effective_message.chat.type == "private":
@@ -588,15 +588,15 @@ Locking bots will stop non-admins from adding bots to the chat.
 
 __mod_name__ = "Locks"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("locktypes", locktypes, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler(
+SHIROKO_PTB.add_handler(CommandHandler(
     "lock", lock, block=False))  # , filters=Filters.group)
-CUTIEPII_PTB.add_handler(CommandHandler(
+SHIROKO_PTB.add_handler(CommandHandler(
     "unlock", unlock, block=False))  # , filters=Filters.group)
-CUTIEPII_PTB.add_handler(CommandHandler(
+SHIROKO_PTB.add_handler(CommandHandler(
     "locks", list_locks, block=False))  # , filters=Filters.group)
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.ALL & filters.ChatType.GROUPS,
                    del_lockables,
                    block=False), PERM_GROUP)

@@ -1,6 +1,6 @@
 """
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
-from ShirokoRobot import LOGGER, CUTIEPII_PTB as app
+from ShirokoRobot import LOGGER, SHIROKO_PTB as app
 
 from typing import Optional, List
 

@@ -43,7 +43,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from ShirokoRobot import BOT_ID, OWNER_ID as SUDO_USERS, pgram, CUTIEPII_PTB
+from ShirokoRobot import BOT_ID, OWNER_ID as SUDO_USERS, pgram, SHIROKO_PTB
 from ShirokoRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)

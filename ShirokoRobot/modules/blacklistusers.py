@@ -39,7 +39,7 @@ from ShirokoRobot import (
     SUPPORT_USERS,
     TIGER_USERS,
     WHITELIST_USERS,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
 )
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from ShirokoRobot.modules.helper_funcs.extraction import (
@@ -185,17 +185,17 @@ def __user_info__(user_id):
     return text
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("ignore",
                    unbl_user,
                    filters=filters.User(OWNER_ID),
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("notice",
                    unbl_user,
                    filters=filters.User(OWNER_ID),
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("ignoredlist",
                    bl_users,
                    filters=filters.User(OWNER_ID),

@@ -9,7 +9,7 @@ from telegram.ext import CommandHandler
 from telegram.helpers import mention_html
 from telegram.ext import CallbackContext
 
-from ShirokoRobot import CUTIEPII_PTB, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
+from ShirokoRobot import SHIROKO_PTB, OWNER_ID, DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus, whitelist_plus
 from ShirokoRobot.modules.log_channel import gloggable
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
@@ -267,18 +267,18 @@ __help__ = """
 
 __mod_name__ = "Super Users"
 
-CUTIEPII_PTB.add_handler(CommandHandler("addsudo", addsudo, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("removesudo", removesudo, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("addsupport", addsupport, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("addsudo", addsudo, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("removesudo", removesudo, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("addsupport", addsupport, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("removesupport", removesupport, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("addwhitelist", addwhitelist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("removewhitelist", removewhitelist, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler(("devlist"), devlist, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler(("sudolist"), sudolist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler(("devlist"), devlist, block=False))
+SHIROKO_PTB.add_handler(CommandHandler(("sudolist"), sudolist, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler(("supportlist"), supportlist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler(("whitelistlist"), whitelistlist, block=False))

@@ -41,7 +41,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 
 import ShirokoRobot.modules.sql.notes_sql as sql
-from ShirokoRobot import CUTIEPII_PTB, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from ShirokoRobot import SHIROKO_PTB, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
 from ShirokoRobot.__main__ import DATA_IMPORT
 
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
@@ -63,8 +63,8 @@ async def import_data(update: Update, context: CallbackContext) -> None:
 
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat = SHIROKO_PTB.bot.getChat(conn)
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             await update.effective_message.reply_text(
@@ -157,9 +157,9 @@ async def export_data(update: Update, context: CallbackContext) -> None:
     current_chat_id = update.effective_chat.id
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
+        chat = SHIROKO_PTB.bot.getChat(conn)
         chat_id = conn
-        # chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        # chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             await update.effective_message.reply_text(
@@ -409,5 +409,5 @@ __help__ = """
 
 __mod_name__ = "Backups"
 
-CUTIEPII_PTB.add_handler(CommandHandler("import", import_data, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("export", export_data, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("import", import_data, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("export", export_data, block=False))

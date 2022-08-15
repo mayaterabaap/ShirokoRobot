@@ -35,7 +35,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler, CallbackContext
 from telegram.constants import ParseMode
 
-from ShirokoRobot import DEV_USERS, SUDO_USERS, CUTIEPII_PTB
+from ShirokoRobot import DEV_USERS, SUDO_USERS, SHIROKO_PTB
 
 
 class AdminPerms(Enum):
@@ -121,10 +121,10 @@ async def anon_callback_handler1(upd: Update):
         return
     if mem.status not in [ChatStatus.ADMINISTRATOR.value, ChatStatus.OWNER.value]:
         callback.answer("You're aren't admin.")
-        await CUTIEPII_PTB.bot.delete_message(
+        await SHIROKO_PTB.bot.delete_message(
             chat_id, anon_callback_messages.pop((chat_id, message_id), None)
         )
-        await CUTIEPII_PTB.bot.send_message(
+        await SHIROKO_PTB.bot.send_message(
             chat_id, "You lack the permissions required for this command"
         )
     elif (
@@ -135,9 +135,9 @@ async def anon_callback_handler1(upd: Update):
         if cb := anon_callbacks.pop((chat_id, message_id), None):
             message_id = anon_callback_messages.pop((chat_id, message_id), None)
             if message_id is not None:
-                await CUTIEPII_PTB.bot.delete_message(chat_id, message_id)
+                await SHIROKO_PTB.bot.delete_message(chat_id, message_id)
             return cb[1](cb[0][0], cb[0][1])
     else:
         callback.answer("This isn't for ya")
 
-CUTIEPII_PTB.add_handler(CallbackQueryHandler(anon_callback_handler1, pattern=r"anoncb", block=False))
+SHIROKO_PTB.add_handler(CallbackQueryHandler(anon_callback_handler1, pattern=r"anoncb", block=False))

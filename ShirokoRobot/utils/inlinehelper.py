@@ -49,7 +49,7 @@ from pyrogram.types import (
 )
 from search_engine_parser import GoogleSearch
 
-from ShirokoRobot import OWNER_ID, pgram, arq, CUTIEPII_PTB
+from ShirokoRobot import OWNER_ID, pgram, arq, SHIROKO_PTB
 from ShirokoRobot.utils.pluginhelpers import convert_seconds_to_minutes as time_convert
 from ShirokoRobot.utils.pluginhelpers import fetch
 

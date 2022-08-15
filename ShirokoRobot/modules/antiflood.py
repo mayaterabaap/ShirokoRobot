@@ -40,7 +40,7 @@ from telegram.constants import ParseMode, ChatType
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, filters, MessageHandler
 from telegram.helpers import mention_html
 
-from ShirokoRobot import CUTIEPII_PTB, WHITELIST_USERS
+from ShirokoRobot import SHIROKO_PTB, WHITELIST_USERS
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.chat_status import (
     bot_admin,
@@ -159,7 +159,7 @@ async def set_flood(update: Update, context: CallbackContext) -> str:
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
         chat_id = conn
-        chat_name = await CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = await SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             send_message(
@@ -232,7 +232,7 @@ async def flood(update: Update, context: CallbackContext) -> None:
                            need_admin=False)
     if conn:
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             send_message(
@@ -269,9 +269,9 @@ async def set_flood_mode(update: Update, context: CallbackContext) -> None:
 
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
+        chat = SHIROKO_PTB.bot.getChat(conn)
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             send_message(
@@ -390,22 +390,22 @@ will result in restricting that user.
 
 __mod_name__ = "Anti-Flood"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.ALL & (~filters.StatusUpdate.ALL)
                    & filters.ChatType.GROUPS,
                    check_flood,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setflood",
                    set_flood,
                    filters=filters.ChatType.GROUPS,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("setfloodmode", set_flood_mode,
                    block=False))  # , filters.ChatType.GROUPS)
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(flood_button, pattern=r"unmute_flooder", block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("flood",
                    flood,
                    filters=filters.ChatType.GROUPS,

@@ -34,7 +34,7 @@ import subprocess
 import sys
 import asyncio
 
-from ShirokoRobot import CUTIEPII_PTB, DEV_USERS, telethn, OWNER_ID
+from ShirokoRobot import SHIROKO_PTB, DEV_USERS, telethn, OWNER_ID
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import TelegramError
@@ -204,12 +204,12 @@ async def restart(update: Update):
     process.communicate()
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("install", pip_install, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("leave", leave, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("gitpull", gitpull, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("reboot", restart, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("lockdown", allow_groups, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("install", pip_install, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("leave", leave, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("gitpull", gitpull, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("reboot", restart, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("lockdown", allow_groups, block=False))
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(leave_cb, pattern=r"leavechat_cb_", block=False))
 
 __mod_name__ = "Dev"

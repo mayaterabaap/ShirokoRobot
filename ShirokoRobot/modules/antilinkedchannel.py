@@ -34,7 +34,7 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.ext import filters
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from ShirokoRobot.modules.helper_funcs.chat_status import bot_can_delete, bot_admin
@@ -126,12 +126,12 @@ def eliminate_linked_channel_msg(update: Update):
         return
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("antilinkedchan",
                               set_antilinkedchannel,
                               filters=filters.ChatType.GROUPS,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("antichannelpin",
                               set_antipinchannel,
                               filters=filters.ChatType.GROUPS,

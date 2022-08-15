@@ -38,13 +38,13 @@ from time import sleep
 from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext
 
-from ShirokoRobot import DATABASE_NAME, OWNER_ID, CUTIEPII_PTB, LOGGER, BACKUP_PASS
+from ShirokoRobot import DATABASE_NAME, OWNER_ID, SHIROKO_PTB, LOGGER, BACKUP_PASS
 from ShirokoRobot.modules.helper_funcs.chat_status import owner_plus
 
 
 @owner_plus
 def backup_now(_: Update, ctx: CallbackContext):
-    cronjob.run(CUTIEPII_PTB=CUTIEPII_PTB)
+    cronjob.run(SHIROKO_PTB=SHIROKO_PTB)
 
 
 @owner_plus
@@ -63,7 +63,7 @@ zip_pass = BACKUP_PASS
 
 
 async def backup_db(_: CallbackContext):
-    bot = CUTIEPII_PTB.bot
+    bot = SHIROKO_PTB.bot
     tmpmsg = "Performing backup, Please wait..."
     tmp = await bot.send_message(OWNER_ID, tmpmsg)
     datenow = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -132,11 +132,11 @@ def term(cmd, info):
 
 # run the backup daliy at 1:00
 twhen = datetime.datetime.strptime('01:00', '%H:%M').time()
-j = CUTIEPII_PTB.job_queue
+j = SHIROKO_PTB.job_queue
 cronjob = j.run_daily(callback=backup_db, name="database backups", time=twhen)
 
-CUTIEPII_PTB.add_handler(CommandHandler("backupdb", backup_now, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("stopjobs", stop_jobs, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("startjobs", start_jobs, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(CommandHandler("backupdb", backup_now, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("stopjobs", stop_jobs, block=False))
+SHIROKO_PTB.add_handler(CommandHandler("startjobs", start_jobs, block=False))
+SHIROKO_PTB.add_handler(
     CommandHandler("purgebackups", del_bkp_fldr, block=False))

@@ -1,33 +1,3 @@
-"""
-BSD 2-Clause License
-
-Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021-2022, Awesome-RJ, [ https://github.com/Awesome-RJ ]
-Copyright (c) 2021-2022, Yūki • Black Knights Union, [ https://github.com/Awesome-RJ/CutiepiiRobot ]
-
-All rights reserved.
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
-
 import json
 import logging
 import os
@@ -135,7 +105,7 @@ if ENV:
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     URL = os.environ.get(
         "URL", ""
-    )  # If You Deploy On Heraku. [URL PERTEN:- https://{App Name}.herokuapp.com/ || EXP:- https://yuki-shiroko-robot.herokuapp.com/]
+    )  # If You Deploy On Heroku. [URL PERTEN:- https://{App Name}.herokuapp.com/ || EXP:- https://yuki-shiroko-robot.herokuapp.com/]
     PORT = int(os.environ.get("PORT", 8443))
     CUSTOM_CMD = os.environ.get("CUSTOM_CMD", False)
     API_ID = os.environ.get(
@@ -176,7 +146,7 @@ if ENV:
     )  # REDIS URL (Take it from redislabs.com and the format should be redis://username:password@publicendpoint:port/)
     SUPPORT_CHAT = os.environ.get(
         "SUPPORT_CHAT"
-    )  # Support Chat Group Link (Use @Black_Knights_Union_Support || Dont Use https://telegram.dog/Black_Knights_Union_Support)
+    )  # Support Chat Group Link (Use @ShirokoRobotSupport || Dont Use https://telegram.dog/ShirokoRobotSupport)
     STRING_SESSION = os.environ.get(
         "STRING_SESSION"
     )  # Telethon Based String Session (2nd ID) [ From https://repl.it/@SpEcHiDe/GenerateStringSession ]
@@ -192,6 +162,7 @@ if ENV:
     BOT_API_FILE_URL = "https://api.telegram.org/file/bot"
     BOT_API_URL = "https://api.telegram.org/bot"
     BOT_ID = int(TOKEN.split(":")[0])
+    BOT_USERNAME = os.environ.get("BOT_USERNAME")
 
     HELP_IMG = os.environ.get("HELP_IMG", True)
     GROUP_START_IMG = os.environ.get("GROUP_START_IMG", True)
@@ -284,6 +255,7 @@ else:
     TG_API = Config.TG_API
     DATABASE_NAME = Config.DATABASE_NAME
     BACKUP_PASS = Config.BACKUP_PASS
+    BOT_USERNAME = Config.BOT_USERNAME
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
@@ -334,9 +306,9 @@ telegraph.create_account(short_name="Shiroko")
 LOGGER.debug("[CUTIEPII]: TELETHON CLIENT STARTING")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 
-CUTIEPII_PTB = (tg.Application.builder().token(TOKEN).build())
+SHIROKO_PTB = (tg.Application.builder().token(TOKEN).build())
 
-# asyncio.get_event_loop().run_until_complete(CUTIEPII_PTB.bot.initialize())
+# asyncio.get_event_loop().run_until_complete(SHIROKO_PTB.bot.initialize())
 #------------------------------------------------------------------
 LOGGER.debug("[CUTIEPII]: PYROGRAM CLIENT STARTING")
 name = TOKEN.split(":")[0]

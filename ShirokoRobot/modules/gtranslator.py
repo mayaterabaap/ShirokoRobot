@@ -38,7 +38,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext
 from telegram.constants import ParseMode
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 trans = SyncTranslator()
@@ -149,12 +149,12 @@ async def spellcheck(update: Update):
             "Reply to some message to get grammar corrected text!")
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["tr", "tl"], translate, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["langs", "lang"], languages, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("tts", gtts, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("tts", gtts, block=False))
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("splcheck", spellcheck, block=False))
 
 __help__ = """

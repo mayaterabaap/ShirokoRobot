@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import html
 
-from ShirokoRobot import ALLOW_EXCL, CustomCommandHandler, CUTIEPII_PTB
+from ShirokoRobot import ALLOW_EXCL, CustomCommandHandler, SHIROKO_PTB
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.chat_status import (
     bot_can_delete,
@@ -69,8 +69,8 @@ command_list = [
     "leaderboard",
 ]
 
-for handler_list in CUTIEPII_PTB.handlers:
-    for handler in CUTIEPII_PTB.handlers[handler_list]:
+for handler_list in SHIROKO_PTB.handlers:
+    for handler in SHIROKO_PTB.handlers[handler_list]:
         if any(
                 isinstance(handler, cmd_handler)
                 for cmd_handler in CommandHandlerList):
@@ -240,20 +240,20 @@ async def bluetext_ignore_list(update: Update,
     return
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("cleanblue", set_blue_text_must_click, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("ignoreblue", add_bluetext_ignore, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("unignoreblue", remove_bluetext_ignore, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("gignoreblue", add_bluetext_ignore_global, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("ungignoreblue", remove_bluetext_ignore_global,
                    block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("listblue", bluetext_ignore_list, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(filters.COMMAND & filters.ChatType.GROUPS,
                    clean_blue_text_must_click,
                    block=False))

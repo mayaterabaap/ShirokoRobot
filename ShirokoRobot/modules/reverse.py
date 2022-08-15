@@ -41,7 +41,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
-from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot import SHIROKO_PTB
 from typing import List
 
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
@@ -170,7 +170,7 @@ def ParseSauce(googleurl):
     return results
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["grs", "reverse", "pp"], reverse, block=False))
 
 __mod_name__ = "Reverse"

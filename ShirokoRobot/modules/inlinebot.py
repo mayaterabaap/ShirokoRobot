@@ -26,7 +26,7 @@ from youtubesearchpython import VideosSearch
 
 from ShirokoRobot.utils.inlinehelper import *
 from ShirokoRobot.utils.pluginhelpers import fetch, json_prettify
-from ShirokoRobot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT, SHIROKO_PTB
 
 dictionary = PyDictionary()
 

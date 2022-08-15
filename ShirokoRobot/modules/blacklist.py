@@ -38,7 +38,7 @@ from telegram.helpers import mention_html
 from telegram.constants import ParseMode, ChatType
 
 import ShirokoRobot.modules.sql.blacklist_sql as sql
-from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot import SHIROKO_PTB, LOGGER
 from ShirokoRobot.modules.connection import connected
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.alternate import send_message
@@ -68,7 +68,7 @@ async def blacklist(update: Update, context: CallbackContext) -> None:
                                user.id,
                                need_admin=False):
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if chat.type == "private":
             return
@@ -113,7 +113,7 @@ async def add_blacklist(update: Update, context: CallbackContext) -> None:
 
     if conn := await connected(context.bot, update, chat, user.id):
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -159,7 +159,7 @@ async def unblacklist(update: Update, context: CallbackContext) -> None:
 
     if conn := await connected(context.bot, update, chat, user.id):
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -229,9 +229,9 @@ async def blacklist_mode(update: Update, context: CallbackContext) -> None:
 
     conn = await connected(context.bot, update, chat, user.id, need_admin=True)
     if conn:
-        chat = CUTIEPII_PTB.bot.getChat(conn)
+        chat = SHIROKO_PTB.bot.getChat(conn)
         chat_id = conn
-        chat_name = CUTIEPII_PTB.bot.getChat(conn).title
+        chat_name = SHIROKO_PTB.bot.getChat(conn).title
     else:
         if update.effective_message.chat.type == ChatType.PRIVATE:
             send_message(
@@ -505,18 +505,18 @@ Note:
 
 __mod_name__ = "Blacklists"
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("blacklist",
                               blacklist,
                               admin_ok=True,
                               block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("addblacklist", add_blacklist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("unblacklist", unblacklist, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CommandHandler("blacklistmode", blacklist_mode, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     MessageHandler(
         (filters.TEXT | filters.COMMAND | filters.Sticker.ALL | filters.PHOTO)
         & filters.ChatType.GROUPS,

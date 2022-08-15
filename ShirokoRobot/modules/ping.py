@@ -36,7 +36,7 @@ from typing import List
 from telegram import Update
 from telegram.constants import ParseMode
 
-from ShirokoRobot import StartTime, CUTIEPII_PTB
+from ShirokoRobot import StartTime, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
@@ -131,7 +131,7 @@ async def pingall(update: Update):
     )
 
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("ping", ping, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("pingall", pingall, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("ping", ping, block=False))
+SHIROKO_PTB.add_handler(DisableAbleCommandHandler("pingall", pingall, block=False))
 
 __command_list__ = ["ping", "pingall"]

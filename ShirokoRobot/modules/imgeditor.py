@@ -36,7 +36,7 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message,
 )
-from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot import SHIROKO_PTB, LOGGER
 
 # By @TroJanzHEX
 from ShirokoRobot.utils.resources.ImageEditor.edit_1 import (

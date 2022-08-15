@@ -3,7 +3,7 @@ import re
 import datetime
 
 from telethon import events, custom
-from ShirokoRobot import telethn as bot
+from ShirokoRobot import SUPPORT_CHAT, telethn as bot
 from ShirokoRobot.events import register
 
 edit_time = 5
@@ -24,7 +24,7 @@ async def proboyx(event):
         event.chat_id,
         file=file2,
         caption=
-        f"♡ Hey {betsy}, I'm Shiroko\n♡ I'm Created By [Black Knights Union](https://t.me/Black_Knights_Union_Support)\n♡ Click The Button Below To Get Your Info",
+        f"♡ Hey {betsy}, I'm Shiroko\n♡ I'm Created By [them](https://t.me/{SUPPORT_CHAT})\n♡ Click The Button Below To Get Your Info",
         buttons=button)
 
     await asyncio.sleep(edit_time)

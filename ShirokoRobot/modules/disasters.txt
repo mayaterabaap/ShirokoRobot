@@ -42,7 +42,7 @@ from ShirokoRobot import (
     SUPPORT_USERS,
     TIGER_USERS,
     WHITELIST_USERS,
-    CUTIEPII_PTB,
+    SHIROKO_PTB,
     ELEVATED_USERS_FILE,
 )
 from ShirokoRobot.modules.helper_funcs.chat_status import (
@@ -600,7 +600,7 @@ def disasters(update: Update, context: CallbackContext) -> None:
         [
             InlineKeyboardButton(
                 text = "Click Here",
-                url="https://t.me/Black_Knights_Union/35",
+                url="https://t.me/ShirokoRobotUpdates/35",
             ),
         ],
     ],
@@ -714,19 +714,19 @@ SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
 SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
 DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist)
 
-CUTIEPII_PTB.add_handler(SUDO_HANDLER)
-CUTIEPII_PTB.add_handler(SUPPORT_HANDLER)
-CUTIEPII_PTB.add_handler(TIGER_HANDLER)
-CUTIEPII_PTB.add_handler(WHITELIST_HANDLER)
-CUTIEPII_PTB.add_handler(UNSUDO_HANDLER)
-CUTIEPII_PTB.add_handler(UNSUPPORT_HANDLER)
-CUTIEPII_PTB.add_handler(UNTIGER_HANDLER)
-CUTIEPII_PTB.add_handler(UNWHITELIST_HANDLER)
-CUTIEPII_PTB.add_handler(DISASTERS_HANDLER)
-CUTIEPII_PTB.add_handler(WHITELISTLIST_HANDLER)
-CUTIEPII_PTB.add_handler(TIGERLIST_HANDLER)
-CUTIEPII_PTB.add_handler(SUPPORTLIST_HANDLER)
-CUTIEPII_PTB.add_handler(SUDOLIST_HANDLER)
-CUTIEPII_PTB.add_handler(DEVLIST_HANDLER)
+SHIROKO_PTB.add_handler(SUDO_HANDLER)
+SHIROKO_PTB.add_handler(SUPPORT_HANDLER)
+SHIROKO_PTB.add_handler(TIGER_HANDLER)
+SHIROKO_PTB.add_handler(WHITELIST_HANDLER)
+SHIROKO_PTB.add_handler(UNSUDO_HANDLER)
+SHIROKO_PTB.add_handler(UNSUPPORT_HANDLER)
+SHIROKO_PTB.add_handler(UNTIGER_HANDLER)
+SHIROKO_PTB.add_handler(UNWHITELIST_HANDLER)
+SHIROKO_PTB.add_handler(DISASTERS_HANDLER)
+SHIROKO_PTB.add_handler(WHITELISTLIST_HANDLER)
+SHIROKO_PTB.add_handler(TIGERLIST_HANDLER)
+SHIROKO_PTB.add_handler(SUPPORTLIST_HANDLER)
+SHIROKO_PTB.add_handler(SUDOLIST_HANDLER)
+SHIROKO_PTB.add_handler(DEVLIST_HANDLER)
 
 __mod_name__ = "Disasters"

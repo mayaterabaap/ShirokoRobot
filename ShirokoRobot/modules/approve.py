@@ -38,7 +38,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackQueryHandler, CallbackContext
 from telegram.helpers import mention_html
 
-from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS
+from ShirokoRobot import SHIROKO_PTB, SUDO_USERS
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
 from ShirokoRobot.modules.log_channel import loggable
@@ -225,17 +225,17 @@ async def unapproveall_btn(update: Update):
             await query.answer("You need to be admin to do this.")
 
 
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("approve", approve, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("unapprove", disapprove, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("approved", approved, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("approval", approval, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("unapproveall", unapproveall, block=False))
-CUTIEPII_PTB.add_handler(
+SHIROKO_PTB.add_handler(
     CallbackQueryHandler(unapproveall_btn,
                          pattern=r"unapproveall_.*",
                          block=False))
