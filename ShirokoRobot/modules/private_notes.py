@@ -8,8 +8,7 @@ from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
 
 
 @user_admin
-async def privatenotes(update: Update,
-                       context: CallbackContext) -> None:
+async def privatenotes(update: Update, context: CallbackContext) -> None:
     chat = update.effective_chat
     message = update.effective_message
     args = context.args
@@ -48,4 +47,5 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-CUTIEPII_PTB.add_handler(CommandHandler("privatenotes", privatenotes, block=False))
+CUTIEPII_PTB.add_handler(
+    CommandHandler("privatenotes", privatenotes, block=False))
