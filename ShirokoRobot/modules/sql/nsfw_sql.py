@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import threading
 
 from sqlalchemy import Column, String
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 #   |----------------------------------|
 #   |  Test Module by @EverythingSuckz |
 #   |        Kang with Credits         |

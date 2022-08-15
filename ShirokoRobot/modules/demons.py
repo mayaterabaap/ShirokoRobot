@@ -5,8 +5,8 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.types import ChatBannedRights
 
-from Cutiepii_Robot import telethn
-from Cutiepii_Robot.modules.helper_funcs.telethn.chatstatus import user_is_admin, can_ban_users
+from ShirokoRobot import telethn
+from ShirokoRobot.modules.helper_funcs.telethn.chatstatus import user_is_admin, can_ban_users
 
 # =================== CONSTANT ===================
 BANNED_RIGHTS = ChatBannedRights(

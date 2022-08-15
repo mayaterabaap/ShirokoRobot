@@ -34,7 +34,7 @@ import typing
 
 from sqlalchemy import Column, String, func, distinct, BigInteger, Boolean
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class GroupLogs(BASE):

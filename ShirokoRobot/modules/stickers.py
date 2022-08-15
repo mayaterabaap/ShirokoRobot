@@ -15,9 +15,9 @@ from telegram.helpers import mention_html
 from urllib.parse import quote as urlquote
 from bs4 import BeautifulSoup
 
-from Cutiepii_Robot import REDIS, CUTIEPII_PTB, telethn, LOGGER
-from Cutiepii_Robot.events import register as Cutiepii
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import REDIS, CUTIEPII_PTB, telethn, LOGGER
+from ShirokoRobot.events import register as Cutiepii
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 scraper = CloudScraper()
@@ -796,7 +796,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./Cutiepii_Robot/resources/ArmWrestler.ttf"
+        fnt = "./ShirokoRobot/resources/ArmWrestler.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")

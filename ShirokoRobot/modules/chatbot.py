@@ -33,10 +33,10 @@ import re
 import requests
 from time import sleep
 
-from Cutiepii_Robot import BOT_ID, CUTIEPII_PTB, DEV_USERS
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot import BOT_ID, CUTIEPII_PTB, DEV_USERS
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     is_user_admin, )
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.constants import ParseMode
 from telegram.ext import (

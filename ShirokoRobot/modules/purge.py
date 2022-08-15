@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import time
 import contextlib
-import Cutiepii_Robot.modules.sql.purges_sql as sql
+import ShirokoRobot.modules.sql.purges_sql as sql
 
 from asyncio import sleep
 from telethon import events
@@ -40,10 +40,10 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler, filters
 
-from Cutiepii_Robot import telethn, CUTIEPII_PTB, BOT_ID, LOGGER
-from Cutiepii_Robot.modules.sql.clear_cmd_sql import get_clearcmd
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.telethn.chatstatus import (
+from ShirokoRobot import telethn, CUTIEPII_PTB, BOT_ID, LOGGER
+from ShirokoRobot.modules.sql.clear_cmd_sql import get_clearcmd
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages, user_is_admin, user_can_purge)
 
 

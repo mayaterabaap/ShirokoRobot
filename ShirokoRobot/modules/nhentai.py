@@ -34,8 +34,8 @@ import requests
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InlineKeyboardButton)
 
-from Cutiepii_Robot import pgram, telegraph
-from Cutiepii_Robot.utils.errors import capture_err
+from ShirokoRobot import pgram, telegraph
+from ShirokoRobot.utils.errors import capture_err
 
 
 @pgram.on_message(~filters.me & filters.command("nhentai", prefixes="/"),
@@ -83,6 +83,6 @@ def nhentai_data(noombers):
     post = telegraph.create_page(
         f"{title}",
         html_content=post_content,
-        author_name="@Cutiepii_Robot",
-        author_url="https://telegram.dog/Cutiepii_Robot")
+        author_name="@ShirokoRobot",
+        author_url="https://telegram.dog/ShirokoRobot")
     return title, tags, artist, total_pages, post["url"], links[0]

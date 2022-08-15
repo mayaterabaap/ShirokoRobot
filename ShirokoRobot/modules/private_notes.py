@@ -2,9 +2,9 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
-import Cutiepii_Robot.modules.sql.private_notes as sql
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
+import ShirokoRobot.modules.sql.private_notes as sql
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 
 
 @user_admin

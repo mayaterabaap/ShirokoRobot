@@ -33,7 +33,7 @@ import threading
 
 from sqlalchemy import Column, UnicodeText, Boolean
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class CleanerBlueTextChatSettings(BASE):

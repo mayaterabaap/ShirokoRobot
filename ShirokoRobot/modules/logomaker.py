@@ -35,8 +35,8 @@ import requests
 import random
 import glob
 
-from Cutiepii_Robot import OWNER_ID, SUPPORT_CHAT, telethn
-from Cutiepii_Robot.events import register
+from ShirokoRobot import OWNER_ID, SUPPORT_CHAT, telethn
+from ShirokoRobot.events import register
 from PIL import Image, ImageDraw, ImageFont
 
 LOGO_LINKS1 = [
@@ -1282,7 +1282,7 @@ async def lego(event):
         img = Image.open(io.BytesIO(requests.get(randc).content))
         draw = ImageDraw.Draw(img)
         image_widthz, image_heightz = img.size
-        fnt = glob.glob("./Cutiepii_Robot/utils/Logo/*")
+        fnt = glob.glob("./ShirokoRobot/utils/Logo/*")
         randf = random.choice(fnt)
         font = ImageFont.truetype(randf, 120)
         w, h = draw.textsize(text, font=font)
@@ -1303,7 +1303,7 @@ async def lego(event):
         img.save(fname, "png")
         await telethn.send_file(event.chat_id,
                                 file=fname,
-                                caption="Made by @Cutiepii_Robot")
+                                caption="Made by @ShirokoRobot")
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)

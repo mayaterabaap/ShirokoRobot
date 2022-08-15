@@ -32,10 +32,10 @@ import html
 from telegram import Update
 from telegram.ext import filters, CallbackContext
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 
 
 @user_admin

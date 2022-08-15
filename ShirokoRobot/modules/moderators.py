@@ -31,13 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import html
 import contextlib
-import Cutiepii_Robot.modules.sql.moderators_sql as sql
+import ShirokoRobot.modules.sql.moderators_sql as sql
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.log_channel import loggable
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.log_channel import loggable
 from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.constants import ParseMode

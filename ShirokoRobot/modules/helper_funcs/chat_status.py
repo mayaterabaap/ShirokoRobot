@@ -34,7 +34,7 @@ from time import perf_counter
 from functools import wraps
 from cachetools import TTLCache
 from threading import RLock
-from Cutiepii_Robot import (
+from ShirokoRobot import (
     DEL_CMDS,
     DEV_USERS,
     SUDO_USERS,
@@ -46,7 +46,7 @@ from Cutiepii_Robot import (
     OWNER_ID,
 )
 
-from Cutiepii_Robot.modules.helper_funcs.admin_status import bot_is_admin
+from ShirokoRobot.modules.helper_funcs.admin_status import bot_is_admin
 
 from telegram import Chat, ChatMember, Update, User
 from telegram.error import TelegramError
@@ -394,6 +394,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from Cutiepii_Robot.modules import connection
+from ShirokoRobot.modules import connection
 
 connected = connection.connected

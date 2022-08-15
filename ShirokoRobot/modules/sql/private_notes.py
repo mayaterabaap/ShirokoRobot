@@ -1,7 +1,7 @@
 import threading
 
 from sqlalchemy import Column, String, Boolean
-from Cutiepii_Robot.modules.sql import SESSION, BASE
+from ShirokoRobot.modules.sql import SESSION, BASE
 
 
 class PrivateNotes(BASE):

@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.errors import RPCError
 
-from Cutiepii_Robot import pgram
-from Cutiepii_Robot.utils.pluginhelpers import admins_only, get_text
+from ShirokoRobot import pgram
+from ShirokoRobot.utils.pluginhelpers import admins_only, get_text
 
 Cutiepii_PYRO_Captedit = filters.command("captedit")
 

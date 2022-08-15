@@ -34,8 +34,8 @@ import random
 from telegram.constants import ParseMode
 from telethon import Button
 
-from Cutiepii_Robot import OWNER_ID, SUPPORT_CHAT
-from Cutiepii_Robot import telethn as tbot
+from ShirokoRobot import OWNER_ID, SUPPORT_CHAT
+from ShirokoRobot import telethn as tbot
 
 from ..events import register
 

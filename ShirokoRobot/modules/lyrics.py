@@ -35,7 +35,7 @@ import lyricsgenius
 from pyrogram import filters
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
-from Cutiepii_Robot import pgram, GENIUS_API_TOKEN, arq
+from ShirokoRobot import pgram, GENIUS_API_TOKEN, arq
 
 
 async def lyrics_func(answers, text):
@@ -84,7 +84,7 @@ async def lyrics_func(_, message):
     await m.edit(f"**LYRICS_TOO_LONG:** [URL]({lyrics})")
 
 
-@pgram.on_message(filters.command(["glyrics", "glyrics@Cutiepii_Robot"]))
+@pgram.on_message(filters.command(["glyrics", "glyrics@ShirokoRobot"]))
 async def lyrics(client, message):
 
     if r"-" not in message.text:

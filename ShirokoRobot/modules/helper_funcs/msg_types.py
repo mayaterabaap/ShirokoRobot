@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from enum import IntEnum, unique
 
-from Cutiepii_Robot.modules.helper_funcs.string_handling import button_markdown_parser
+from ShirokoRobot.modules.helper_funcs.string_handling import button_markdown_parser
 from telegram import Message
 
 

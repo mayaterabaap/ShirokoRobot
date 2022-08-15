@@ -29,20 +29,20 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 import html
-import Cutiepii_Robot.modules.sql.blsticker_sql as sql
+import ShirokoRobot.modules.sql.blsticker_sql as sql
 
 from typing import Optional
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import user_not_admin
-from Cutiepii_Robot.modules.helper_funcs.misc import split_message
-from Cutiepii_Robot.modules.helper_funcs.string_handling import extract_time
-from Cutiepii_Robot.modules.redis.approvals_redis import is_approved
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.warns import warn
+from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import user_not_admin
+from ShirokoRobot.modules.helper_funcs.misc import split_message
+from ShirokoRobot.modules.helper_funcs.string_handling import extract_time
+from ShirokoRobot.modules.redis.approvals_redis import is_approved
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.warns import warn
 from telegram import Update, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, filters, MessageHandler

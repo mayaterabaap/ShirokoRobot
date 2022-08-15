@@ -33,7 +33,7 @@ import os
 import shutil
 
 from PIL import Image, ImageOps
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 
 
 async def black_border(client, message):

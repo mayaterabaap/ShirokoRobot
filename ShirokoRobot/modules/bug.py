@@ -8,8 +8,8 @@ from pyrogram.types import (
     Message,
 )
 
-from Cutiepii_Robot import pgram, OWNER_ID, OWNER_USERNAME, SUPPORT_CHAT
-from Cutiepii_Robot.utils.errors import capture_err
+from ShirokoRobot import pgram, OWNER_ID, OWNER_USERNAME, SUPPORT_CHAT
+from ShirokoRobot.utils.errors import capture_err
 
 
 def content(msg: Message) -> [None, str]:

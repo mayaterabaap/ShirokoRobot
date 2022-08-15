@@ -32,7 +32,7 @@ import contextlib
 import html
 import asyncio
 import ast
-import Cutiepii_Robot.modules.sql.locks_sql as sql
+import ShirokoRobot.modules.sql.locks_sql as sql
 
 from telegram import MessageEntity, ChatPermissions, Update
 from telegram.constants import ParseMode
@@ -42,14 +42,14 @@ from telegram.ext import CallbackContext
 from telegram.helpers import mention_html
 from alphabet_detector import AlphabetDetector
 
-from Cutiepii_Robot.modules.helper_funcs.chat_status import connection_status
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.sql.approve_sql import is_approved
-from Cutiepii_Robot import CUTIEPII_PTB, LOGGER
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.helper_funcs.chat_status import connection_status
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.sql.approve_sql import is_approved
+from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
     AdminPerms,

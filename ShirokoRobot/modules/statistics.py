@@ -34,17 +34,17 @@ import requests
 import datetime
 import platform
 import git
-import Cutiepii_Robot.modules.sql.users_sql as sql
+import ShirokoRobot.modules.sql.users_sql as sql
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, __version__ as ptbver
 from telegram.constants import ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.helpers import escape_markdown
 
-from Cutiepii_Robot import StartTime, CUTIEPII_PTB
-from Cutiepii_Robot.__main__ import STATS
-from Cutiepii_Robot.modules.sql import SESSION
-from Cutiepii_Robot.modules.helper_funcs.chat_status import sudo_plus
+from ShirokoRobot import StartTime, CUTIEPII_PTB
+from ShirokoRobot.__main__ import STATS
+from ShirokoRobot.modules.sql import SESSION
+from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
 from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
 

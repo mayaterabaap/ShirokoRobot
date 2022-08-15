@@ -1,5 +1,5 @@
-Cutiepii_Robot/*.session
-Cutiepii_Robot/*.session-journal
+ShirokoRobot/*.session
+ShirokoRobot/*.session-journal
 log.txt
 *.pyc
 .idea/
@@ -7,8 +7,8 @@ log.txt
 .pydevproject
 .directory
 .vscode
-Cutiepii_Robot/modules/helper_funcs/temp.txt
-Cutiepii_Robot/elevated_users.json
+ShirokoRobot/modules/helper_funcs/temp.txt
+ShirokoRobot/elevated_users.json
 start-3.6.bat
 *.session
 kangsticker.png

@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import threading
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 from sqlalchemy.sql.sqltypes import BigInteger
 from sqlalchemy.dialects import postgresql

@@ -33,9 +33,9 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from Cutiepii_Robot import LOGGER
-from Cutiepii_Robot.modules.helper_funcs.msg_types import Types
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot import LOGGER
+from ShirokoRobot.modules.helper_funcs.msg_types import Types
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):

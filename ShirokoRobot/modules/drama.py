@@ -6,7 +6,7 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
-from Cutiepii_Robot import CUTIEPII_PTB
+from ShirokoRobot import CUTIEPII_PTB
 
 url = "https://mydramalist.com/"
 

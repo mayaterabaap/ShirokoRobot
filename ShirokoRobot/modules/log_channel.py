@@ -33,9 +33,9 @@ from datetime import datetime
 from functools import wraps
 import asyncio
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
-from Cutiepii_Robot.modules.helper_funcs.misc import is_module_loaded
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin, AdminPerms
+from ShirokoRobot.modules.helper_funcs.misc import is_module_loaded
+from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin, AdminPerms
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
@@ -45,12 +45,12 @@ if is_module_loaded(FILENAME):
     from telegram.error import BadRequest, Forbidden
     from telegram.helpers import escape_markdown
 
-    from Cutiepii_Robot import GBAN_LOGS
-    from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+    from ShirokoRobot import GBAN_LOGS
+    from ShirokoRobot.modules.helper_funcs.chat_status import (
         user_admin as u_admin,
         is_user_admin,
     )
-    from Cutiepii_Robot.modules.sql import log_channel_sql as sql
+    from ShirokoRobot.modules.sql import log_channel_sql as sql
 
     def loggable(func):
 
@@ -255,7 +255,7 @@ async def log_settings(update: Update):
     await msg.reply_text("Toggle channel log settings", reply_markup=btn)
 
 
-from Cutiepii_Robot.modules.sql import log_channel_sql as sql
+from ShirokoRobot.modules.sql import log_channel_sql as sql
 
 
 async def log_setting_callback(update: Update,

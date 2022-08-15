@@ -3,28 +3,28 @@ import html
 import random
 import re
 import time
-import Cutiepii_Robot.modules.sql.welcome_sql as sql
+import ShirokoRobot.modules.sql.welcome_sql as sql
 
 from functools import partial
 from contextlib import suppress
 from io import BytesIO
-from Cutiepii_Robot import (DEV_USERS, LOGGER, OWNER_ID, SUDO_USERS,
+from ShirokoRobot import (DEV_USERS, LOGGER, OWNER_ID, SUDO_USERS,
                             SUPPORT_USERS, WHITELIST_USERS, JOIN_LOGGER,
                             CUTIEPII_PTB, SUPPORT_CHAT)
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin as u_admin,
 )
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin, AdminPerms
-from Cutiepii_Robot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Cutiepii_Robot.modules.helper_funcs.msg_types import get_welcome_type
-from Cutiepii_Robot.modules.helper_funcs.string_handling import (
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin, AdminPerms
+from ShirokoRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from ShirokoRobot.modules.helper_funcs.msg_types import get_welcome_type
+from ShirokoRobot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-import Cutiepii_Robot.modules.sql.feds_sql as fed_sql
-from Cutiepii_Robot.modules.sql.global_bans_sql import is_user_gbanned
+from ShirokoRobot.modules.log_channel import loggable
+import ShirokoRobot.modules.sql.feds_sql as fed_sql
+from ShirokoRobot.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -43,7 +43,7 @@ from telegram.ext import (
 )
 from telegram.constants import ParseMode
 from telegram.helpers import escape_markdown, mention_html, mention_markdown
-import Cutiepii_Robot.modules.sql.log_channel_sql as logsql
+import ShirokoRobot.modules.sql.log_channel_sql as logsql
 from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
 
 VALID_WELCOME_FORMATTERS = [
@@ -1207,7 +1207,7 @@ WELC_HELP_TXT = (
     "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
     "Buttons are also supported, so you can make your welcomes look awesome with some nice intro "
     "buttons.\n"
-    f"To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/Cutiepii_Robot?start=group_id)`. "
+    f"To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/ShirokoRobot?start=group_id)`. "
     "Simply replace `group_id` with your group's id, which can be obtained via /id, and you're good to "
     "go. Note that group ids are usually preceded by a `-` sign; this is required, so please don't "
     "remove it.\n"

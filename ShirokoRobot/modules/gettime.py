@@ -34,8 +34,8 @@ import pycountry
 from typing import List
 
 from requests import get
-from Cutiepii_Robot import TIME_API_KEY, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import TIME_API_KEY, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext

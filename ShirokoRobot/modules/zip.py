@@ -40,8 +40,8 @@ from telethon.tl.types import DocumentAttributeVideo
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 
-from Cutiepii_Robot import TEMP_DOWNLOAD_DIRECTORY, telethn
-from Cutiepii_Robot.events import register
+from ShirokoRobot import TEMP_DOWNLOAD_DIRECTORY, telethn
+from ShirokoRobot.events import register
 
 
 async def is_register_admin(chat, user):

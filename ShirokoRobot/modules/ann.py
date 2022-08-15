@@ -9,11 +9,11 @@ from telegram import Update, ChatMemberUpdated
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, ChatMemberHandler
 
-import Cutiepii_Robot.modules.sql.log_channel_sql as logsql
-from Cutiepii_Robot import OWNER_ID, CUTIEPII_PTB
-from Cutiepii_Robot.modules.log_channel import loggable
+import ShirokoRobot.modules.sql.log_channel_sql as logsql
+from ShirokoRobot import OWNER_ID, CUTIEPII_PTB
+from ShirokoRobot.modules.log_channel import loggable
 
-import Cutiepii_Robot.modules.sql.logger_sql as sql
+import ShirokoRobot.modules.sql.logger_sql as sql
 
 # Module to extract and log (optional: send to chat) status changes in chat members using ChatMemberUpdated
 # https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/chatmemberbot.py

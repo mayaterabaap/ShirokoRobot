@@ -33,8 +33,8 @@ import threading
 
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
-from Cutiepii_Robot.modules.helper_funcs.msg_types import Types
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.helper_funcs.msg_types import Types
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class Notes(BASE):

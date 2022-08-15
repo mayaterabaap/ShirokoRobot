@@ -37,14 +37,14 @@ import re
 import psutil
 import platform
 import sqlalchemy
-import Cutiepii_Robot.modules.helper_funcs.git_api as git
+import ShirokoRobot.modules.helper_funcs.git_api as git
 
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import sudo_plus
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_action
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot import CUTIEPII_PTB, pgram, StartTime
-from Cutiepii_Robot.__main__ import GDPR
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShirokoRobot.modules.helper_funcs.alternate import send_action
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import CUTIEPII_PTB, pgram, StartTime
+from ShirokoRobot.__main__ import GDPR
 
 from bs4 import BeautifulSoup
 from datetime import datetime

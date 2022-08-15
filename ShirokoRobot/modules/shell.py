@@ -31,8 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import subprocess
 
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler

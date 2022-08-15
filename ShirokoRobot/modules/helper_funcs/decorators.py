@@ -1,6 +1,6 @@
 """
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB as app
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from ShirokoRobot import LOGGER, CUTIEPII_PTB as app
 
 from typing import Optional, List
 

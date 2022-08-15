@@ -1,27 +1,27 @@
 # Clients
 ## Importing Pyrogram
 ```python3
-from Cutiepii_Robot import pgram
+from ShirokoRobot import pgram
 ```
 ## Importing Telethon
 ```python3
-from Cutiepii_Robot import telethn
+from ShirokoRobot import telethn
 ```
 ## Importing Userbot
 ```python3
-from Cutiepii_Robot import ubot
+from ShirokoRobot import ubot
 ```
 ## Importing ARQ
 ```python3
-from Cutiepii_Robot import arq
+from ShirokoRobot import arq
 ```
 
 # DataBase
 ## Importing MongoDB
 ```python3
-from Cutiepii_Robot import mongodb
+from ShirokoRobot import mongodb
 ```
 ## Importing Postgres
 ```python3
-from Cutiepii_Robot.modules.sql import SESSION
+from ShirokoRobot.modules.sql import SESSION
 ```

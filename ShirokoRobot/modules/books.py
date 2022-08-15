@@ -36,7 +36,7 @@ import requests
 from bs4 import BeautifulSoup
 from telethon import events
 
-from Cutiepii_Robot import telethn, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot import telethn, SUPPORT_CHAT, CUTIEPII_PTB
 
 
 @telethn.on(events.NewMessage(pattern="^/book (.*)"))
@@ -72,7 +72,7 @@ async def _(event):
                 f.write("\n" + title)
                 f.write("\nBook link:- " + link + "\n\n")
 
-        f.write("By @Cutiepii_Robot.")
+        f.write("By @ShirokoRobot.")
         f.close()
 
         await telethn.send_file(

@@ -35,7 +35,7 @@ from sqlalchemy import Boolean
 from sqlalchemy.sql.sqltypes import String
 from sqlalchemy import Column
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class AntiLinkedChannelSettings(BASE):

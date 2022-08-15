@@ -6,7 +6,7 @@ from telegram import Chat, Update, ChatMember, InlineKeyboardButton, InlineKeybo
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext as Ctx, CallbackQueryHandler as CBHandler
 
-from Cutiepii_Robot import CUTIEPII_PTB
+from ShirokoRobot import CUTIEPII_PTB
 
 from .admin_status_helpers import (
 	ADMINS_CACHE as A_CACHE,

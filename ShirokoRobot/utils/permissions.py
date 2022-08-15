@@ -35,8 +35,8 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from Cutiepii_Robot import SUDO_USERS, LOGGER
-from Cutiepii_Robot.utils.pluginhelp import member_permissions
+from ShirokoRobot import SUDO_USERS, LOGGER
+from ShirokoRobot.utils.pluginhelp import member_permissions
 
 
 async def authorised(func, subFunc2, client, message, *args, **kwargs):

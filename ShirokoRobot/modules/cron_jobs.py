@@ -38,8 +38,8 @@ from time import sleep
 from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext
 
-from Cutiepii_Robot import DATABASE_NAME, OWNER_ID, CUTIEPII_PTB, LOGGER, BACKUP_PASS
-from Cutiepii_Robot.modules.helper_funcs.chat_status import owner_plus
+from ShirokoRobot import DATABASE_NAME, OWNER_ID, CUTIEPII_PTB, LOGGER, BACKUP_PASS
+from ShirokoRobot.modules.helper_funcs.chat_status import owner_plus
 
 
 @owner_plus
@@ -87,9 +87,9 @@ async def backup_db(_: CallbackContext):
     if os.path.exists('log.txt'):
         LOGGER.debug("logs copied")
         shutil.copyfile('log.txt', f'{bkplocation}/log.txt')
-    if os.path.exists('Cutiepii_Robot/config.py'):
+    if os.path.exists('ShirokoRobot/config.py'):
         LOGGER.debug("config copied")
-        shutil.copyfile('Cutiepii_Robot/config.py', f'{bkplocation}/config.py')
+        shutil.copyfile('ShirokoRobot/config.py', f'{bkplocation}/config.py')
     LOGGER.info("zipping the backup")
     zipcmd = f"zip --password '{zip_pass}' {bkplocation} {bkplocation}/*"
     zipinfo = "zipping db backup"

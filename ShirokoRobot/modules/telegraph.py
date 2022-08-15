@@ -31,15 +31,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os
 
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn
+from ShirokoRobot.events import register
+from ShirokoRobot import telethn
 from telethon import types
 from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 
 TMP_DOWNLOAD_DIRECTORY = "tg-File/"
-babe = "Cutiepii_Robot"
+babe = "ShirokoRobot"
 telegraph = Telegraph()
 data = telegraph.create_account(short_name=babe)
 auth_url = data["auth_url"]

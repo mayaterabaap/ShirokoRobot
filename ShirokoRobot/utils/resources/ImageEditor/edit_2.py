@@ -35,7 +35,7 @@ import shutil
 import cv2
 import numpy as np
 
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 from PIL import Image, ImageDraw, ImageEnhance
 
 

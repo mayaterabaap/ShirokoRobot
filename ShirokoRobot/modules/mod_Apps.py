@@ -38,9 +38,9 @@ import wget
 from bs4 import BeautifulSoup
 from pyrogram import filters
 
-from Cutiepii_Robot.utils.pluginhelpers import admins_only
-from Cutiepii_Robot.utils.progress import progress
-from Cutiepii_Robot import pgram
+from ShirokoRobot.utils.pluginhelpers import admins_only
+from ShirokoRobot.utils.progress import progress
+from ShirokoRobot import pgram
 
 Cutiepii_PYRO_Mod = filters.command("mod")
 

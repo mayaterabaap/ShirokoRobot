@@ -37,8 +37,8 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.constants import ParseMode
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 
 async def dot(number, thousand_separator="."):

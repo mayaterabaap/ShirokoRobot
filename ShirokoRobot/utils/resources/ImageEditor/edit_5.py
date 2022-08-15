@@ -33,7 +33,7 @@ import asyncio
 import os
 import shutil
 
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 
 
 async def normalglitch_1(client, message):

@@ -36,9 +36,9 @@ from typing import List
 from telegram import Update
 from telegram.constants import ParseMode
 
-from Cutiepii_Robot import StartTime, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.chat_status import sudo_plus
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import StartTime, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",

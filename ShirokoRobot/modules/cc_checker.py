@@ -33,8 +33,8 @@ import asyncio
 import datetime
 
 from telethon.tl import functions, types
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import ubot, telethn
+from ShirokoRobot.events import register
+from ShirokoRobot import ubot, telethn
 
 
 async def is_register_admin(chat, user):

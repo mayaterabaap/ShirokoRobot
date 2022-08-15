@@ -35,11 +35,11 @@ import wget
 
 from pyrogram import filters
 
-from Cutiepii_Robot import pgram
-from Cutiepii_Robot.utils.saavnhelp import get_arg
+from ShirokoRobot import pgram
+from ShirokoRobot.utils.saavnhelp import get_arg
 
 
-@pgram.on_message(filters.command("saavn", "saavn@Cutiepii_Robot"))
+@pgram.on_message(filters.command("saavn", "saavn@ShirokoRobot"))
 async def song(message):
     args = f"{get_arg(message)} song"
     if args.startswith(" "):

@@ -12,8 +12,8 @@ from uuid import uuid4
 
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import InlineKeyboardButton, CallbackQuery, Message, InlineKeyboardMarkup
-from Cutiepii_Robot import DEV_USERS, pgram, GBAN_LOGS, TEMP_DOWNLOAD_DIRECTORY, LOGGER
-from Cutiepii_Robot.utils.db import get_collection
+from ShirokoRobot import DEV_USERS, pgram, GBAN_LOGS, TEMP_DOWNLOAD_DIRECTORY, LOGGER
+from ShirokoRobot.utils.db import get_collection
 
 AUTH_USERS = get_collection("AUTH_USERS")
 IGNORE = get_collection("IGNORED_USERS")

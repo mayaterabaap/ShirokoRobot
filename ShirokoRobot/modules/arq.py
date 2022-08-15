@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from pyrogram import filters
 
-from Cutiepii_Robot import pgram, arq, CUTIEPII_PTB
+from ShirokoRobot import pgram, arq, CUTIEPII_PTB
 
 
 @pgram.on_message(filters.command("arq"))
@@ -64,6 +64,6 @@ async def arq_stats(_, message):
 **ARQ Statistics:**
 **Users:** `{users}`
 
-**@Cutiepii_Robot Some Modules Running On ARQ**
+**@ShirokoRobot Some Modules Running On ARQ**
 """
     await message.reply_text(statistics, disable_web_page_preview=True)

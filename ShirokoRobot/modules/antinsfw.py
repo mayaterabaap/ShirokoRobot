@@ -32,10 +32,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from os import remove
 from pyrogram import filters
 
-from Cutiepii_Robot import SUDO_USERS, arq, pgram
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot.utils.permissions import adminsOnly
-from Cutiepii_Robot.modules.mongo.nsfw_mongo import is_nsfw_on, nsfw_off, nsfw_on
+from ShirokoRobot import SUDO_USERS, arq, pgram
+from ShirokoRobot.utils.errors import capture_err
+from ShirokoRobot.utils.permissions import adminsOnly
+from ShirokoRobot.modules.mongo.nsfw_mongo import is_nsfw_on, nsfw_off, nsfw_on
 
 
 async def get_file_id_from_message(message):
@@ -121,7 +121,7 @@ __Powered by__@Yuki_Network.
 """)
 
 
-@pgram.on_message(filters.command(["nsfwscan", "nsfwscan@Cutiepii_Robot"]))
+@pgram.on_message(filters.command(["nsfwscan", "nsfwscan@ShirokoRobot"]))
 @capture_err
 async def nsfw_scan_command(_, message):
     if not message.reply_to_message:
@@ -158,7 +158,7 @@ async def nsfw_scan_command(_, message):
 
 
 @pgram.on_message(
-    filters.command(["antinsfw", "antinsfw@Cutiepii_Robot"]) & ~filters.private
+    filters.command(["antinsfw", "antinsfw@ShirokoRobot"]) & ~filters.private
 )
 @adminsOnly("can_change_info")
 async def nsfw_enable_disable(_, message):

@@ -1,8 +1,8 @@
 import os
 import barcode
 import urllib.request
-from Cutiepii_Robot import *
-from Cutiepii_Robot.events import register
+from ShirokoRobot import *
+from ShirokoRobot.events import register
 from datetime import datetime
 from barcode.writer import ImageWriter
 from typing import List

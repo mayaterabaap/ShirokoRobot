@@ -44,9 +44,9 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from Cutiepii_Robot import OWNER_ID, SUPPORT_CHAT
-from Cutiepii_Robot.utils.errors import split_limits
-from Cutiepii_Robot import pgram
+from ShirokoRobot import OWNER_ID, SUPPORT_CHAT
+from ShirokoRobot.utils.errors import split_limits
+from ShirokoRobot import pgram
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:

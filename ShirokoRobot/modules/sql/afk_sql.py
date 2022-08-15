@@ -3,7 +3,7 @@ import typing
 
 from sqlalchemy import Column, UnicodeText, Boolean, BigInteger
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 
 class AFK(BASE):

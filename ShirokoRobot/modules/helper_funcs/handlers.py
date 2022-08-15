@@ -29,10 +29,10 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import Cutiepii_Robot.modules.sql.blacklistusers_sql as sql
+import ShirokoRobot.modules.sql.blacklistusers_sql as sql
 
-from Cutiepii_Robot import ALLOW_EXCL
-from Cutiepii_Robot import DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, CUTIEPII_PTB
+from ShirokoRobot import ALLOW_EXCL
+from ShirokoRobot import DEV_USERS, SUDO_USERS, SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS, CUTIEPII_PTB
 
 from telegram import Update
 import telegram.ext as tg

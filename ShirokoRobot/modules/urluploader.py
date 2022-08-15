@@ -33,9 +33,9 @@ import os
 import time
 import aiohttp
 
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 
-from Cutiepii_Robot.utils.pluginhelpers import humanbytes, time_formatter
+from ShirokoRobot.utils.pluginhelpers import humanbytes, time_formatter
 
 
 async def download_file(url, file_name, message, start_time, bot):
@@ -60,7 +60,7 @@ async def download_coroutine(session, url, file_name, event, start):
 **URL:** {}
 **File Name:** {}
 **File Size:** {}
-**© @Cutiepii_Robot**""".format(
+**© @ShirokoRobot**""".format(
                 url,
                 os.path.basename(file_name).replace("%20", " "),
                 humanbytes(total_length),

@@ -1,7 +1,7 @@
 import requests
 
-from Cutiepii_Robot import pgram
-from Cutiepii_Robot.utils.errors import capture_err
+from ShirokoRobot import pgram
+from ShirokoRobot.utils.errors import capture_err
 from pyrogram import filters
 
 

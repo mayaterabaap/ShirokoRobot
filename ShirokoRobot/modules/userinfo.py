@@ -50,8 +50,8 @@ from telegram.ext import CallbackContext
 from telegram.error import BadRequest
 from telegram.helpers import escape_markdown, mention_html
 
-from Cutiepii_Robot.utils.sections import section
-from Cutiepii_Robot import (
+from ShirokoRobot.utils.sections import section
+from ShirokoRobot import (
     DEV_USERS,
     OWNER_ID,
     SUDO_USERS,
@@ -64,15 +64,15 @@ from Cutiepii_Robot import (
     telethn,
     pgram,
 )
-from Cutiepii_Robot.__main__ import TOKEN, USER_INFO
-import Cutiepii_Robot.modules.sql.userinfo_sql as sql
-from Cutiepii_Robot.modules.helper_funcs.misc import delete
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.sql.global_bans_sql import is_user_gbanned
-from Cutiepii_Robot.modules.redis.afk_redis import is_user_afk, afk_reason
-from Cutiepii_Robot.modules.sql.users_sql import get_user_num_chats
-from Cutiepii_Robot.modules.sql.clear_cmd_sql import get_clearcmd
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.__main__ import TOKEN, USER_INFO
+import ShirokoRobot.modules.sql.userinfo_sql as sql
+from ShirokoRobot.modules.helper_funcs.misc import delete
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShirokoRobot.modules.redis.afk_redis import is_user_afk, afk_reason
+from ShirokoRobot.modules.sql.users_sql import get_user_num_chats
+from ShirokoRobot.modules.sql.clear_cmd_sql import get_clearcmd
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
 
 Cutiepii_PYRO_Whois = filters.command("whois")
 

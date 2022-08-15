@@ -43,10 +43,10 @@ from telegram.ext import CommandHandler, filters, CallbackContext
 from telegram.constants import ParseMode
 from telegram.helpers import mention_html
 
-import Cutiepii_Robot.modules.sql.nsfw_sql as sql
-from Cutiepii_Robot import CUTIEPII_PTB, DEV_USERS
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.log_channel import gloggable
+import ShirokoRobot.modules.sql.nsfw_sql as sql
+from ShirokoRobot import CUTIEPII_PTB, DEV_USERS
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.log_channel import gloggable
 
 
 @user_admin

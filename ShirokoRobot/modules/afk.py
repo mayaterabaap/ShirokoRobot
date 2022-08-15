@@ -7,9 +7,9 @@ import random
 from telegram import Update, MessageEntity
 from telegram.ext import filters, CallbackContext
 from telegram.error import BadRequest
-from Cutiepii_Robot.modules.sql import afk_sql as sql
-from Cutiepii_Robot.modules.users import get_user_id
-from Cutiepii_Robot.modules.helper_funcs.decorators import cutiepii_cmd, cutiepii_msg
+from ShirokoRobot.modules.sql import afk_sql as sql
+from ShirokoRobot.modules.users import get_user_id
+from ShirokoRobot.modules.helper_funcs.decorators import cutiepii_cmd, cutiepii_msg
 
 
 @cutiepii_msg(filters.Regex("(?i)^brb"), friendly="afk", group=3)

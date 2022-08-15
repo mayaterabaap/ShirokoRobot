@@ -38,9 +38,9 @@ import traceback
 import aiohttp
 from telethon import events
 
-from Cutiepii_Robot import telethn, TEMP_DOWNLOAD_DIRECTORY, SUPPORT_CHAT, LOGGER
-from Cutiepii_Robot.modules.urluploader import download_file
-from Cutiepii_Robot.utils.pluginhelpers import humanbytes, progress
+from ShirokoRobot import telethn, TEMP_DOWNLOAD_DIRECTORY, SUPPORT_CHAT, LOGGER
+from ShirokoRobot.modules.urluploader import download_file
+from ShirokoRobot.utils.pluginhelpers import humanbytes, progress
 
 
 def get_date_in_two_weeks():
@@ -144,7 +144,7 @@ async def tmp(event):
 
             str(time.time() - start)
             await orta.edit(
-                f"File Successfully Uploaded to TmpNinja.\n\nLink 👉 {download_link}\n\nUploaded by *@Cutiepii_Robot*"
+                f"File Successfully Uploaded to TmpNinja.\n\nLink 👉 {download_link}\n\nUploaded by *@ShirokoRobot*"
             )
         except Exception as e:
             traceback.print_exc()
@@ -186,7 +186,7 @@ async def up(event):
                 event.chat.id,
                 dosya,
                 force_document=True,
-                caption="Uploaded By *@Cutiepii_Robot*",
+                caption="Uploaded By *@ShirokoRobot*",
             )
         except Exception as e:
             traceback.print_exc()

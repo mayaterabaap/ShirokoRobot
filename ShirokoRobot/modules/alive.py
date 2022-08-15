@@ -34,8 +34,8 @@ import asyncio
 import datetime
 from datetime import datetime
 from telethon import Button, __version__ as tlhver
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn
+from ShirokoRobot.events import register
+from ShirokoRobot import telethn
 from platform import python_version
 from pyrogram import __version__ as pyrover
 
@@ -49,7 +49,7 @@ file5 = "https://telegra.ph/file/401cb7f6216764ebab161.jpg"
 """ =======================Hottie====================== """
 
 BUTTON = [[
-    Button.url("【► HELP ◄】", "https://t.me/Cutiepii_Robot?start=help"),
+    Button.url("【► HELP ◄】", "https://t.me/ShirokoRobot?start=help"),
     Button.url("【► SUPPORT ◄】", "https://t.me/Black_Knights_Union_Support"),
 ]]
 
@@ -87,7 +87,7 @@ async def hmm(yes):
     pm_caption += f"**♡ Pyrogram Version :** `{pyrover}`\n\n"
     pm_caption += "**♡ My Master :** [Rajkumar](https://t.me/Awesome_RJ_official) "
     BUTTON = [[
-        Button.url("【► Help ◄】", "https://t.me/Cutiepii_Robot?start=help"),
+        Button.url("【► Help ◄】", "https://t.me/ShirokoRobot?start=help"),
         Button.url("【► Support ◄】",
                    "https://t.me/Black_Knights_Union_Support"),
     ]]

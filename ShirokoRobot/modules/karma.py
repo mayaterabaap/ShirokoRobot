@@ -34,13 +34,13 @@ import re
 
 from pyrogram import filters
 
-from Cutiepii_Robot import pgram
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot.utils.permissions import adminsOnly
-from Cutiepii_Robot.modules.mongo.karma_mongo import (alpha_to_int, get_karma,
+from ShirokoRobot import pgram
+from ShirokoRobot.utils.errors import capture_err
+from ShirokoRobot.utils.permissions import adminsOnly
+from ShirokoRobot.modules.mongo.karma_mongo import (alpha_to_int, get_karma,
                                                       get_karmas, int_to_alpha,
                                                       update_karma)
-from Cutiepii_Robot.modules.mongo.karma_mongo import is_karma_on, karma_off, karma_on
+from ShirokoRobot.modules.mongo.karma_mongo import is_karma_on, karma_off, karma_on
 
 karma_positive_group = 3
 karma_negative_group = 4
@@ -111,7 +111,7 @@ async def downvote(_, message):
 
 
 @pgram.on_message(
-    filters.command("karma", "karma@Cutiepii_Robot") & filters.group)
+    filters.command("karma", "karma@ShirokoRobot") & filters.group)
 @capture_err
 async def command_karma(_, message):
     chat_id = message.chat.id

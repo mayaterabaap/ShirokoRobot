@@ -33,8 +33,8 @@ from telethon.tl.functions.account import *
 from telethon.tl.functions.channels import *
 from telethon.tl.functions.photos import *
 from telethon.tl.types import *
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn as borg
+from ShirokoRobot.events import register
+from ShirokoRobot import telethn as borg
 from html import *
 import logging
 

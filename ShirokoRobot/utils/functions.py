@@ -10,8 +10,8 @@ from carbonnow import Carbon
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from wget import download
 
-from Cutiepii_Robot.utils import aiodownloader
-from Cutiepii_Robot.utils.fetch import fetch
+from ShirokoRobot.utils import aiodownloader
+from ShirokoRobot.utils.fetch import fetch
 """
 Just import 'downloader' anywhere and do downloader.download() to
 download file from a given url

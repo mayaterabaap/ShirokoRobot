@@ -42,7 +42,7 @@ from urllib.parse import urlparse, urljoin, urlunparse
 from Crypto import Random, Hash, Protocol
 from Crypto.Cipher import AES
 
-from Cutiepii_Robot import NO_LOAD
+from ShirokoRobot import NO_LOAD
 from telegram import Bot, InlineKeyboardButton
 from telegram.error import TelegramError
 from telegram.constants import ParseMode, MessageLimit

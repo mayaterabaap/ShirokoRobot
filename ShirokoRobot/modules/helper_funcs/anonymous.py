@@ -35,7 +35,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler, CallbackContext
 from telegram.constants import ParseMode
 
-from Cutiepii_Robot import DEV_USERS, SUDO_USERS, CUTIEPII_PTB
+from ShirokoRobot import DEV_USERS, SUDO_USERS, CUTIEPII_PTB
 
 
 class AdminPerms(Enum):

@@ -34,11 +34,11 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.ext import filters
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import bot_can_delete, bot_admin
-import Cutiepii_Robot.modules.sql.antilinkedchannel_sql as sql
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import bot_can_delete, bot_admin
+import ShirokoRobot.modules.sql.antilinkedchannel_sql as sql
 
 
 @bot_can_delete

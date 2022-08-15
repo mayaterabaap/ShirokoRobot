@@ -1,6 +1,6 @@
 import html
 import contextlib
-import Cutiepii_Robot.modules.sql.welcome_sql as sql
+import ShirokoRobot.modules.sql.welcome_sql as sql
 
 from typing import Optional
 from datetime import timedelta
@@ -12,12 +12,12 @@ from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram.constants import ParseMode
 from telegram.helpers import mention_html
 
-from Cutiepii_Robot.modules.log_channel import loggable
+from ShirokoRobot.modules.log_channel import loggable
 
-from Cutiepii_Robot.modules.helper_funcs.chat_status import connection_status
-from Cutiepii_Robot.modules.cron_jobs import j
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.helper_funcs.chat_status import connection_status
+from ShirokoRobot.modules.cron_jobs import j
+from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
     AdminPerms,

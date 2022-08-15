@@ -35,8 +35,8 @@ import datetime
 from telethon import events
 from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler
-from Cutiepii_Robot import telethn, CUTIEPII_PTB, LOGGER
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot import telethn, CUTIEPII_PTB, LOGGER
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 

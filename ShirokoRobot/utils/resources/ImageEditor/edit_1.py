@@ -33,7 +33,7 @@ import os
 import shutil
 import cv2
 
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 from PIL import Image, ImageEnhance, ImageFilter
 
 

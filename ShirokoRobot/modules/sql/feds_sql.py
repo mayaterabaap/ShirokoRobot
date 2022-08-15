@@ -32,8 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import ast
 import threading
 
-from Cutiepii_Robot import CUTIEPII_PTB, LOGGER
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot.modules.sql import BASE, SESSION
 from telegram.error import BadRequest, Forbidden
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger

@@ -49,9 +49,9 @@ from pyrogram.types import (
 )
 from search_engine_parser import GoogleSearch
 
-from Cutiepii_Robot import OWNER_ID, pgram, arq, CUTIEPII_PTB
-from Cutiepii_Robot.utils.pluginhelpers import convert_seconds_to_minutes as time_convert
-from Cutiepii_Robot.utils.pluginhelpers import fetch
+from ShirokoRobot import OWNER_ID, pgram, arq, CUTIEPII_PTB
+from ShirokoRobot.utils.pluginhelpers import convert_seconds_to_minutes as time_convert
+from ShirokoRobot.utils.pluginhelpers import fetch
 
 SUDOERS = OWNER_ID
 app = pgram
@@ -80,7 +80,7 @@ async def inline_help_func(__HELP__):
     buttons.add(
         InlineKeyboardButton(
             "Get More Help.",
-            url="https://telegram.dog/Cutiepii_Robot?start=start"),
+            url="https://telegram.dog/ShirokoRobot?start=start"),
         InlineKeyboardButton("Go Inline!",
                              switch_inline_query_current_chat=""),
     )
@@ -103,7 +103,7 @@ async def alive_function(answers):
     # ubot_state = "Dead" if not await app2.get_me() else "Alive"
     buttons.add(
         InlineKeyboardButton("Main Bot",
-                             url="https://telegram.dog/Cutiepii_Robot"),
+                             url="https://telegram.dog/ShirokoRobot"),
         InlineKeyboardButton("Go Inline!",
                              switch_inline_query_current_chat=""),
     )
@@ -116,7 +116,7 @@ async def alive_function(answers):
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](https://telegram.dog/Cutiepii_Robot) | [UBOT](https://telegram.dog/Awesome_Cutiepii)
+**Profiles:** [BOT](https://telegram.dog/ShirokoRobot) | [UBOT](https://telegram.dog/Awesome_Cutiepii)
 """
     answers.append(
         InlineQueryResultArticle(

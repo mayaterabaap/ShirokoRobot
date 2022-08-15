@@ -32,10 +32,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import os
 
 from time import sleep
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.sql.users_sql import get_user_com_chats
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.sql.users_sql import get_user_com_chats
 
 from telegram import Update
 from telegram.constants import ParseMode

@@ -33,13 +33,13 @@ import traceback
 import html
 import random
 
-from Cutiepii_Robot.modules.helper_funcs.misc import upload_text
+from ShirokoRobot.modules.helper_funcs.misc import upload_text
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 from psycopg2 import errors as sqlerrors
 
-from Cutiepii_Robot import TOKEN, CUTIEPII_PTB, DEV_USERS, OWNER_ID, LOGGER
+from ShirokoRobot import TOKEN, CUTIEPII_PTB, DEV_USERS, OWNER_ID, LOGGER
 
 
 class ErrorsDict(dict):

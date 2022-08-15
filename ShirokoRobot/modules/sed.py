@@ -34,9 +34,9 @@ import regex
 import telegram
 
 
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleMessageHandler
-from Cutiepii_Robot.modules.helper_funcs.regex_helper import infinite_loop_check
+from ShirokoRobot import LOGGER, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleMessageHandler
+from ShirokoRobot.modules.helper_funcs.regex_helper import infinite_loop_check
 from telegram import Update
 from telegram.ext import filters
 

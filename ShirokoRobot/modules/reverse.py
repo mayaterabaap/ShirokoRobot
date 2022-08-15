@@ -41,10 +41,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
-from Cutiepii_Robot import CUTIEPII_PTB
+from ShirokoRobot import CUTIEPII_PTB
 from typing import List
 
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.705.68"

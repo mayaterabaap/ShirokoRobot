@@ -3,8 +3,8 @@ import re
 import datetime
 
 from telethon import events, custom
-from Cutiepii_Robot import telethn as bot
-from Cutiepii_Robot.events import register
+from ShirokoRobot import telethn as bot
+from ShirokoRobot.events import register
 
 edit_time = 5
 """ =======================CONSTANTS====================== """

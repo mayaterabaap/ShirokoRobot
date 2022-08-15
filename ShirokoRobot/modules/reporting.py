@@ -31,9 +31,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import html
 
-from Cutiepii_Robot import LOGGER, SUDO_USERS, WHITELIST_USERS, CUTIEPII_PTB
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.sql import reporting_sql as sql
+from ShirokoRobot import LOGGER, SUDO_USERS, WHITELIST_USERS, CUTIEPII_PTB
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.sql import reporting_sql as sql
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import (
@@ -42,10 +42,10 @@ from telegram.ext import (
     CallbackQueryHandler,
     CommandHandler,
 )
-import Cutiepii_Robot.modules.sql.log_channel_sql as logsql
+import ShirokoRobot.modules.sql.log_channel_sql as logsql
 from telegram.utils.helpers import mention_html
 
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
     AdminPerms,

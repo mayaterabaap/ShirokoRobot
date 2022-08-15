@@ -33,7 +33,7 @@ import os
 import html
 import contextlib
 import requests
-import Cutiepii_Robot.modules.sql.pin_sql as sql
+import ShirokoRobot.modules.sql.pin_sql as sql
 
 from html import escape
 from io import BytesIO
@@ -52,14 +52,14 @@ from telethon import *
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Cutiepii_Robot import SUDO_USERS, TOKEN, CUTIEPII_PTB, LOGGER, pgram, telethn
-from Cutiepii_Robot.modules.helper_funcs.msg_types import get_message_type
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.users import build_keyboard_alternate
-from Cutiepii_Robot.modules.helper_funcs.admin_status import user_admin_check, bot_admin_check, AdminPerms
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot import SUDO_USERS, TOKEN, CUTIEPII_PTB, LOGGER, pgram, telethn
+from ShirokoRobot.modules.helper_funcs.msg_types import get_message_type
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.users import build_keyboard_alternate
+from ShirokoRobot.modules.helper_funcs.admin_status import user_admin_check, bot_admin_check, AdminPerms
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     connection_status,
     is_user_admin,
@@ -67,12 +67,12 @@ from Cutiepii_Robot.modules.helper_funcs.chat_status import (
     can_promote,
 )
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import (
+from ShirokoRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.events import register as CUTIEPII
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.events import register as CUTIEPII
 
 ENUM_FUNC_MAP = {
     'Types.TEXT': CUTIEPII_PTB.bot.send_message,

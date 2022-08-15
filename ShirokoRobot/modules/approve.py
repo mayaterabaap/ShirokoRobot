@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 import html
-import Cutiepii_Robot.modules.sql.approve_sql as sql
+import ShirokoRobot.modules.sql.approve_sql as sql
 
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.error import BadRequest
@@ -38,12 +38,12 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackQueryHandler, CallbackContext
 from telegram.helpers import mention_html
 
-from Cutiepii_Robot import CUTIEPII_PTB, SUDO_USERS
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.admin_status import AdminPerms, user_admin_check
+from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.admin_status import AdminPerms, user_admin_check
 
 
 @loggable

@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 from telethon import events
-from Cutiepii_Robot import telethn
+from ShirokoRobot import telethn
 
 
 def register(**args):

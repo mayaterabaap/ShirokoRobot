@@ -1,6 +1,6 @@
 import os
 
-from Cutiepii_Robot import pgram, MONGO_DB_URL
+from ShirokoRobot import pgram, MONGO_DB_URL
 from telegram import *
 from pyrogram import Client , filters
 from pyrogram.types import Chat, Message, User

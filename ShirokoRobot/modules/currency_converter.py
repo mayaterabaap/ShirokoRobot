@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import requests
 
-from Cutiepii_Robot import CASH_API_KEY, CUTIEPII_PTB
+from ShirokoRobot import CASH_API_KEY, CUTIEPII_PTB
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CommandHandler

@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 from io import BytesIO
-from Cutiepii_Robot import aiohttpsession
+from ShirokoRobot import aiohttpsession
 
 
 async def make_carbon(code):

@@ -40,17 +40,17 @@ from telegram.constants import ParseMode, ChatType
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 
-import Cutiepii_Robot.modules.sql.notes_sql as sql
-from Cutiepii_Robot import CUTIEPII_PTB, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
-from Cutiepii_Robot.__main__ import DATA_IMPORT
+import ShirokoRobot.modules.sql.notes_sql as sql
+from ShirokoRobot import CUTIEPII_PTB, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from ShirokoRobot.__main__ import DATA_IMPORT
 
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-import Cutiepii_Robot.modules.sql.rules_sql as rulessql
-import Cutiepii_Robot.modules.sql.blacklist_sql as blacklistsql
-from Cutiepii_Robot.modules.sql import disable_sql as disabledsql
-import Cutiepii_Robot.modules.sql.welcome_sql as welcsql
-import Cutiepii_Robot.modules.sql.locks_sql as locksql
-from Cutiepii_Robot.modules.connection import connected
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+import ShirokoRobot.modules.sql.rules_sql as rulessql
+import ShirokoRobot.modules.sql.blacklist_sql as blacklistsql
+from ShirokoRobot.modules.sql import disable_sql as disabledsql
+import ShirokoRobot.modules.sql.welcome_sql as welcsql
+import ShirokoRobot.modules.sql.locks_sql as locksql
+from ShirokoRobot.modules.connection import connected
 
 
 @user_admin
@@ -353,7 +353,7 @@ async def export_data(update: Update, context: CallbackContext) -> None:
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("Cutiepii_Robot{}Backup".format(chat_id), "w") as f:
+    with open("ShirokoRobot{}Backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     await context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -370,7 +370,7 @@ async def export_data(update: Update, context: CallbackContext) -> None:
         )
     await context.bot.sendDocument(
         current_chat_id,
-        document=open("Cutiepii_Robot{}Backup".format(chat_id), "rb"),
+        document=open("ShirokoRobot{}Backup".format(chat_id), "rb"),
         caption=
         "*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Cutiepii-Robot-Backup` was specially made for notes."
         .format(
@@ -382,7 +382,7 @@ async def export_data(update: Update, context: CallbackContext) -> None:
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("Cutiepii_Robot{}Backup".format(chat_id))  # Cleaning file
+    os.remove("ShirokoRobot{}Backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data

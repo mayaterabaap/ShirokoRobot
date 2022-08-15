@@ -34,7 +34,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 from telethon import events
 from telethon.tl import functions, types
-from Cutiepii_Robot import telethn
+from ShirokoRobot import telethn
 
 
 async def is_register_admin(chat, user):

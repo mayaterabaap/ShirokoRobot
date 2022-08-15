@@ -35,7 +35,7 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from Cutiepii_Robot.events import register, telethn
+from ShirokoRobot.events import register, telethn
 
 
 async def is_register_admin(chat, user):

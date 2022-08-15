@@ -33,10 +33,10 @@ from telegram import Update, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, filters, CommandHandler
 
-from Cutiepii_Robot import LOGGER, CUTIEPII_PTB, SUDO_USERS
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user_and_text
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot import LOGGER, CUTIEPII_PTB, SUDO_USERS
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user_and_text
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     AdminPerms,
     bot_is_admin,
 )

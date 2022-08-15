@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import threading
 import time
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 

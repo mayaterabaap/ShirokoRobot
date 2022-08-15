@@ -7,9 +7,9 @@ from telegram import InlineKeyboardButton, Message, Update
 from telegram import InlineKeyboardMarkup
 from telegram.helpers import mention_html
 
-from Cutiepii_Robot.modules.helper_funcs.admin_status import user_is_admin
-from Cutiepii_Robot.modules.sql.notes_sql import Buttons
-from Cutiepii_Robot import CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.admin_status import user_is_admin
+from ShirokoRobot.modules.sql.notes_sql import Buttons
+from ShirokoRobot import CUTIEPII_PTB
 
 BTN_LINK_REGEX = re.compile(
     r"(?<!\\)\[(.+?)\]\(((?!b(?:utto|t)nurl:).+?)\)|(?m)^(\n?\[(.+?)\]\(b(?:utto|t)nurl:(?:/*)?(.+?)(:same)?\))$"

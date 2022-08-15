@@ -31,8 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import random
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 
 reactions = [

@@ -37,14 +37,14 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import filters, CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram.helpers import mention_html
 from telegram.constants import ParseMode
-from Cutiepii_Robot import (BAN_STICKER, DEV_USERS, ERROR_LOGS, SUDO_USERS,
+from ShirokoRobot import (BAN_STICKER, DEV_USERS, ERROR_LOGS, SUDO_USERS,
                             OWNER_ID, WHITELIST_USERS, LOGGER, CUTIEPII_PTB)
 
-from Cutiepii_Robot.modules.helper_funcs.chat_status import connection_status, dev_plus, is_user_admin
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user_and_text
-from Cutiepii_Robot.modules.helper_funcs.string_handling import extract_time
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.log_channel import loggable, gloggable
+from ShirokoRobot.modules.helper_funcs.chat_status import connection_status, dev_plus, is_user_admin
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user_and_text
+from ShirokoRobot.modules.helper_funcs.string_handling import extract_time
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.log_channel import loggable, gloggable
 
 
 def cannot_ban(banner_id, user_id, message) -> bool:
@@ -73,7 +73,7 @@ def cannot_ban(banner_id, user_id, message) -> bool:
 
 ban_myself = "Oh yeah, ban myself, noob!"
 
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
     AdminPerms,

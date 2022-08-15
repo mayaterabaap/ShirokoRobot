@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import requests
 from telegram.constants import ParseMode
 
-from Cutiepii_Robot.events import register as bot
+from ShirokoRobot.events import register as bot
 
 
 @bot(pattern="[/!]waifu")

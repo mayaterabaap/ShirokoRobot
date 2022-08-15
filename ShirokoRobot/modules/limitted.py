@@ -31,8 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import ubot
+from ShirokoRobot.events import register
+from ShirokoRobot import ubot
 
 
 @register(pattern="^/limited ?(.*)")

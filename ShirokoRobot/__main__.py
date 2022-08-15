@@ -36,12 +36,12 @@ import importlib
 import time
 import re
 import traceback
-import Cutiepii_Robot.modules.sql.users_sql as sql
+import ShirokoRobot.modules.sql.users_sql as sql
 
 from sys import argv
 from typing import Optional
 
-from Cutiepii_Robot import (
+from ShirokoRobot import (
     DONATION_LINK,
     LOGGER,
     OWNER_ID,
@@ -58,10 +58,10 @@ from Cutiepii_Robot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Cutiepii_Robot.modules import ALL_MODULES
-from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
-from Cutiepii_Robot.modules.helper_funcs.misc import paginate_modules
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules import ALL_MODULES
+from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin
+from ShirokoRobot.modules.helper_funcs.misc import paginate_modules
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.constants import ParseMode
 from telegram.error import (
@@ -124,7 +124,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="Add Cutiepii To Your Group",
-            url="https://telegram.dog/Cutiepii_Robot?startgroup=true")
+            url="https://telegram.dog/ShirokoRobot?startgroup=true")
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
@@ -166,7 +166,7 @@ GDPR = []
 
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module(
-        f"Cutiepii_Robot.modules.{module_name}")
+        f"ShirokoRobot.modules.{module_name}")
 
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
@@ -694,7 +694,7 @@ def main():
         CUTIEPII_PTB.run_polling(allowed_updates=Update.ALL_TYPES,
                                  stop_signals=None)
         LOGGER.info(
-            "Cutiepii Robot started, Using long polling. | BOT: [@Cutiepii_Robot]"
+            "Cutiepii Robot started, Using long polling. | BOT: [@ShirokoRobot]"
         )
 
 

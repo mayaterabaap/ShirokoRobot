@@ -38,8 +38,8 @@ from telegram import Update
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import MessageHandler, CommandHandler, CallbackContext, filters
 
-import Cutiepii_Robot.modules.sql.users_sql as sql
-from Cutiepii_Robot import CUTIEPII_PTB, LOGGER
+import ShirokoRobot.modules.sql.users_sql as sql
+from ShirokoRobot import CUTIEPII_PTB, LOGGER
 
 USERS_GROUP = 4
 CHAT_GROUP = 10

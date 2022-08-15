@@ -30,25 +30,25 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 import html
 import re
-import Cutiepii_Robot.modules.sql.rules_sql as rules_sql
+import ShirokoRobot.modules.sql.rules_sql as rules_sql
 
 from typing import Optional
 
-from Cutiepii_Robot import BAN_STICKER, DEV_USERS, OWNER_ID, SUDO_USERS, WHITELIST_USERS, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot import BAN_STICKER, DEV_USERS, OWNER_ID, SUDO_USERS, WHITELIST_USERS, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import (
+from ShirokoRobot.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
 )
-from Cutiepii_Robot.modules.helper_funcs.misc import split_message
-from Cutiepii_Robot.modules.helper_funcs.string_handling import split_quotes
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.sql import warns_sql as sql
-from Cutiepii_Robot.modules.sql.approve_sql import is_approved
-from Cutiepii_Robot.modules.helper_funcs.admin_status import user_admin_check, bot_admin_check, AdminPerms, bot_is_admin, user_is_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
+from ShirokoRobot.modules.helper_funcs.misc import split_message
+from ShirokoRobot.modules.helper_funcs.string_handling import split_quotes
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.sql import warns_sql as sql
+from ShirokoRobot.modules.sql.approve_sql import is_approved
+from ShirokoRobot.modules.helper_funcs.admin_status import user_admin_check, bot_admin_check, AdminPerms, bot_is_admin, user_is_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin
 from telegram import (
     Chat,
     InlineKeyboardButton,
@@ -154,7 +154,7 @@ async def warn(user: User,
             keyboard[0].append(
                 InlineKeyboardButton(
                     "📝 Rules",
-                    url=f"t.me/Cutiepii_Robot?start={chat.id}",
+                    url=f"t.me/ShirokoRobot?start={chat.id}",
                 ))
 
         reply = (f"<b>╔━「 Warn Event 」</b>\n"
@@ -249,7 +249,7 @@ async def swarn(
             keyboard[0].append(
                 InlineKeyboardButton(
                     "📝 Rules",
-                    url=f"t.me/Cutiepii_Robot?start={chat.id}",
+                    url=f"t.me/ShirokoRobot?start={chat.id}",
                 ))
 
         reply = (f"<b>╔━「 Warn Event 」</b>\n"
@@ -344,7 +344,7 @@ async def dwarn(user: User,
             keyboard[0].append(
                 InlineKeyboardButton(
                     "📝 Rules",
-                    url=f"t.me/Cutiepii_Robot?start={chat.id}",
+                    url=f"t.me/ShirokoRobot?start={chat.id}",
                 ))
 
         reply = (f"<b>╔━「 Warn Event 」</b>\n"

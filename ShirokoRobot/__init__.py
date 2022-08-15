@@ -55,7 +55,7 @@ StartTime = time.time()
 
 
 def get_user_list(__init__, key):
-    with open(f"{os.getcwd()}/Cutiepii_Robot/{__init__}", "r") as json_file:
+    with open(f"{os.getcwd()}/ShirokoRobot/{__init__}", "r") as json_file:
         return json.load(json_file)[key]
 
 
@@ -203,7 +203,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from Cutiepii_Robot.config import Development as Config
+    from ShirokoRobot.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -406,10 +406,10 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 TIGER_USERS = list(TIGER_USERS)
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(),
-                                   "Cutiepii_Robot/elevated_users.json")
+                                   "ShirokoRobot/elevated_users.json")
 
 # Load at end to ensure all prev variables have been set
-from Cutiepii_Robot.modules.helper_funcs.handlers import CustomCommandHandler
+from ShirokoRobot.modules.helper_funcs.handlers import CustomCommandHandler
 
 # make sure the regex handler can take extra kwargs
 tg.CommandHandler = CustomCommandHandler

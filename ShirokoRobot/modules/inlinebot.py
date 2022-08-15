@@ -24,9 +24,9 @@ from search_engine_parser import GoogleSearch
 from tswift import Song
 from youtubesearchpython import VideosSearch
 
-from Cutiepii_Robot.utils.inlinehelper import *
-from Cutiepii_Robot.utils.pluginhelpers import fetch, json_prettify
-from Cutiepii_Robot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot.utils.inlinehelper import *
+from ShirokoRobot.utils.pluginhelpers import fetch, json_prettify
+from ShirokoRobot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT, CUTIEPII_PTB
 
 dictionary = PyDictionary()
 
@@ -54,10 +54,10 @@ class AioHttp:
 
 __mod_name__ = "Inline"
 __help__ = """
-INLINE BOT SERVICE OF @Cutiepii_Robot
+INLINE BOT SERVICE OF @ShirokoRobot
 I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.
 ──「 Syntax 」──
-   @Cutiepii_Robot [command] [query]
+   @ShirokoRobot [command] [query]
 ──「 Commands Available 」──
 ➛ alive - Check Bot's Stats.
 ➛ yt [query] - Youtube Search.
@@ -96,10 +96,10 @@ I'm more efficient when added as group admin. By the way these commands can be u
 
 __MODULE__ = "Inline"
 __HELP__ = """
- ==>> **INLINE BOT SERVICE OF @Cutiepii_Robot** <<==
+ ==>> **INLINE BOT SERVICE OF @ShirokoRobot** <<==
 `I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.`
    >> Syntax <<
-@Cutiepii_Robot [command] [query]
+@ShirokoRobot [command] [query]
    >> Commands Available <<
 - **alive** - __Check Bot's Stats.__
 - **yt [query]** - __Youtube Search.__
@@ -625,7 +625,7 @@ async def inline_query_handler(client, query):
                 Time Zones:- {tom}
                 Top Level Domain:- {lanester}
                 wikipedia:- {wiki}</b>
-                Gathered By @Cutiepii_Robot.</b>
+                Gathered By @ShirokoRobot.</b>
                 """
             results.append(
                 InlineQueryResultArticle(

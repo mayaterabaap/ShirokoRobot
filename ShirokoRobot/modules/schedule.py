@@ -36,7 +36,7 @@ from pyrogram import filters
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 
-from Cutiepii_Robot import pgram
+from ShirokoRobot import pgram
 
 
 def call_back_in_filter(data):

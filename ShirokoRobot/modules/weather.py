@@ -36,9 +36,9 @@ import aiohttp
 from telethon.tl import functions
 from telethon.tl import types
 
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import OPENWEATHERMAP_ID, CUTIEPII_PTB, telethn as tbot
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.events import register
+from ShirokoRobot import OPENWEATHERMAP_ID, CUTIEPII_PTB, telethn as tbot
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 
 async def is_register_admin(chat, user):

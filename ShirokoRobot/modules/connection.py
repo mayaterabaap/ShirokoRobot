@@ -37,11 +37,11 @@ from telegram.error import BadRequest, Forbidden
 from telegram.ext import (CommandHandler, CallbackQueryHandler,
                           CallbackContext)
 
-import Cutiepii_Robot.modules.sql.connection_sql as sql
-from Cutiepii_Robot import CUTIEPII_PTB, SUDO_USERS, DEV_USERS
-from Cutiepii_Robot.modules.helper_funcs import admin_status
+import ShirokoRobot.modules.sql.connection_sql as sql
+from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS, DEV_USERS
+from ShirokoRobot.modules.helper_funcs import admin_status
 
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
 
 AdminPerms = admin_status.AdminPerms
 user_admin_check = admin_status.user_admin_check

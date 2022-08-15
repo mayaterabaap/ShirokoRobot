@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from gogoanimeapi import gogoanime as anime
 from telethon import Button, events
 
-from Cutiepii_Robot import telethn
+from ShirokoRobot import telethn
 
 
 @telethn.on(events.NewMessage(pattern="^/gogo ?(.*)"))

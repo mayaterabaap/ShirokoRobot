@@ -34,15 +34,15 @@ import io
 import re
 import time
 
-from Cutiepii_Robot import SUDO_USERS, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.string_handling import (
+from ShirokoRobot import SUDO_USERS, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.string_handling import (
     extract_time_seconds,
     markdown_to_html,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.ping import get_readable_time
-from Cutiepii_Robot.modules.sql import remind_sql as sql
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.ping import get_readable_time
+from ShirokoRobot.modules.sql import remind_sql as sql
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,

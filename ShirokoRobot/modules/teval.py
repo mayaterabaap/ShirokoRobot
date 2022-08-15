@@ -2,7 +2,7 @@ import sys
 import io
 import traceback
 
-from Cutiepii_Robot import telethn, LOGGER
+from ShirokoRobot import telethn, LOGGER
 from telethon.sync import events
 
 # telethon eval

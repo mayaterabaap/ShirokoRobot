@@ -3,7 +3,7 @@
 ## Advanced: Pyrogram
 ```python3
 from pyrogram import filters
-from Cutiepii_Robot import pgram
+from ShirokoRobot import pgram
 
 @pgram.on_message(filters.command("hi"))
 async def hmm(_, message):
@@ -20,8 +20,8 @@ __help__ = """
 
 ## Advanced: Telethon
 ```python3
-from Cutiepii_Robot import telethn
-from Cutiepii_Robot.events import register
+from ShirokoRobot import telethn
+from ShirokoRobot.events import register
 
 @register(pattern="^/hi$")
 async def _(event):

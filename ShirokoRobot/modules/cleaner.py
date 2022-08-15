@@ -31,15 +31,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import html
 
-from Cutiepii_Robot import ALLOW_EXCL, CustomCommandHandler, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot import ALLOW_EXCL, CustomCommandHandler, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
 )
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.sql import cleaner_sql as sql
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.sql import cleaner_sql as sql
 from telegram import Update
 from telegram.ext import (
     CallbackContext,

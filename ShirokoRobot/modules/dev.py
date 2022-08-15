@@ -34,8 +34,8 @@ import subprocess
 import sys
 import asyncio
 
-from Cutiepii_Robot import CUTIEPII_PTB, DEV_USERS, telethn, OWNER_ID
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot import CUTIEPII_PTB, DEV_USERS, telethn, OWNER_ID
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import TelegramError
 from telegram.ext import CallbackContext, CommandHandler
@@ -198,7 +198,7 @@ async def gitpull(update: Update):
 async def restart(update: Update):
     await update.effective_message.reply_text(
         "Exiting all Processes and starting a new Instance!")
-    process = subprocess.run("pkill python3 && python3 -m Cutiepii_Robot",
+    process = subprocess.run("pkill python3 && python3 -m ShirokoRobot",
                              shell=True,
                              check=True)
     process.communicate()

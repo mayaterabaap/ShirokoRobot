@@ -1,6 +1,6 @@
-from Cutiepii_Robot import LOGGER, mongodb, telethn
+from ShirokoRobot import LOGGER, mongodb, telethn
 
-from Cutiepii_Robot.events import register
+from ShirokoRobot.events import register
 from telethon import *
 import dateparser
 
@@ -156,7 +156,7 @@ async def tikclock():
 __help__ = """
  - /setalarm <(date) (time)|zone|reason>: sets a alarm/reminder 
 **Syntax:** `/setalarm 01/01/2000 10:00:00 AM | America/New_York | breakfast`
-**NOTE:** Please turn on notifications for @Cutiepii_Robot otherwise you will not get notification for the alarm !
+**NOTE:** Please turn on notifications for @ShirokoRobot otherwise you will not get notification for the alarm !
 """
 
 __mod_name__ = "Alarm"

@@ -3,8 +3,8 @@ import threading
 from typing import Union
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
-from Cutiepii_Robot.modules.helper_funcs.msg_types import Types
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.helper_funcs.msg_types import Types
+from ShirokoRobot.modules.sql import BASE, SESSION
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"

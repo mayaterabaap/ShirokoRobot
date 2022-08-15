@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import github
 
 from pyrogram import filters
-from Cutiepii_Robot import pgram
+from ShirokoRobot import pgram
 
 Cutiepii_PYRO_Repo = filters.command("repo")
 

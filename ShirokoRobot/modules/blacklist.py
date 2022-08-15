@@ -37,21 +37,21 @@ from telegram.ext import CallbackContext, CommandHandler, filters, MessageHandle
 from telegram.helpers import mention_html
 from telegram.constants import ParseMode, ChatType
 
-import Cutiepii_Robot.modules.sql.blacklist_sql as sql
-from Cutiepii_Robot import CUTIEPII_PTB, LOGGER
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import user_not_admin
+import ShirokoRobot.modules.sql.blacklist_sql as sql
+from ShirokoRobot import CUTIEPII_PTB, LOGGER
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import user_not_admin
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_text
-from Cutiepii_Robot.modules.helper_funcs.misc import split_message
-from Cutiepii_Robot.modules.helper_funcs.string_handling import extract_time
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.redis.approvals_redis import is_approved
-from Cutiepii_Robot.modules.warns import warn
-from Cutiepii_Robot.modules.helper_funcs.anonymous import AdminPerms
+from ShirokoRobot.modules.helper_funcs.extraction import extract_text
+from ShirokoRobot.modules.helper_funcs.misc import split_message
+from ShirokoRobot.modules.helper_funcs.string_handling import extract_time
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.redis.approvals_redis import is_approved
+from ShirokoRobot.modules.warns import warn
+from ShirokoRobot.modules.helper_funcs.anonymous import AdminPerms
 
 BLACKLIST_GROUP = 11
 

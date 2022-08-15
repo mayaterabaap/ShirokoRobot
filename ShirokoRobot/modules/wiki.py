@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import wikipedia
 import re
 
-from Cutiepii_Robot import CUTIEPII_PTB
+from ShirokoRobot import CUTIEPII_PTB
 
 from telegram.ext import CommandHandler
 from telegram.error import BadRequest

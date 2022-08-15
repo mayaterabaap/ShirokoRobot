@@ -35,12 +35,12 @@ import requests
 from pyrogram import filters
 from json import JSONDecodeError
 
-from Cutiepii_Robot.utils.pluginhelpers import admins_only, edit_or_reply, fetch_audio
-from Cutiepii_Robot import pgram, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot.utils.pluginhelpers import admins_only, edit_or_reply, fetch_audio
+from ShirokoRobot import pgram, SUPPORT_CHAT, CUTIEPII_PTB
 
 
 @pgram.on_message(
-    filters.command(["identify", "shazam", "shazam@Cutiepii_Robot"]))
+    filters.command(["identify", "shazam", "shazam@ShirokoRobot"]))
 @admins_only
 async def shazamm(client, message):
     kek = await edit_or_reply(message, "`Shazaming In Progress!`")
@@ -76,7 +76,7 @@ async def shazamm(client, message):
     messageo = f"""<b>Song Shazamed.</b>
 <b>Song Name : </b>{title}
 <b>Song By : </b>{by}
-<u><b>Identified Using @Cutiepii_Robot - Join our support @{SUPPORT_CHAT}</b></u>
+<u><b>Identified Using @ShirokoRobot - Join our support @{SUPPORT_CHAT}</b></u>
 <i>Powered by @Yuki_Netowrk</i>
 """
     await client.send_photo(message.chat.id,

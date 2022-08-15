@@ -4,11 +4,11 @@ from enum import IntEnum, unique
 from typing import Optional, Union
 
 from telegram import InlineKeyboardMarkup
-import Cutiepii_Robot
+import ShirokoRobot
 
-from Cutiepii_Robot import LOGGER
+from ShirokoRobot import LOGGER
 
-from Cutiepii_Robot.modules.sql.notes_sql import SESSION, Notes
+from ShirokoRobot.modules.sql.notes_sql import SESSION, Notes
 
 BTN_LINK_REGEX = re.compile(
     r"(?<!\\)\[(.+?)\]\(((?!b(?:utto|t)nurl:).+?)\)|(?m)^(\n?\[(.+?)\]\(b(?:utto|t)nurl:(?:/*)?(.+?)(:same)?\))$"

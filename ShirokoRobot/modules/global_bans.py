@@ -9,8 +9,8 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext, CommandHandler, filters, MessageHandler
 from telegram.helpers import mention_html
 
-import Cutiepii_Robot.modules.sql.global_bans_sql as sql
-from Cutiepii_Robot import (
+import ShirokoRobot.modules.sql.global_bans_sql as sql
+from ShirokoRobot import (
     SUPPORT_USERS,
     DEV_USERS,
     GBAN_LOGS,
@@ -22,19 +22,19 @@ from Cutiepii_Robot import (
     CUTIEPII_PTB,
     SUDO_USERS,
 )
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     bot_admin,
 )
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import (
+from ShirokoRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from Cutiepii_Robot.modules.helper_funcs.misc import send_to_list
-from Cutiepii_Robot.modules.sql.users_sql import get_user_com_chats
+from ShirokoRobot.modules.helper_funcs.misc import send_to_list
+from ShirokoRobot.modules.sql.users_sql import get_user_com_chats
 
 GBAN_ENFORCE_GROUP = 6
 

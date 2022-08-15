@@ -32,9 +32,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import importlib
 import collections
 
-from Cutiepii_Robot import CUTIEPII_PTB, telethn
-from Cutiepii_Robot.__main__ import CHAT_SETTINGS, DATA_EXPORT, DATA_IMPORT, HELPABLE, IMPORTED, MIGRATEABLE, STATS, USER_INFO, USER_SETTINGS
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from ShirokoRobot import CUTIEPII_PTB, telethn
+from ShirokoRobot.__main__ import CHAT_SETTINGS, DATA_EXPORT, DATA_IMPORT, HELPABLE, IMPORTED, MIGRATEABLE, STATS, USER_INFO, USER_SETTINGS
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CommandHandler
@@ -51,7 +51,7 @@ async def load(update: Update):
 
     try:
         imported_module = importlib.import_module(
-            f"Cutiepii_Robot.modules.{text}")
+            f"ShirokoRobot.modules.{text}")
     except Exception:
         await load_messasge.edit_text("Does that module even exist?")
         return
@@ -122,7 +122,7 @@ async def unload(update: Update):
 
     try:
         imported_module = importlib.import_module(
-            f"Cutiepii_Robot.modules.{text}")
+            f"ShirokoRobot.modules.{text}")
     except Exception:
         await unload_messasge.edit_text("Does that module even exist?")
         return
@@ -193,7 +193,7 @@ async def listmodules(update: Update):
     for helpable_module in HELPABLE:
         helpable_module_info = IMPORTED[helpable_module]
         file_info = IMPORTED[helpable_module_info.__mod_name__.lower()]
-        file_name = file_info.__name__.rsplit("Cutiepii_Robot.modules.", 1)[1]
+        file_name = file_info.__name__.rsplit("ShirokoRobot.modules.", 1)[1]
         mod_name = file_info.__mod_name__
         module_list.append(f"- <code>{mod_name} ({file_name})</code>\n")
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)

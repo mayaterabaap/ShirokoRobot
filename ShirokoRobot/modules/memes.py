@@ -50,10 +50,10 @@ from zalgo_text import zalgo
 
 from pyrogram import filters
 
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot.utils.carbon import make_carbon
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn, ubot, pgram, TEMP_DOWNLOAD_DIRECTORY, SUPPORT_CHAT, LOGGER
+from ShirokoRobot.utils.errors import capture_err
+from ShirokoRobot.utils.carbon import make_carbon
+from ShirokoRobot.events import register
+from ShirokoRobot import telethn, ubot, pgram, TEMP_DOWNLOAD_DIRECTORY, SUPPORT_CHAT, LOGGER
 
 nltk.download("punkt")
 nltk.download("averaged_perceptron_tagger")

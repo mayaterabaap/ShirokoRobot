@@ -31,8 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 import threading
 
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 from sqlalchemy import (
     Column,
@@ -103,7 +103,7 @@ INSERTION_LOCK = threading.RLock()
 
 def ensure_bot_in_db():
     with INSERTION_LOCK:
-        bot = Users(1241223850, "Cutiepii_Robot")
+        bot = Users(1241223850, "ShirokoRobot")
         SESSION.merge(bot)
         SESSION.commit()
 

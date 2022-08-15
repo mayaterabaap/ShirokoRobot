@@ -36,8 +36,8 @@ import requests
 from datetime import datetime
 from telethon import types
 from telethon.tl import functions
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import TEMP_DOWNLOAD_DIRECTORY, REM_BG_API_KEY, telethn
+from ShirokoRobot.events import register
+from ShirokoRobot import TEMP_DOWNLOAD_DIRECTORY, REM_BG_API_KEY, telethn
 
 
 async def is_register_admin(chat, user):

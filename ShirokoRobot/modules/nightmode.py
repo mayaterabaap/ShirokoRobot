@@ -33,9 +33,9 @@ from telethon.tl.types import ChatBannedRights
 from telethon import *
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-from Cutiepii_Robot.modules.sql.night_mode_sql import add_nightmode, rmnightmode, get_all_chat_id, is_nightmode_indb
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import OWNER_ID, telethn, LOGGER
+from ShirokoRobot.modules.sql.night_mode_sql import add_nightmode, rmnightmode, get_all_chat_id, is_nightmode_indb
+from ShirokoRobot.events import register
+from ShirokoRobot import OWNER_ID, telethn, LOGGER
 
 hehes = ChatBannedRights(
     until_date=None,

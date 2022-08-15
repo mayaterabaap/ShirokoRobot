@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import sys
 
-from Cutiepii_Robot import LOAD, LOGGER, NO_LOAD
+from ShirokoRobot import LOAD, LOGGER, NO_LOAD
 
 
 def __list_all_modules():

@@ -1,14 +1,14 @@
 from telethon import events, Button
 import logging
 from telethon.tl.functions.users import GetFullUserRequest as us
-from Cutiepii_Robot import telethn as bot
+from ShirokoRobot import telethn as bot
 
 logging.basicConfig(level=logging.INFO)
 
 db = {}
 
 
-@bot.on(events.NewMessage(pattern="^[!?@/]Cutiepii_Robot$"))
+@bot.on(events.NewMessage(pattern="^[!?@/]ShirokoRobot$"))
 async def stsrt(event):
     await event.reply("**Heya, I am a Whisper Bot function for Cutiepii!**",
                       buttons=[[Button.switch_inline("Go Inline", query="")]])

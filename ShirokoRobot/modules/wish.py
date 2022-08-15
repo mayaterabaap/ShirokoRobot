@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 import random
 
-from Cutiepii_Robot import OWNER_ID, telethn
+from ShirokoRobot import OWNER_ID, telethn
 
 from telethon import events, Button
 from telegram.constants import ParseMode

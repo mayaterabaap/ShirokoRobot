@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import ast
 import contextlib
 
-from Cutiepii_Robot import REDIS
+from ShirokoRobot import REDIS
 
 try:
     ast.literal_eval(REDIS.get("Approvals"))

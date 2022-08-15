@@ -34,7 +34,7 @@ import json
 
 from typing import Optional
 
-from Cutiepii_Robot import (
+from ShirokoRobot import (
     DEV_USERS,
     OWNER_ID,
     SUDO_USERS,
@@ -45,14 +45,14 @@ from Cutiepii_Robot import (
     CUTIEPII_PTB,
     ELEVATED_USERS_FILE,
 )
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
     whitelist_plus,
 )
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.log_channel import gloggable
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.log_channel import gloggable
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest, TelegramError, Forbidden
 from telegram.ext import CallbackContext, CommandHandler

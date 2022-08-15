@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import sys
 import traceback
 from functools import wraps
-from Cutiepii_Robot import pgram, SUPPORT_CHAT
+from ShirokoRobot import pgram, SUPPORT_CHAT
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
 

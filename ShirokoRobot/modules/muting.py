@@ -41,7 +41,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram.helpers import mention_html
 
-from Cutiepii_Robot import (
+from ShirokoRobot import (
     DEV_USERS,
     SUDO_USERS,
     SUPPORT_USERS,
@@ -50,14 +50,14 @@ from Cutiepii_Robot import (
     CUTIEPII_PTB,
     LOGGER,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin, connection_status
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user_and_text
-from Cutiepii_Robot.modules.helper_funcs.string_handling import extract_time
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin, connection_status
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user_and_text
+from ShirokoRobot.modules.helper_funcs.string_handling import extract_time
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     bot_admin_check,
     AdminPerms,

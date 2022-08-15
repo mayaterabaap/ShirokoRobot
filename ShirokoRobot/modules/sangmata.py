@@ -32,8 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
 
-from Cutiepii_Robot.events import register as Cutiepii
-from Cutiepii_Robot import telethn, ubot
+from ShirokoRobot.events import register as Cutiepii
+from ShirokoRobot import telethn, ubot
 
 
 async def is_register_admin(chat, user):

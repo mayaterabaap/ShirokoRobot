@@ -32,8 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import aiohttp
 
 from pyrogram import filters
-from Cutiepii_Robot import pgram, LOGGER
-from Cutiepii_Robot.utils.errors import capture_err
+from ShirokoRobot import pgram, LOGGER
+from ShirokoRobot.utils.errors import capture_err
 
 __mod_name__ = "Github"
 

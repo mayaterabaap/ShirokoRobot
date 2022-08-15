@@ -35,14 +35,14 @@ import time
 import requests
 import asyncio
 import telegram
-import Cutiepii_Robot.modules.fun_strings as fun_strings
+import ShirokoRobot.modules.fun_strings as fun_strings
 
 from pyrogram import filters as cutiepii_pyro
-from Cutiepii_Robot import SUPPORT_USERS, SUDO_USERS, pgram, CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
+from ShirokoRobot import SUPPORT_USERS, SUDO_USERS, pgram, CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_user
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.extraction import extract_user
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import ChatPermissions, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, filters
@@ -151,7 +151,7 @@ earth_ani = [
 ]
 
 
-@pgram.on_message(cutiepii_pyro.command("meme", "meme@Cutiepii_Robot"))
+@pgram.on_message(cutiepii_pyro.command("meme", "meme@ShirokoRobot"))
 async def meme(_, message):
     r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
     pic = r['image']
@@ -160,7 +160,7 @@ async def meme(_, message):
 
 
 @pgram.on_message(
-    cutiepii_pyro.command("hentaimeme", "hmeme", "hmeme@Cutiepii_Robot"))
+    cutiepii_pyro.command("hentaimeme", "hmeme", "hmeme@ShirokoRobot"))
 async def hmeme(_, message):
     r = requests.get(
         'https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()

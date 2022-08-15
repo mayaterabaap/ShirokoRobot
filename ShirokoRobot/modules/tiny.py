@@ -33,8 +33,8 @@ import os
 import cv2
 
 from PIL import Image
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn
+from ShirokoRobot.events import register
+from ShirokoRobot import telethn
 
 
 @register(pattern="^/tiny ?(.*)")
@@ -45,7 +45,7 @@ async def _(event):
         return
     kontol = await event.reply("`Processing tiny...`")
     ik = await telethn.download_media(reply)
-    im1 = Image.open("Cutiepii_Robot/resources/ken.png")
+    im1 = Image.open("ShirokoRobot/resources/ken.png")
     if ik.endswith(".tgs"):
         await telethn.download_media(reply, "ken.tgs")
         os.system("lottie_convert.py ken.tgs json.json")

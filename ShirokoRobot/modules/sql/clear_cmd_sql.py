@@ -1,6 +1,6 @@
 import threading
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from ShirokoRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Integer, String, Column, UnicodeText
 
 

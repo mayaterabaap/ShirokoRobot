@@ -36,8 +36,8 @@ import requests
 from datetime import datetime
 from telethon import events
 
-from Cutiepii_Robot.utils.pluginhelpers import is_admin
-from Cutiepii_Robot import telethn, SUPPORT_CHAT, LOGGER
+from ShirokoRobot.utils.pluginhelpers import is_admin
+from ShirokoRobot import telethn, SUPPORT_CHAT, LOGGER
 
 
 def main(url, filename):
@@ -92,7 +92,7 @@ async def _(event):
             event.chat_id,
             kk,
             caption=
-            f"Facebook Video downloaded Successfully by @Cutiepii_Robot.\nSay hi to devs @{SUPPORT_CHAT}.",
+            f"Facebook Video downloaded Successfully by @ShirokoRobot.\nSay hi to devs @{SUPPORT_CHAT}.",
         )
         os.system(f"rm {kk}")
     else:

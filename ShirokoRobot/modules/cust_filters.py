@@ -13,22 +13,22 @@ from telegram.ext import (
 )
 from telegram.helpers import escape_markdown, mention_html
 
-from Cutiepii_Robot import CUTIEPII_PTB, SUDO_USERS, LOGGER
-from Cutiepii_Robot.modules.helper_funcs.msg_types import get_filter_type
-from Cutiepii_Robot.modules.helper_funcs.misc import build_keyboard_parser
-from Cutiepii_Robot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
-from Cutiepii_Robot.modules.helper_funcs.string_handling import (
+from ShirokoRobot import CUTIEPII_PTB, SUDO_USERS, LOGGER
+from ShirokoRobot.modules.helper_funcs.msg_types import get_filter_type
+from ShirokoRobot.modules.helper_funcs.misc import build_keyboard_parser
+from ShirokoRobot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+from ShirokoRobot.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     markdown_to_html,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.sql import cust_filters_sql as sql
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.helper_funcs.extraction import extract_text
-from Cutiepii_Robot.modules.helper_funcs.admin_status import (
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.sql import cust_filters_sql as sql
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.extraction import extract_text
+from ShirokoRobot.modules.helper_funcs.admin_status import (
     user_admin_check,
     AdminPerms,
 )

@@ -36,9 +36,9 @@ from telegram import Update
 from telegram.constants import ChatAction
 from telegram.ext import CallbackContext
 
-from Cutiepii_Robot import SUPPORT_CHAT, WALL_API, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_action
+from ShirokoRobot import SUPPORT_CHAT, WALL_API, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.alternate import send_action
 
 # Wallpaper module powered by wall.alphacoders.com
 

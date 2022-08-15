@@ -33,7 +33,7 @@ import threading
 from sqlalchemy import String, Column, Integer, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Cutiepii_Robot.modules.sql import SESSION, BASE
+from ShirokoRobot.modules.sql import SESSION, BASE
 
 DEF_COUNT = 1
 DEF_LIMIT = 0

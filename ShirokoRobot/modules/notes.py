@@ -52,14 +52,14 @@ from telegram.ext import (
 )
 from telegram.helpers import escape_markdown, mention_markdown
 
-import Cutiepii_Robot.modules.sql.notes_sql as sql
-from Cutiepii_Robot import SUDO_USERS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, CUTIEPII_PTB
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.chat_status import connection_status, user_admin
-from Cutiepii_Robot.modules.helper_funcs.handlers import MessageHandlerChecker
-from Cutiepii_Robot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Cutiepii_Robot.modules.helper_funcs.msg_types import get_note_type
-from Cutiepii_Robot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+import ShirokoRobot.modules.sql.notes_sql as sql
+from ShirokoRobot import SUDO_USERS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, CUTIEPII_PTB
+from ShirokoRobot.modules.disable import DisableAbleCommandHandler
+from ShirokoRobot.modules.helper_funcs.chat_status import connection_status, user_admin
+from ShirokoRobot.modules.helper_funcs.handlers import MessageHandlerChecker
+from ShirokoRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from ShirokoRobot.modules.helper_funcs.msg_types import get_note_type
+from ShirokoRobot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 STICKER_MATCHER = re.compile(r"^###sticker(!photo)?###:")

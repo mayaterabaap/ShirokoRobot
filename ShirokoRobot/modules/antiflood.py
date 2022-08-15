@@ -40,19 +40,19 @@ from telegram.constants import ParseMode, ChatType
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, filters, MessageHandler
 from telegram.helpers import mention_html
 
-from Cutiepii_Robot import CUTIEPII_PTB, WHITELIST_USERS
-from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from ShirokoRobot import CUTIEPII_PTB, WHITELIST_USERS
+from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
+from ShirokoRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     user_admin_no_reply,
     is_user_admin,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.sql import antiflood_sql as sql
-from Cutiepii_Robot.modules.connection import connected
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.helper_funcs.string_handling import extract_time
-from Cutiepii_Robot.modules.sql.approve_sql import is_approved
+from ShirokoRobot.modules.log_channel import loggable
+from ShirokoRobot.modules.sql import antiflood_sql as sql
+from ShirokoRobot.modules.connection import connected
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.helper_funcs.string_handling import extract_time
+from ShirokoRobot.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3
 

@@ -37,11 +37,11 @@ from telegram import Update
 from telegram.constants import ParseMode, ChatType
 from telegram.ext import CommandHandler, MessageHandler, CallbackContext
 from telegram.helpers import escape_markdown
-from Cutiepii_Robot import CUTIEPII_PTB
-from Cutiepii_Robot.modules.helper_funcs.handlers import CMD_STARTERS
-from Cutiepii_Robot.modules.helper_funcs.misc import is_module_loaded
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
-from Cutiepii_Robot.modules.connection import connected
+from ShirokoRobot import CUTIEPII_PTB
+from ShirokoRobot.modules.helper_funcs.handlers import CMD_STARTERS
+from ShirokoRobot.modules.helper_funcs.misc import is_module_loaded
+from ShirokoRobot.modules.helper_funcs.alternate import send_message
+from ShirokoRobot.modules.connection import connected
 
 CMD_STARTERS = tuple(CMD_STARTERS)
 
@@ -49,11 +49,11 @@ FILENAME = __name__.rsplit(".", 1)[-1]
 
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
-    from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+    from ShirokoRobot.modules.helper_funcs.chat_status import (
         is_user_admin, )
-    from Cutiepii_Robot.modules.helper_funcs.anonymous import user_admin
+    from ShirokoRobot.modules.helper_funcs.anonymous import user_admin
 
-    from Cutiepii_Robot.modules.sql import disable_sql as sql
+    from ShirokoRobot.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []

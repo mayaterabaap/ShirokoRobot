@@ -35,8 +35,8 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot import arq, pgram, LOGGER
+from ShirokoRobot.utils.errors import capture_err
+from ShirokoRobot import arq, pgram, LOGGER
 
 Cutiepii_PYRO_Q = filters.command(["quote", "q"])
 

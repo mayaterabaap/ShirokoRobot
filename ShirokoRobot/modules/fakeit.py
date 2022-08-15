@@ -36,8 +36,8 @@ from faker import Faker
 from faker.providers import internet
 from telethon import events
 
-from Cutiepii_Robot.utils.pluginhelpers import is_admin
-from Cutiepii_Robot import telethn, SUPPORT_CHAT, LOGGER
+from ShirokoRobot.utils.pluginhelpers import is_admin
+from ShirokoRobot import telethn, SUPPORT_CHAT, LOGGER
 
 
 @telethn.on(events.NewMessage(pattern="/fakegen$"))

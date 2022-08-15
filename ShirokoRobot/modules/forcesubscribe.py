@@ -43,8 +43,8 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from Cutiepii_Robot import BOT_ID, OWNER_ID as SUDO_USERS, pgram, CUTIEPII_PTB
-from Cutiepii_Robot.modules.sql import forceSubscribe_sql as sql
+from ShirokoRobot import BOT_ID, OWNER_ID as SUDO_USERS, pgram, CUTIEPII_PTB
+from ShirokoRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 
@@ -166,8 +166,8 @@ def _check_member(client, message):
 
 @pgram.on_message(
     filters.command([
-        "forcesubscribe", "forcesub", "forcesub@Cutiepii_Robot",
-        "forcesubscribe@Cutiepii_Robot"
+        "forcesubscribe", "forcesub", "forcesub@ShirokoRobot",
+        "forcesubscribe@ShirokoRobot"
     ]) & ~filters.private)
 def config(client, message):
     user = client.get_chat_member(message.chat.id, message.from_user.id)

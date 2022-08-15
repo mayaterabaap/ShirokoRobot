@@ -46,9 +46,9 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
-from Cutiepii_Robot import DEV_USERS, LOGGER, CUTIEPII_PTB
-from Cutiepii_Robot import pgram
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot import DEV_USERS, LOGGER, CUTIEPII_PTB
+from ShirokoRobot import pgram
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 
 Cutiepii_PYRO_Eval = filters.command(["eval", "e"])
 namespaces = {}
@@ -121,7 +121,7 @@ async def do(func, bot, update):
     os.chdir(os.getcwd())
     with open(
             os.path.join(os.getcwd(),
-                         "Cutiepii_Robot/modules/helper_funcs/temp.txt"),
+                         "ShirokoRobot/modules/helper_funcs/temp.txt"),
             "w",
     ) as temp:
         temp.write(body)

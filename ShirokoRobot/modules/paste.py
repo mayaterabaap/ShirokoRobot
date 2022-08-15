@@ -38,9 +38,9 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from Cutiepii_Robot import pgram, aiohttpsession
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot.utils.pastebin import paste
+from ShirokoRobot import pgram, aiohttpsession
+from ShirokoRobot.utils.errors import capture_err
+from ShirokoRobot.utils.pastebin import paste
 
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 Cutiepii_PYRO_Paste = filters.command("paste")

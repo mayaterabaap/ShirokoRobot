@@ -30,9 +30,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 import html
-import Cutiepii_Robot.modules.sql.blacklistusers_sql as sql
+import ShirokoRobot.modules.sql.blacklistusers_sql as sql
 
-from Cutiepii_Robot import (
+from ShirokoRobot import (
     DEV_USERS,
     OWNER_ID,
     SUDO_USERS,
@@ -41,12 +41,12 @@ from Cutiepii_Robot import (
     WHITELIST_USERS,
     CUTIEPII_PTB,
 )
-from Cutiepii_Robot.modules.helper_funcs.chat_status import dev_plus
-from Cutiepii_Robot.modules.helper_funcs.extraction import (
+from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
+from ShirokoRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from Cutiepii_Robot.modules.log_channel import gloggable
+from ShirokoRobot.modules.log_channel import gloggable
 from telegram import Update
 from telegram.error import BadRequest
 from telegram.constants import ParseMode

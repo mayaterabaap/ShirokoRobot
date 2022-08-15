@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import Column, String
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Cutiepii_Robot.modules.sql import BASE, SESSION # import your file name
+from ShirokoRobot.modules.sql import BASE, SESSION # import your file name
 
 class VanitasUser(BASE):
     __tablename__ = "vanitasuser"

@@ -29,7 +29,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 import secureme
-from Cutiepii_Robot.events import register
+from ShirokoRobot.events import register
 
 
 @register(pattern="^/encrypt ?(.*)")
