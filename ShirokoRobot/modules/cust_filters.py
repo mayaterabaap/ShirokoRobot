@@ -6,7 +6,7 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.error import BadRequest
 from telegram.constants import MessageLimit, ParseMode
 from telegram.ext import (
-    filters as PTB_Cutiepii_Filters,
+    filters as PTB_Shikoro_Filters,
     CallbackContext,
     CallbackQueryHandler,
     MessageHandler,
@@ -587,7 +587,7 @@ SHIROKO_PTB.add_handler(DisableAbleCommandHandler("stop", stop_filter))
 SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler(["removeallfilters", "stopall"],
                               rmall_filters,
-                              filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                              filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                               block=False))
 SHIROKO_PTB.add_handler(
     CallbackQueryHandler(rmall_callback, pattern=r"filters_.*", block=False))
@@ -597,8 +597,8 @@ SHIROKO_PTB.add_handler(
                               admin_ok=True,
                               block=False))
 SHIROKO_PTB.add_handler(
-    MessageHandler(PTB_Cutiepii_Filters.TEXT
-                   & ~PTB_Cutiepii_Filters.UpdateType.EDITED_MESSAGE,
+    MessageHandler(PTB_Shikoro_Filters.TEXT
+                   & ~PTB_Shikoro_Filters.UpdateType.EDITED_MESSAGE,
                    reply_filter,
                    block=False))
 

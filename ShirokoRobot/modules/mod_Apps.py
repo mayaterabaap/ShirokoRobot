@@ -11,11 +11,11 @@ from ShirokoRobot.utils.pluginhelpers import admins_only
 from ShirokoRobot.utils.progress import progress
 from ShirokoRobot import pgram
 
-Cutiepii_PYRO_Mod = filters.command("mod")
+Shikoro_PYRO_Mod = filters.command("mod")
 
 
-@pgram.on_message(Cutiepii_PYRO_Mod & ~filters.bot)
-@pgram.on_edited_message(Cutiepii_PYRO_Mod)
+@pgram.on_message(Shikoro_PYRO_Mod & ~filters.bot)
+@pgram.on_edited_message(Shikoro_PYRO_Mod)
 @admins_only
 async def mudapk(client, message):
     pablo = await client.send_message(message.chat.id,

@@ -9,11 +9,11 @@ from telegram.ext import filters, CallbackContext
 from telegram.error import BadRequest
 from ShirokoRobot.modules.sql import afk_sql as sql
 from ShirokoRobot.modules.users import get_user_id
-from ShirokoRobot.modules.helper_funcs.decorators import cutiepii_cmd, cutiepii_msg
+from ShirokoRobot.modules.helper_funcs.decorators import shikoro_cmd, shikoro_msg
 
 
-@cutiepii_msg(filters.Regex("(?i)^brb"), friendly="afk", group=3)
-@cutiepii_cmd(command="afk", group=3)
+@shikoro_msg(filters.Regex("(?i)^brb"), friendly="afk", group=3)
+@shikoro_cmd(command="afk", group=3)
 async def afk(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
     args = update.effective_message.text.split(" " or None, 1)
@@ -39,7 +39,7 @@ async def afk(update: Update, context: CallbackContext) -> None:
         await update.effective_message.reply_text(f"{fname} is now away!{notice}")
 
 
-@cutiepii_msg((filters.ALL & filters.ChatType.GROUPS), friendly="afk", group=1)
+@shikoro_msg((filters.ALL & filters.ChatType.GROUPS), friendly="afk", group=1)
 async def no_longer_afk(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
     message = update.effective_message
@@ -70,7 +70,7 @@ async def no_longer_afk(update: Update, context: CallbackContext) -> None:
             return
 
 
-@cutiepii_msg(
+@shikoro_msg(
     (
         filters.Entity(MessageEntity.MENTION)
         | filters.Entity(MessageEntity.TEXT_MENTION) & filters.ChatType.GROUPS

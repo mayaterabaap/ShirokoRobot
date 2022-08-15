@@ -43,7 +43,7 @@ from ShirokoRobot.modules.sql.users_sql import get_user_num_chats
 from ShirokoRobot.modules.sql.clear_cmd_sql import get_clearcmd
 from ShirokoRobot.modules.helper_funcs.extraction import extract_user
 
-Cutiepii_PYRO_Whois = filters.command("whois")
+Shikoro_PYRO_Whois = filters.command("whois")
 
 
 # whois
@@ -88,8 +88,8 @@ def FullName(user: User):
             if user.last_name else user.first_name)
 
 
-@pgram.on_message(Cutiepii_PYRO_Whois)
-@pgram.on_edited_message(Cutiepii_PYRO_Whois)
+@pgram.on_message(Shikoro_PYRO_Whois)
+@pgram.on_edited_message(Shikoro_PYRO_Whois)
 async def whois(client, message):
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:

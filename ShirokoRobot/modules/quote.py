@@ -7,7 +7,7 @@ from pyrogram.types import Message
 from ShirokoRobot.utils.errors import capture_err
 from ShirokoRobot import arq, pgram, LOGGER
 
-Cutiepii_PYRO_Q = filters.command(["quote", "q"])
+Shikoro_PYRO_Q = filters.command(["quote", "q"])
 
 
 async def quotify(messages: list):
@@ -34,8 +34,8 @@ def isArgInt(message: Message) -> list:
         return [False, 0]
 
 
-@pgram.on_message(Cutiepii_PYRO_Q & ~filters.forwarded & ~filters.bot)
-@pgram.on_edited_message(Cutiepii_PYRO_Q)
+@pgram.on_message(Shikoro_PYRO_Q & ~filters.forwarded & ~filters.bot)
+@pgram.on_edited_message(Shikoro_PYRO_Q)
 @capture_err
 async def quote(client, message: Message):
     await message.delete()

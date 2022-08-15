@@ -19,7 +19,7 @@ from ShirokoRobot import DEV_USERS, LOGGER, SHIROKO_PTB
 from ShirokoRobot import pgram
 from ShirokoRobot.modules.helper_funcs.chat_status import dev_plus
 
-Cutiepii_PYRO_Eval = filters.command(["eval", "e"])
+Shikoro_PYRO_Eval = filters.command(["eval", "e"])
 namespaces = {}
 
 
@@ -124,9 +124,9 @@ async def do(func, bot, update):
             return result
 
 
-@pgram.on_message(Cutiepii_PYRO_Eval & filters.user(DEV_USERS) &
+@pgram.on_message(Shikoro_PYRO_Eval & filters.user(DEV_USERS) &
                   (~filters.forwarded) & (~filters.via_bot))
-@pgram.on_edited_message(Cutiepii_PYRO_Eval)
+@pgram.on_edited_message(Shikoro_PYRO_Eval)
 async def executor(client, message):
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]

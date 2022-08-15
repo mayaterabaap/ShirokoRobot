@@ -758,7 +758,7 @@ async def remove_fvrtsticker(update: Update, context: CallbackContext) -> None:
             parse_mode=ParseMode.HTML)
 
 
-Credit = "Yūki • Black Knights Union"
+Credit = "Shikoro Robot Devs • Out Of World Network"
 
 
 @Shiroko(pattern="^/mmf ?(.*)")

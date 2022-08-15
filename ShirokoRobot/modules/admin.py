@@ -11,7 +11,7 @@ from typing import Optional
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import BadRequest
 from telegram.constants import ParseMode, ChatType
-from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, filters as PTB_Cutiepii_Filters
+from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, filters as PTB_Shikoro_Filters
 from telegram.helpers import mention_html
 from telethon import events
 from telethon.tl import functions, types
@@ -41,7 +41,7 @@ from ShirokoRobot.modules.helper_funcs.extraction import (
     extract_user_and_text,
 )
 from ShirokoRobot.modules.log_channel import loggable
-from ShirokoRobot.events import register as CUTIEPII
+from ShirokoRobot.events import register as Shikoro
 
 ENUM_FUNC_MAP = {
     'Types.TEXT': SHIROKO_PTB.bot.send_message,
@@ -100,7 +100,7 @@ async def can_ban_users(message):
         p, types.ChannelParticipantAdmin) and p.admin_rights.ban_users)
 
 
-@CUTIEPII(pattern=("/reload"))
+@Shikoro(pattern=("/reload"))
 async def reload(event):
     text = "✅ **bot restarted successfully**\n\n• Admin list has been **updated**"
     await telethn.send_message(event.chat_id, text)
@@ -1715,60 +1715,60 @@ async def unpinallbtn(update: Update, context: CallbackContext) -> None:
 SHIROKO_PTB.add_handler(
     CommandHandler("setdesc",
                    set_desc,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("setsticker",
                    set_sticker,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("setgpic",
                    setchatpic,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("delgpic",
                    rmchatpic,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("setgtitle",
                    setchat_title,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 
 SHIROKO_PTB.add_handler(
     CommandHandler("pin",
                    pin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("unpin",
                    unpin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("unpinall",
                    unpinall,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("permapin",
                    permapin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("cleanlinked",
                    permanent_pin_set,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 SHIROKO_PTB.add_handler(
     CallbackQueryHandler(unpinallbtn, pattern=r"unpinallbtn_", block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("pinned",
                    pinned,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 
 SHIROKO_PTB.add_handler(
@@ -1797,7 +1797,7 @@ SHIROKO_PTB.add_handler(CommandHandler("title", set_title, block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("admincache",
                    refresh_admin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                    block=False))
 
 __help__ = """

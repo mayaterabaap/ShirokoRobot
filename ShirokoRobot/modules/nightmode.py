@@ -105,7 +105,7 @@ async def job_close():
         try:
             await telethn.send_message(
                 int(pro.chat_id),
-                "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By Yūki Network**"
+                "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By Out Of World Network**"
             )
             await telethn(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -128,7 +128,7 @@ async def job_open():
         try:
             await telethn.send_message(
                 int(pro.chat_id),
-                "06:00 Am, Group Is Opening.\n**Powered By Yūki Network**")
+                "06:00 Am, Group Is Opening.\n**Powered By Out Of World Network**")
             await telethn(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(pro.chat_id), banned_rights=openhehe))

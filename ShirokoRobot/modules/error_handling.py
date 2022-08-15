@@ -71,11 +71,11 @@ async def error_callback(update: Update, context: CallbackContext) -> None:
     paste_url = upload_text(pretty_message)
 
     if not paste_url:
-        with open("Cutiepii_error.txt", "w+") as f:
+        with open("Shikoro_error.txt", "w+") as f:
             f.write(pretty_message)
         await context.bot.send_document(
             OWNER_ID,
-            open("Cutiepii_error.txt", "rb"),
+            open("Shikoro_error.txt", "rb"),
             caption=
             f"#{context.error.identifier}\n<b>Your sugar mommy got an error for you, you cute guy:</b>\n<code>{e}</code>",
             parse_mode=ParseMode.HTML,
@@ -103,11 +103,11 @@ async def list_errors(update: Update,
 
     msg += f"{len(errors)} have occurred since startup."
     if len(msg) > 4096:
-        with open("Cutiepii_errors_msg.txt", "w+") as f:
+        with open("Shikoro_errors_msg.txt", "w+") as f:
             f.write(msg)
         await context.bot.send_document(
             update.effective_chat.id,
-            open("Cutiepii_errors_msg.txt", "rb"),
+            open("Shikoro_errors_msg.txt", "rb"),
             caption='Too many errors have occured..',
             parse_mode=ParseMode.HTML,
         )

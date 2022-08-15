@@ -6,7 +6,7 @@ import asyncio
 import telegram
 import ShirokoRobot.modules.fun_strings as fun_strings
 
-from pyrogram import filters as cutiepii_pyro
+from pyrogram import filters as shikoro_pyro
 from ShirokoRobot import SUPPORT_USERS, SUDO_USERS, pgram, SHIROKO_PTB
 from ShirokoRobot.modules.helper_funcs.chat_status import is_user_admin
 
@@ -120,7 +120,7 @@ earth_ani = [
 ]
 
 
-@pgram.on_message(cutiepii_pyro.command("meme", "meme@ShirokoRobot"))
+@pgram.on_message(shikoro_pyro.command("meme", "meme@ShirokoRobot"))
 async def meme(_, message):
     r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
     pic = r['image']
@@ -129,7 +129,7 @@ async def meme(_, message):
 
 
 @pgram.on_message(
-    cutiepii_pyro.command("hentaimeme", "hmeme", "hmeme@ShirokoRobot"))
+    shikoro_pyro.command("hentaimeme", "hmeme", "hmeme@ShirokoRobot"))
 async def hmeme(_, message):
     r = requests.get(
         'https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()
@@ -169,7 +169,7 @@ async def slap(update: Update, context: CallbackContext) -> None:
     user_id = extract_user(message, args)
 
     if user_id == bot.id:
-        temp = random.choice(fun_strings.SLAP_CUTIEPII_TEMPLATES)
+        temp = random.choice(fun_strings.SLAP_TEMPLATES)
 
         if isinstance(temp, list):
             if temp[2] == "tmute":

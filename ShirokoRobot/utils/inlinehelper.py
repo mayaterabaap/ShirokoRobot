@@ -79,14 +79,14 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Shiroko 💜](https://github.com/Awesome-RJ/CutiepiiRobot):**
+**[Shiroko 💜](https://github.com/Awesome-RJ/ShikoroRobot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `3.9`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](https://telegram.dog/ShirokoRobot) | [UBOT](https://telegram.dog/Awesome_Cutiepii)
+**Profiles:** [BOT](https://telegram.dog/ShirokoRobot) | [UBOT](https://telegram.dog/Awesome_Shikoro)
 """
     answers.append(
         InlineQueryResultArticle(

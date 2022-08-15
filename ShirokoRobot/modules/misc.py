@@ -20,7 +20,7 @@ from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, __version__ as ptbver
 from telegram.constants import ParseMode, ChatAction
 from telegram.error import BadRequest
-from telegram.ext import filters as PTB_Cutiepii_Filters, CommandHandler, CallbackQueryHandler, CallbackContext
+from telegram.ext import filters as PTB_Shikoro_Filters, CommandHandler, CallbackQueryHandler, CallbackContext
 from platform import python_version
 from telethon import version as tlthn
 from pyrogram import filters
@@ -261,7 +261,7 @@ async def src(update: Update) -> None:
                 [
                     InlineKeyboardButton(
                         text="[► Click Here ◄]",
-                        url="https://github.com/Awesome-RJ/CutiepiiRobot",
+                        url="https://github.com/Awesome-RJ/ShikoroRobot",
                     ),
                 ],
             ],
@@ -542,21 +542,21 @@ Bass Boosting
 SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("echo",
                               echo,
-                              filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                              filters=PTB_Shikoro_Filters.ChatType.GROUPS,
                               block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("markdownhelp", markdown_help, block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("gdpr",
                    gdpr,
-                   filters=PTB_Cutiepii_Filters.ChatType.PRIVATE,
+                   filters=PTB_Shikoro_Filters.ChatType.PRIVATE,
                    block=False))
 SHIROKO_PTB.add_handler(
     CallbackQueryHandler(mkdown_btn, pattern=r"mkhelp_", block=False))
 SHIROKO_PTB.add_handler(
     CommandHandler("source",
                    src,
-                   filters=PTB_Cutiepii_Filters.ChatType.PRIVATE,
+                   filters=PTB_Shikoro_Filters.ChatType.PRIVATE,
                    block=False))
 SHIROKO_PTB.add_handler(
     DisableAbleCommandHandler("rmeme", rmemes, block=False))

@@ -4,7 +4,7 @@ from ShirokoRobot.events import register
 from telethon import *
 import dateparser
 
-db = mongodb["Cutiepii_Robot_alarm"]
+db = mongodb["Shikoro_Robot_alarm"]
 alarms = db.alarm
 approved_users = db.approve
 

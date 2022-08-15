@@ -10,7 +10,7 @@ from typing import Optional
 from telethon import *
 from telethon.tl import types, functions
 
-db = mongodb["Cutiepii_Robot_Barcode"]
+db = mongodb["Shikoro_Robot_Barcode"]
 approved_users = db.approve
 
 

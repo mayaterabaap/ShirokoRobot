@@ -30,7 +30,7 @@ def get_user_list(__init__, key):
 
 
 # enable logging
-FORMAT = "[CUTIEPII ROBOT] %(message)s"
+FORMAT = "[Shikoro ROBOT] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"),
               logging.StreamHandler()],
@@ -273,44 +273,44 @@ REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 try:
     REDIS.ping()
     LOGGER.info(
-        "[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • Redis Database"
+        "[Shikoro]: Connecting To Out Of World Network • Data Center • Mumbai • Redis Database"
     )
 
 except BaseException:
     raise Exception(
-        "[CUTIEPII ERROR]: Your Yūki • Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again."
+        "[Shikoro Error]: Your Out Of World Network • Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again."
     )
 
 finally:
     REDIS.ping()
     LOGGER.info(
-        "[CUTIEPII]: Connection To The Yūki • Data Center • Mumbai • Redis Database Established Successfully!"
+        "[Shikoro]: Connection To The Out Of World Network • Data Center • Mumbai • Redis Database Established Successfully!"
     )
 
 # Credits Logger
 LOGGER.debug(
-    "[CUTIEPII] CUTIEPII Is Starting. | Yūki • Black Knights Union Project | Licensed Under GPLv3."
+    "[Shikoro] Shikoro Is Starting. | Out Of World Network • Black Knights Union Project | Licensed Under GPLv3."
 )
 LOGGER.debug(
-    "[CUTIEPII] Cutie Cutie! Successfully Connected With A  Yūki • Data Center • Mumbai"
+    "[Shikoro] Successfully Connected With A  Out Of World Network • Data Center • Mumbai"
 )
 LOGGER.debug(
-    "[CUTIEPII] Project Maintained By: github.com/Awesome-RJ (https://telegram.dog/Awesome_Rj)"
+    "[Shikoro] Project Maintained By: github.com/Awesome-RJ (https://telegram.dog/Awesome_Rj)"
 )
 
-LOGGER.debug("[CUTIEPII]: Telegraph Installing")
+LOGGER.debug("[Shikoro]: Telegraph Installing")
 telegraph = Telegraph()
-LOGGER.debug("[CUTIEPII]: Telegraph Account Creating")
+LOGGER.debug("[Shikoro]: Telegraph Account Creating")
 telegraph.create_account(short_name="Shiroko")
 #------------------------------------------------------------------
-LOGGER.debug("[CUTIEPII]: TELETHON CLIENT STARTING")
+LOGGER.debug("[Shikoro]: TELETHON CLIENT STARTING")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 
 SHIROKO_PTB = (tg.Application.builder().token(TOKEN).build())
 
 # asyncio.get_event_loop().run_until_complete(SHIROKO_PTB.bot.initialize())
 #------------------------------------------------------------------
-LOGGER.debug("[CUTIEPII]: PYROGRAM CLIENT STARTING")
+LOGGER.debug("[Shikoro]: PYROGRAM CLIENT STARTING")
 name = TOKEN.split(":")[0]
 pgram = Client(
     name,
@@ -322,7 +322,7 @@ pgram = Client(
     in_memory=True,
 )
 LOGGER.debug(
-    "[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • MongoDB Database")
+    "[Shikoro]: Connecting To Out Of World Network • Data Center • Mumbai • MongoDB Database")
 mongodb = MongoClient(MONGO_DB_URL, 27017)[MONGO_DB]
 motor = AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
@@ -334,11 +334,11 @@ LOGGER.debug("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://arq.hamker.in", "ERUOGT-KHSTDT-RUYZKQ-FZNSHO-ARQ",
           aiohttpsession)
 LOGGER.debug(
-    "[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • PostgreSQL Database"
+    "[Shikoro]: Connecting To Out Of World Network • Data Center • Mumbai • PostgreSQL Database"
 )
 ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 LOGGER.debug(
-    "[CUTIEPII]: Connecting To Yūki • Shiroko Userbot (https://telegram.dog/Awesome_Cutiepii)"
+    "[Shikoro]: Connecting To Out Of World Network • Shiroko Userbot (https://telegram.dog/ShikoroAssistant)"
 )
 timeout = Timeout(40)
 http = AsyncClient(http2=True, timeout=timeout)

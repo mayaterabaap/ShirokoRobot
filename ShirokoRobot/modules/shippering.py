@@ -21,11 +21,11 @@ def dt_tom():
 
 today = str(dt()[0])
 tomorrow = str(dt_tom())
-Cutiepii_PYRO_Couples = filters.command("couples")
+Shikoro_PYRO_Couples = filters.command("couples")
 
 
-@pgram.on_message(Cutiepii_PYRO_Couples)
-@pgram.on_edited_message(Cutiepii_PYRO_Couples)
+@pgram.on_message(Shikoro_PYRO_Couples)
+@pgram.on_edited_message(Shikoro_PYRO_Couples)
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":

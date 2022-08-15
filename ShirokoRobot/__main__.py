@@ -358,21 +358,21 @@ async def help_button(update: Update, context: CallbackContext) -> None:
         # await query.message.delete()
 
 
-async def cutiepii_callback_data(update: Update,
+async def shikoro_callback_data(update: Update,
                                  context: CallbackContext) -> None:
     query = update.callback_query
     uptime = get_readable_time((time.time() - StartTime))
-    if query.data == "cutiepii_":
+    if query.data == "shikoro_":
         await query.message.edit_text(
             text="""CallBackQueriesData Here""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(text="[► Back ◄]",
-                                     callback_data="cutiepii_back")
+                                     callback_data="shikoro_back")
             ]]),
         )
-    elif query.data == "cutiepii_back":
+    elif query.data == "shikoro_back":
         first_name = update.effective_user.first_name
         await query.message.edit_text(
             PM_START_TEXT.format(escape_markdown(context.bot.first_name),
@@ -646,8 +646,8 @@ def main():
         CallbackQueryHandler(settings_button, pattern=r"stngs_", block=False))
 
     SHIROKO_PTB.add_handler(
-        CallbackQueryHandler(cutiepii_callback_data,
-                             pattern=r"cutiepii_",
+        CallbackQueryHandler(shikoro_callback_data,
+                             pattern=r"shikoro_",
                              block=False))
     SHIROKO_PTB.add_handler(DisableAbleCommandHandler("donate", donate))
     SHIROKO_PTB.add_handler(

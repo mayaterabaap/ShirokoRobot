@@ -8,7 +8,7 @@ Shiroko Robot Music : Help Menu
 │2.Turn on voice chat.
 │3.Run /play [song name] in your chat.
 │4.If userbot joins the chat, enjoy music.
-│ If not, add @CutiepiiHelper manually.
+│ If not, add @ShikoroHelper manually.
 ╘══════════════════
 ╒════「 Music Player 」
 ├ /play - Song Name : Plays Via Youtube.

@@ -41,11 +41,11 @@ async def _(event):
         url = "https://thispersondoesnotexist.com/image"
         response = requests.get(url)
         if response.status_code == 200:
-            with open("FRIDAYOT.jpg", "wb") as f:
+            with open("shikoro_picgen.jpg", "wb") as f:
                 f.write(response.content)
 
         captin = f"Fake Image powered by @{SUPPORT_CHAT}."
-        fole = "FRIDAYOT.jpg"
+        fole = "shikoro_picgen.jpg"
         await telethn.send_file(event.chat_id, fole, caption=captin)
         await event.delete()
-        os.system("rm ./cutiepii_picgen.jpg ")
+        os.system("rm ./shikoro_picgen.jpg ")

@@ -4,11 +4,11 @@ from pyrogram.errors import RPCError
 from ShirokoRobot import pgram
 from ShirokoRobot.utils.pluginhelpers import admins_only, get_text
 
-Cutiepii_PYRO_Captedit = filters.command("captedit")
+Shikoro_PYRO_Captedit = filters.command("captedit")
 
 
-@pgram.on_message(Cutiepii_PYRO_Captedit & ~filters.bot & ~filters.private)
-@pgram.on_edited_message(Cutiepii_PYRO_Captedit)
+@pgram.on_message(Shikoro_PYRO_Captedit & ~filters.bot & ~filters.private)
+@pgram.on_edited_message(Shikoro_PYRO_Captedit)
 @admins_only
 async def loltime(message):
     lol = await message.reply("Processing please wait")

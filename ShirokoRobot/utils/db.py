@@ -12,13 +12,13 @@ LOGGER.debug("Connecting to Database ...")
 _MGCLIENT: AgnosticClient = AsyncIOMotorClient(DB_URL)
 _RUN = asyncio.get_event_loop().run_until_complete
 
-if "CutiepiiRobot" in _RUN(_MGCLIENT.list_database_names()):
-    LOGGER.debug("[CUTIEPII] Anime  Database Found :) => Now Logging to it...")
+if "ShikoroRobot" in _RUN(_MGCLIENT.list_database_names()):
+    LOGGER.debug("[Shikoro] Anime  Database Found :) => Now Logging to it...")
 else:
     LOGGER.debug(
-        "[CUTIEPII] Anime Database Not Found :( => Creating New Database...")
+        "[Shikoro] Anime Database Not Found :( => Creating New Database...")
 
-_DATABASE: AgnosticDatabase = _MGCLIENT["CutiepiiRobot"]
+_DATABASE: AgnosticDatabase = _MGCLIENT["ShikoroRobot"]
 
 
 def get_collection(name: str) -> AgnosticCollection:

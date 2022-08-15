@@ -8,7 +8,7 @@ from telegram.ext import Application, CallbackQueryHandler, CommandHandler, Inli
 from telegram.ext.filters import BaseFilter
 
 
-class Cutiepii_TG_Handler:
+class Shikoro_TG_Handler:
     def __init__(self, app):
         self.app: Application = app
 
@@ -44,7 +44,7 @@ class Cutiepii_TG_Handler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[CUTIEPII CMD] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[Shikoro CMD] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -67,7 +67,7 @@ class Cutiepii_TG_Handler:
                         )
                     )
                 LOGGER.debug(
-                    f"[CUTIEPII CMD] Loaded handler {command} for function {func.__name__}"
+                    f"[Shikoro CMD] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -92,7 +92,7 @@ class Cutiepii_TG_Handler:
                 else:
                     self.app.add_handler(MessageHandler(pattern, func), group)
                 LOGGER.debug(
-                    f"[CUTIEPII MSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[Shikoro MSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -102,7 +102,7 @@ class Cutiepii_TG_Handler:
                 else:
                     self.app.add_handler(MessageHandler(pattern, func))
                 LOGGER.debug(
-                    f"[CUTIEPII MSG] Loaded filter pattern {pattern} for function {func.__name__}"
+                    f"[Shikoro MSG] Loaded filter pattern {pattern} for function {func.__name__}"
                 )
 
             return func
@@ -113,7 +113,7 @@ class Cutiepii_TG_Handler:
         def _callbackquery(func):
             self.app.add_handler(CallbackQueryHandler(pattern=pattern, callback=func))
             LOGGER.debug(
-                f"[CUTIEPII CALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[Shikoro CALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
@@ -138,7 +138,7 @@ class Cutiepii_TG_Handler:
                 )
             )
             LOGGER.debug(
-                f"[CUTIEPII INLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
+                f"[Shikoro INLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
                 f"USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
             )
             return func
@@ -146,9 +146,9 @@ class Cutiepii_TG_Handler:
         return _inlinequery
 
 
-cutiepii_cmd = Cutiepii_TG_Handler(app).command
-cutiepii_msg = Cutiepii_TG_Handler(app).message
-cutiepii_callback = Cutiepii_TG_Handler(app).callbackquery
-cutiepii_inline = Cutiepii_TG_Handler(app).inlinequery
+shikoro_cmd = Shikoro_TG_Handler(app).command
+shikoro_msg = Shikoro_TG_Handler(app).message
+shikoro_callback = Shikoro_TG_Handler(app).callbackquery
+shikoro_inline = Shikoro_TG_Handler(app).inlinequery
 
 """
