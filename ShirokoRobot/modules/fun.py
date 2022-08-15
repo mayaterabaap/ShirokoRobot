@@ -736,7 +736,7 @@ async def goodmorning(update: Update,
 
 
 
-async def cutiepii(update: Update, context: CallbackContext) -> None:
+async def shiroko(update: Update, context: CallbackContext) -> None:
     reply_text = (update.effective_message.reply_to_message.reply_text
                   if update.effective_message.reply_to_message else
                   update.effective_message.reply_text)
@@ -762,12 +762,12 @@ __help__ = """
 ➛ /meme*:* sends random anime memes
 ➛ /hmeme*:* sends random hentai memes
 ➛ /cuddle*:* cuddle someone by replying to his/her message or get cuddled
-➛ /hug*:* hug someone or get hugged by Cutiepii Robot 愛
+➛ /hug*:* hug someone or get hugged by Shiroko Robot 愛
 ➛ /love*:* Checks Love in your heart weather it's true or fake
 ➛ /kiss*:* Kiss someone or get kissed 
-➛ /flirt*:* Cutiepii Robot 愛 will flirt to the replied person or with you
-➛ /lewd*:* Cutiepii Robot 愛 will act lewd with you or with the replied person
-➛ /romance*:* Cutiepii Robot 愛 will act all romantic with you or replied person
+➛ /flirt*:* Shiroko Robot 愛 will flirt to the replied person or with you
+➛ /lewd*:* Shiroko Robot 愛 will act lewd with you or with the replied person
+➛ /romance*:* Shiroko Robot 愛 will act all romantic with you or replied person
 ➛ /couples*:* To Choose Couple Of The Day
 ➛ /owo*:* OWO de text
 ➛ /stretch*:* STRETCH de text
@@ -818,8 +818,8 @@ CUTIEPII_PTB.add_handler(
                               goodnight,
                               friendly="goodnight"))
 CUTIEPII_PTB.add_handler(
-    DisableAbleMessageHandler(filters.Regex(r"(?i)^cutiepii\?"),
-                              cutiepii,
+    DisableAbleMessageHandler(filters.Regex(r"(?i)^shiroko\?"),
+                              shiroko,
                               friendly="decide"))
                               """
 CUTIEPII_PTB.add_handler(

@@ -123,7 +123,7 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add Cutiepii To Your Group",
+            text="Add Shiroko To Your Group",
             url="https://telegram.dog/ShirokoRobot?startgroup=true")
     ],
     [
@@ -694,7 +694,7 @@ def main():
         CUTIEPII_PTB.run_polling(allowed_updates=Update.ALL_TYPES,
                                  stop_signals=None)
         LOGGER.info(
-            "Cutiepii Robot started, Using long polling. | BOT: [@ShirokoRobot]"
+            "Shiroko Robot started, Using long polling. | BOT: [@ShirokoRobot]"
         )
 
 

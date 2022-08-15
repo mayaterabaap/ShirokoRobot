@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 __mod_name__ = "Music Play"
 
 __help__ = """
-Cutiepii Robot Music : Help Menu
+Shiroko Robot Music : Help Menu
 ╒════「 Setup Guide 」
 │1.Promote bot as admin.
 │ (with Manage Voice Chats rights)

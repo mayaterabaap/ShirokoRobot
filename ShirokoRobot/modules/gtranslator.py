@@ -106,12 +106,12 @@ async def gtts(update: Update, context: CallbackContext) -> None:
             reply = reply.replace(x, "")
     try:
         tts = gTTS(reply)
-        tts.save("Cutiepii.mp3")
-        with open("Cutiepii.mp3", "rb") as speech:
+        tts.save("Shiroko.mp3")
+        with open("Shiroko.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
-        if os.path.isfile("Cutiepii.mp3"):
-            os.remove("Cutiepii.mp3")
+        if os.path.isfile("Shiroko.mp3"):
+            os.remove("Shiroko.mp3")
 
 
 # Open API key

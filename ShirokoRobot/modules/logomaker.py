@@ -1299,7 +1299,7 @@ async def lego(event):
                   fill="black",
                   stroke_width=1,
                   stroke_fill="white")
-        fname = "Cutiepii.png"
+        fname = "Shiroko.png"
         img.save(fname, "png")
         await telethn.send_file(event.chat_id,
                                 file=fname,

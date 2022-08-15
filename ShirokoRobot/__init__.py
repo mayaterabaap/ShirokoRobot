@@ -135,7 +135,7 @@ if ENV:
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     URL = os.environ.get(
         "URL", ""
-    )  # If You Deploy On Heraku. [URL PERTEN:- https://{App Name}.herokuapp.com/ || EXP:- https://yuki-cutiepii-robot.herokuapp.com/]
+    )  # If You Deploy On Heraku. [URL PERTEN:- https://{App Name}.herokuapp.com/ || EXP:- https://yuki-shiroko-robot.herokuapp.com/]
     PORT = int(os.environ.get("PORT", 8443))
     CUSTOM_CMD = os.environ.get("CUSTOM_CMD", False)
     API_ID = os.environ.get(
@@ -188,7 +188,7 @@ if ENV:
     )  # needed for cron_jobs module, use same databasename from SQLALCHEMY_DATABASE_URI
     BACKUP_PASS = os.environ.get(
         "BACKUP_PASS", True)  # The password used for the cron backups zip
-    MONGO_DB = "Cutiepii"
+    MONGO_DB = "Shiroko"
     BOT_API_FILE_URL = "https://api.telegram.org/file/bot"
     BOT_API_URL = "https://api.telegram.org/bot"
     BOT_ID = int(TOKEN.split(":")[0])
@@ -329,7 +329,7 @@ LOGGER.debug(
 LOGGER.debug("[CUTIEPII]: Telegraph Installing")
 telegraph = Telegraph()
 LOGGER.debug("[CUTIEPII]: Telegraph Account Creating")
-telegraph.create_account(short_name="Cutiepii")
+telegraph.create_account(short_name="Shiroko")
 #------------------------------------------------------------------
 LOGGER.debug("[CUTIEPII]: TELETHON CLIENT STARTING")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
@@ -366,7 +366,7 @@ LOGGER.debug(
 )
 ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 LOGGER.debug(
-    "[CUTIEPII]: Connecting To Yūki • Cutiepii Userbot (https://telegram.dog/Awesome_Cutiepii)"
+    "[CUTIEPII]: Connecting To Yūki • Shiroko Userbot (https://telegram.dog/Awesome_Cutiepii)"
 )
 timeout = Timeout(40)
 http = AsyncClient(http2=True, timeout=timeout)

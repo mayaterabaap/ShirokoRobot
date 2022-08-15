@@ -71,11 +71,11 @@ async def user_is_admin(user_id: int, message):
 
 async def cutiepii_is_admin(chat_id: int):
     status = False
-    cutiepii = await telethn.get_me()
+    shiroko = await telethn.get_me()
     async for user in telethn.iter_participants(
         chat_id, filter=ChannelParticipantsAdmins,
     ):
-        if cutiepii.id == user.id:
+        if shiroko.id == user.id:
             status = True
             break
     return status

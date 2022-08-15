@@ -372,7 +372,7 @@ async def export_data(update: Update, context: CallbackContext) -> None:
         current_chat_id,
         document=open("ShirokoRobot{}Backup".format(chat_id), "rb"),
         caption=
-        "*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Cutiepii-Robot-Backup` was specially made for notes."
+        "*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Shiroko-Robot-Backup` was specially made for notes."
         .format(
             chat.title,
             chat_id,

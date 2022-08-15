@@ -24,7 +24,7 @@ async def proboyx(event):
         event.chat_id,
         file=file2,
         caption=
-        f"♡ Hey {betsy}, I'm Cutiepii\n♡ I'm Created By [Black Knights Union](https://t.me/Black_Knights_Union_Support)\n♡ Click The Button Below To Get Your Info",
+        f"♡ Hey {betsy}, I'm Shiroko\n♡ I'm Created By [Black Knights Union](https://t.me/Black_Knights_Union_Support)\n♡ Click The Button Below To Get Your Info",
         buttons=button)
 
     await asyncio.sleep(edit_time)

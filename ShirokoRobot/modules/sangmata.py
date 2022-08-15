@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
 
-from ShirokoRobot.events import register as Cutiepii
+from ShirokoRobot.events import register as Shiroko
 from ShirokoRobot import telethn, ubot
 
 
@@ -65,7 +65,7 @@ async def silently_send_message(conv, text):
     return response
 
 
-@Cutiepii(pattern="^/sg ?(.*)")
+@Shiroko(pattern="^/sg ?(.*)")
 async def _(event):
 
     if event.fwd_from:

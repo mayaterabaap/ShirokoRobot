@@ -16,7 +16,7 @@ from urllib.parse import quote as urlquote
 from bs4 import BeautifulSoup
 
 from ShirokoRobot import REDIS, CUTIEPII_PTB, telethn, LOGGER
-from ShirokoRobot.events import register as Cutiepii
+from ShirokoRobot.events import register as Shiroko
 from ShirokoRobot.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
@@ -542,7 +542,7 @@ async def makepack_internal(context,
             )
         elif e.message == "Peer_id_invalid" or "bot was blocked by the user":
             await msg.reply_text(
-                "Cutiepii Robot 愛 was blocked by you.",
+                "Shiroko Robot 愛 was blocked by you.",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(text="Unblock",
                                          url=f"t.me/{context.bot.username}")
@@ -761,7 +761,7 @@ async def remove_fvrtsticker(update: Update, context: CallbackContext) -> None:
 Credit = "Yūki • Black Knights Union"
 
 
-@Cutiepii(pattern="^/mmf ?(.*)")
+@Shiroko(pattern="^/mmf ?(.*)")
 async def handler(event):
     if event.fwd_from:
         return

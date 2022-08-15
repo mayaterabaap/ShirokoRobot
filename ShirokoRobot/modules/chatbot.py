@@ -96,7 +96,7 @@ async def chatbot_handle_callq(update: Update):
 
 def chatbot_response(query: str) -> str:
     data = requests.get(
-        f"https://www.kukiapi.xyz/api/apikey=5349869477-KUKIhU1ygu8mm0/Cutiepii/@Awesome_RJ/message={query}"
+        f"https://www.kukiapi.xyz/api/apikey=5349869477-KUKIhU1ygu8mm0/Shiroko/@Awesome_RJ/message={query}"
     )
     return data.json()["reply"]
 
@@ -150,7 +150,7 @@ async def list_chatbot_chats(update: Update, context: CallbackContext) -> None:
 
 
 __help__ = """
-Chatbot utilizes the Brainshop's API and allows Cutiepii Robot 愛 to talk and provides a more interactive group chat experience.
+Chatbot utilizes the Brainshop's API and allows Shiroko Robot 愛 to talk and provides a more interactive group chat experience.
 
 *Commands:*
 *Admins only:*

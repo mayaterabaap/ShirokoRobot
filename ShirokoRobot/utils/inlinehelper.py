@@ -109,7 +109,7 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Cutiepii 💜](https://github.com/Awesome-RJ/CutiepiiRobot):**
+**[Shiroko 💜](https://github.com/Awesome-RJ/CutiepiiRobot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `3.9`

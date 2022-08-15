@@ -48,12 +48,12 @@ async def _(event):
 
     is_admin = False
     try:
-        cutiepii = await telethn(
+        shiroko = await telethn(
             GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if (isinstance(cutiepii.participant, (
+        if (isinstance(shiroko.participant, (
                 ChannelParticipantAdmin,
                 ChannelParticipantCreator,
         ))):
@@ -97,12 +97,12 @@ async def _(event):
 
     is_admin = False
     try:
-        cutiepii = await telethn(
+        shiroko = await telethn(
             GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if (isinstance(cutiepii.participant, (
+        if (isinstance(shiroko.participant, (
                 ChannelParticipantAdmin,
                 ChannelParticipantCreator,
         ))):

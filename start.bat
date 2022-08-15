@@ -1,4 +1,4 @@
 @echo off
-TITLE Cutiepii Robot
-:: Enables virtual env mode and then starts Cutiepii
+TITLE Shiroko Robot
+:: Enables virtual env mode and then starts Shiroko
 env\scripts\activate.bat && py -m ShirokoRobot

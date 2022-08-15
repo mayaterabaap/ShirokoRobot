@@ -44,9 +44,9 @@ async def ud(update: Update, context: CallbackContext) -> None:
     if not text:
         await msg.reply_text("Please enter keywords to search on ud!")
         return
-    if text == "Cutiepii":
+    if text == "Shiroko":
         await msg.reply_text(
-            "Cutiepii is my owner so if you search him on urban dictionary you can't find the meaning because he is my husband and only me who know what's the meaning of!"
+            "Shiroko is my owner so if you search him on urban dictionary you can't find the meaning because he is my husband and only me who know what's the meaning of!"
         )
         return
     try:
