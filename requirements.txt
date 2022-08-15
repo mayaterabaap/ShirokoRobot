@@ -39,7 +39,7 @@ PyDictionary==2.0.1
 markdown2==2.4.3
 cowpy==1.1.5
 secureme==0.0.4
-git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
+git+https://github.com/outofworldnetwork/GoGoAnimeAPI.git
 pydub==0.25.1
 bs4==0.0.1
 multicolorcaptcha==1.2.0

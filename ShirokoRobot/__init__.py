@@ -295,7 +295,7 @@ LOGGER.debug(
     "[Shikoro] Successfully Connected With A  Out Of World Network • Data Center • Mumbai"
 )
 LOGGER.debug(
-    "[Shikoro] Project Maintained By: github.com/Awesome-RJ (https://telegram.dog/Awesome_Rj)"
+    "[Shikoro] Project Maintained By: github.com/outofworldnetwork (https://telegram.dog/Outofworldowner)"
 )
 
 LOGGER.debug("[Shikoro]: Telegraph Installing")

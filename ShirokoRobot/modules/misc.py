@@ -261,7 +261,7 @@ async def src(update: Update) -> None:
                 [
                     InlineKeyboardButton(
                         text="[► Click Here ◄]",
-                        url="https://github.com/Awesome-RJ/ShikoroRobot",
+                        url="https://github.com/outofworldnetwork/ShikoroRobot",
                     ),
                 ],
             ],

@@ -83,7 +83,7 @@ async def stats(update: Update):
             status + "\n*╔═━「 Bot statistics*: 」\n" +
             "\n".join([mod.__stats__() for mod in STATS]) +
             "\n\n✦ [Support](https://telegram.dog/{SUPPORT_CHAT}) | ✦ [Updates](https://telegram.dog/ShirokoRobotUpdates)\n\n"
-            + "╘═━「 by [Awesome-RJ](https://github.com/Awesome-RJ) 」\n",
+            + "╘═━「 by [outofworldnetwork](https://github.com/outofworldnetwork) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
             disable_web_page_preview=True,
@@ -93,7 +93,7 @@ async def stats(update: Update):
             ((("\n*╔═━「 Bot statistics*: 」\n" + "\n".join(mod.__stats__()
                                                           for mod in STATS)) +
               "\n\n✦ [Support](https://telegram.dog/{SUPPORT_CHAT}) | ✦ [Updates](https://telegram.dog/ShirokoRobotUpdates)\n\n"
-              ) + "╘═━「 by [Awesome-RJ](https://github.com/Awesome-RJ) 」\n"),
+              ) + "╘═━「 by [outofworldnetwork](https://github.com/outofworldnetwork) 」\n"),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
             disable_web_page_preview=True,

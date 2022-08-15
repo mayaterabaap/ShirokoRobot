@@ -79,7 +79,7 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Shiroko 💜](https://github.com/Awesome-RJ/ShikoroRobot):**
+**[Shiroko 💜](https://github.com/outofworldnetwork/ShikoroRobot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `3.9`
