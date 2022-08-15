@@ -242,8 +242,7 @@ async def unrestr_members(bot,
             )
 
 
-async def locktypes(update: Update,
-                    context: CallbackContext) -> None:
+async def locktypes(update: Update, context: CallbackContext) -> None:
     await update.effective_message.reply_text(
         "\n ➛ ".join(["Locks available: "] +
                      sorted(list(LOCK_TYPES) + list(LOCK_CHAT_RESTRICTION))))
@@ -505,8 +504,7 @@ async def build_lock_message(chat_id):
 
 @connection_status
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
-async def list_locks(update: Update,
-                     context: CallbackContext) -> None:
+async def list_locks(update: Update, context: CallbackContext) -> None:
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user
 
@@ -529,9 +527,7 @@ async def list_locks(update: Update,
     if conn:
         res = res.replace("Locks in", f"*{chat_name}*")
 
-    send_message(update.effective_message,
-                 res,
-                 parse_mode=ParseMode.MARKDOWN)
+    send_message(update.effective_message, res, parse_mode=ParseMode.MARKDOWN)
 
 
 def get_permission_list(current, new):
@@ -592,13 +588,15 @@ Locking bots will stop non-admins from adding bots to the chat.
 
 __mod_name__ = "Locks"
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("locktypes", locktypes, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("lock",
-                                        lock, block=False))  # , filters=Filters.group)
-CUTIEPII_PTB.add_handler(CommandHandler("unlock",
-                                        unlock, block=False))  # , filters=Filters.group)
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("locktypes", locktypes, block=False))
+CUTIEPII_PTB.add_handler(CommandHandler(
+    "lock", lock, block=False))  # , filters=Filters.group)
+CUTIEPII_PTB.add_handler(CommandHandler(
+    "unlock", unlock, block=False))  # , filters=Filters.group)
 CUTIEPII_PTB.add_handler(CommandHandler(
     "locks", list_locks, block=False))  # , filters=Filters.group)
 CUTIEPII_PTB.add_handler(
-    MessageHandler(filters.ALL & filters.ChatType.GROUPS, del_lockables, block=False),
-    PERM_GROUP)
+    MessageHandler(filters.ALL & filters.ChatType.GROUPS,
+                   del_lockables,
+                   block=False), PERM_GROUP)

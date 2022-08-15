@@ -117,8 +117,7 @@ async def neko(update: Update, context: CallbackContext):
         return
     try:
         if flag == "-i":
-            await message.reply_photo(photo=img,
-                                      parse_mode=ParseMode.MARKDOWN)
+            await message.reply_photo(photo=img, parse_mode=ParseMode.MARKDOWN)
         elif flag == "-d":
             await message.reply_document(document=img,
                                          parse_mode=ParseMode.MARKDOWN)
@@ -129,8 +128,7 @@ async def neko(update: Update, context: CallbackContext):
             await message.reply_sticker(sticker=open(stkr, "rb"))
             os.remove("sticker.webp")
         elif flag == "-v":
-            await message.reply_video(video=img,
-                                      parse_mode=ParseMode.MARKDOWN)
+            await message.reply_video(video=img, parse_mode=ParseMode.MARKDOWN)
         else:
             await message.reply_text("Put flags correctly!!!")
     except Exception as excp:

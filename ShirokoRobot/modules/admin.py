@@ -166,8 +166,7 @@ async def get_users(show):
 @connection_status
 @bot_admin_check(AdminPerms.CAN_CHANGE_INFO)
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
-async def set_sticker(update: Update,
-                      context: CallbackContext) -> str:
+async def set_sticker(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     chat = update.effective_chat
     msg = update.effective_message
@@ -211,8 +210,7 @@ async def set_sticker(update: Update,
 @connection_status
 @bot_admin_check(AdminPerms.CAN_CHANGE_INFO)
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
-async def setchatpic(update: Update,
-                     context: CallbackContext) -> str:
+async def setchatpic(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     chat = update.effective_chat
     msg = update.effective_message
@@ -329,8 +327,7 @@ async def set_desc(update: Update, context: CallbackContext) -> str:
 @connection_status
 @bot_admin_check(AdminPerms.CAN_CHANGE_INFO)
 @user_admin_check(AdminPerms.CAN_CHANGE_INFO)
-async def setchat_title(update: Update,
-                        context: CallbackContext) -> str:
+async def setchat_title(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     chat = update.effective_chat
     msg = update.effective_message
@@ -425,8 +422,7 @@ async def promote_button(update: Update,
 
 @loggable
 @user_admin
-async def refresh_admin(update: Update,
-                        context: CallbackContext) -> None:
+async def refresh_admin(update: Update, context: CallbackContext) -> None:
     with contextlib.suppress(KeyError):
         ADMIN_CACHE.pop(update.effective_chat.id)
     await update.effective_message.reply_text("Admins cache refreshed!")
@@ -950,8 +946,7 @@ async def fullpromote(update: Update,
 @bot_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @user_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @loggable
-async def middemote(update: Update,
-                    context: CallbackContext) -> Optional[str]:
+async def middemote(update: Update, context: CallbackContext) -> Optional[str]:
     bot = context.bot
     args = context.args
 
@@ -1031,8 +1026,7 @@ async def middemote(update: Update,
 @bot_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @user_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @loggable
-async def demote(update: Update,
-                 context: CallbackContext) -> Optional[str]:
+async def demote(update: Update, context: CallbackContext) -> Optional[str]:
     bot = context.bot
     args = context.args
 
@@ -1209,8 +1203,7 @@ async def demoteanon(update: Update,
 
 
 @user_admin
-async def refresh_admin(update: Update,
-                        context: CallbackContext) -> None:
+async def refresh_admin(update: Update, context: CallbackContext) -> None:
     with contextlib.suppress(KeyError):
         ADMIN_CACHE.pop(update.effective_chat.id)
     await update.effective_message.reply_text("Admins cache refreshed!")
@@ -1219,8 +1212,7 @@ async def refresh_admin(update: Update,
 @bot_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @user_admin_check(AdminPerms.CAN_PROMOTE_MEMBERS)
 @loggable
-async def set_title(update: Update,
-                    context: CallbackContext) -> None:
+async def set_title(update: Update, context: CallbackContext) -> None:
     bot = context.bot
     args = context.args
 
@@ -1584,8 +1576,7 @@ async def permapin(update: Update, context: CallbackContext) -> None:
 @connection_status
 @bot_admin_check(AdminPerms.CAN_DELETE_MESSAGES)
 @user_admin
-async def permanent_pin_set(update: Update,
-                            context: CallbackContext) -> str:
+async def permanent_pin_set(update: Update, context: CallbackContext) -> str:
     u = update.effective_user  # type: Optional[User]
     chat = update.effective_chat  # type: Optional[Chat]
     args = context.args
@@ -1687,8 +1678,7 @@ async def unpinall(update: Update, context: CallbackContext) -> None:
     )
 
 
-async def permanent_pin(update: Update,
-                        context: CallbackContext) -> None:
+async def permanent_pin(update: Update, context: CallbackContext) -> None:
     user = update.effective_user  # type: Optional[User]
     chat = update.effective_chat  # type: Optional[Chat]
     message = update.effective_message
@@ -1727,8 +1717,7 @@ async def permanent_pin(update: Update,
 @bot_admin_check(AdminPerms.CAN_PIN_MESSAGES)
 @user_admin_check(AdminPerms.CAN_PIN_MESSAGES)
 @loggable
-async def unpinallbtn(update: Update,
-                      context: CallbackContext) -> None:
+async def unpinallbtn(update: Update, context: CallbackContext) -> None:
     chat = update.effective_chat
     query = update.callback_query
     user = update.effective_user
@@ -1757,67 +1746,90 @@ async def unpinallbtn(update: Update,
 CUTIEPII_PTB.add_handler(
     CommandHandler("setdesc",
                    set_desc,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("setsticker",
                    set_sticker,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("setgpic",
                    setchatpic,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("delgpic",
                    rmchatpic,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("setgtitle",
                    setchat_title,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 
 CUTIEPII_PTB.add_handler(
-    CommandHandler("pin", pin, filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+    CommandHandler("pin",
+                   pin,
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("unpin",
                    unpin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("unpinall",
                    unpinall,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("permapin",
                    permapin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("cleanlinked",
                    permanent_pin_set,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 CUTIEPII_PTB.add_handler(
     CallbackQueryHandler(unpinallbtn, pattern=r"unpinallbtn_", block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("pinned",
                    pinned,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("invitelink", invite, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("invitelink", invite, block=False))
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("promote", promote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("promote", promote, block=False))
 CUTIEPII_PTB.add_handler(
     CallbackQueryHandler(promote_button, pattern=r"admin_", block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("fullpromote", fullpromote, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("lowpromote", lowpromote, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("midpromote", midpromote, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("setanon", promoteanon, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("demote", demote, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("middemote", middemote, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("unsetanon", demoteanon, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("fullpromote", fullpromote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("lowpromote", lowpromote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("midpromote", midpromote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("setanon", promoteanon, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("demote", demote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("middemote", middemote, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("unsetanon", demoteanon, block=False))
 
 CUTIEPII_PTB.add_handler(CommandHandler("title", set_title, block=False))
 CUTIEPII_PTB.add_handler(
     CommandHandler("admincache",
                    refresh_admin,
-                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS, block=False))
+                   filters=PTB_Cutiepii_Filters.ChatType.GROUPS,
+                   block=False))
 
 __help__ = """
 *User Commands*:

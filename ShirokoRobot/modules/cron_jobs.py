@@ -138,4 +138,5 @@ cronjob = j.run_daily(callback=backup_db, name="database backups", time=twhen)
 CUTIEPII_PTB.add_handler(CommandHandler("backupdb", backup_now, block=False))
 CUTIEPII_PTB.add_handler(CommandHandler("stopjobs", stop_jobs, block=False))
 CUTIEPII_PTB.add_handler(CommandHandler("startjobs", start_jobs, block=False))
-CUTIEPII_PTB.add_handler(CommandHandler("purgebackups", del_bkp_fldr, block=False))
+CUTIEPII_PTB.add_handler(
+    CommandHandler("purgebackups", del_bkp_fldr, block=False))

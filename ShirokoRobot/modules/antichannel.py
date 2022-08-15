@@ -39,8 +39,7 @@ from Cutiepii_Robot.modules.sql.antichannel_sql import antichannel_status, disab
 
 
 @user_admin
-async def set_antichannel(update: Update,
-                          context: CallbackContext) -> None:
+async def set_antichannel(update: Update, context: CallbackContext) -> None:
     message = update.effective_message
     chat = update.effective_chat
     args = context.args
@@ -63,8 +62,7 @@ async def set_antichannel(update: Update,
     )
 
 
-async def eliminate_channel(update: Update,
-                            context: CallbackContext) -> None:
+async def eliminate_channel(update: Update, context: CallbackContext) -> None:
     message = update.effective_message
     chat = update.effective_chat
     bot = context.bot
@@ -80,4 +78,5 @@ async def eliminate_channel(update: Update,
 CUTIEPII_PTB.add_handler(
     DisableAbleCommandHandler("antichannel",
                               set_antichannel,
-                              filters=filters.ChatType.GROUPS, block=False))
+                              filters=filters.ChatType.GROUPS,
+                              block=False))

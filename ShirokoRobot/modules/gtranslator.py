@@ -44,8 +44,7 @@ from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
 trans = SyncTranslator()
 
 
-async def translate(update: Update,
-                    context: CallbackContext) -> None:
+async def translate(update: Update, context: CallbackContext) -> None:
     global to_translate
     message = update.effective_message
     reply_msg = message.reply_to_message
@@ -150,11 +149,13 @@ async def spellcheck(update: Update):
             "Reply to some message to get grammar corrected text!")
 
 
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler(["tr", "tl"], translate, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler(["tr", "tl"], translate, block=False))
 CUTIEPII_PTB.add_handler(
     DisableAbleCommandHandler(["langs", "lang"], languages, block=False))
 CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("tts", gtts, block=False))
-CUTIEPII_PTB.add_handler(DisableAbleCommandHandler("splcheck", spellcheck, block=False))
+CUTIEPII_PTB.add_handler(
+    DisableAbleCommandHandler("splcheck", spellcheck, block=False))
 
 __help__ = """
 *Commands:*
