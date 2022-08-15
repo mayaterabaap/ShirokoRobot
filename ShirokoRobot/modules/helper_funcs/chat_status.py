@@ -84,9 +84,8 @@ def user_can_changeinfo(chat: Chat, user: User, _: int) -> bool:
 def owner_plus(func):
 
     @wraps(func)
-    async def is_owner_plus_func(update: Update,
-                                 context: CallbackContext, *args,
-                                 **kwargs):
+    async def is_owner_plus_func(update: Update, context: CallbackContext,
+                                 *args, **kwargs):
         user = update.effective_user
 
         if user.id == OWNER_ID:
@@ -155,8 +154,7 @@ def is_user_ban_protected(update: Update,
 def dev_plus(func):
 
     @wraps(func)
-    async def is_dev_plus_func(update: Update,
-                               context: CallbackContext, *args,
+    async def is_dev_plus_func(update: Update, context: CallbackContext, *args,
                                **kwargs):
         user = update.effective_user
 
@@ -180,9 +178,8 @@ def dev_plus(func):
 def sudo_plus(func):
 
     @wraps(func)
-    async def is_sudo_plus_func(update: Update,
-                                context: CallbackContext, *args,
-                                **kwargs):
+    async def is_sudo_plus_func(update: Update, context: CallbackContext,
+                                *args, **kwargs):
         user = update.effective_user
         chat = update.effective_chat
 
@@ -205,9 +202,8 @@ def sudo_plus(func):
 def support_plus(func):
 
     @wraps(func)
-    async def is_support_plus_func(update: Update,
-                                   context: CallbackContext, *args,
-                                   **kwargs):
+    async def is_support_plus_func(update: Update, context: CallbackContext,
+                                   *args, **kwargs):
         user = update.effective_user
         chat = update.effective_chat
 
@@ -245,8 +241,8 @@ def whitelist_plus(func):
 def user_admin(func):
 
     @wraps(func)
-    async def is_admin(update: Update, context: CallbackContext,
-                       *args, **kwargs):
+    async def is_admin(update: Update, context: CallbackContext, *args,
+                       **kwargs):
         user = update.effective_user
 
         if user and (await is_user_admin(update, user.id)):
@@ -266,9 +262,8 @@ def user_admin(func):
 def user_admin_no_reply(func):
 
     @wraps(func)
-    async def is_not_admin_no_reply(update: Update,
-                                    context: CallbackContext, *args,
-                                    **kwargs):
+    async def is_not_admin_no_reply(update: Update, context: CallbackContext,
+                                    *args, **kwargs):
         # bot = context.bot
         user = update.effective_user
         # chat = update.effective_chat
@@ -287,8 +282,8 @@ def user_admin_no_reply(func):
 def user_not_admin(func):
 
     @wraps(func)
-    async def is_not_admin(update: Update, context: CallbackContext,
-                           *args, **kwargs):
+    async def is_not_admin(update: Update, context: CallbackContext, *args,
+                           **kwargs):
         message = update.effective_message
         user = update.effective_user
         # chat = update.effective_chat
@@ -306,8 +301,8 @@ def user_not_admin(func):
 def bot_admin(func):
 
     @wraps(func)
-    async def is_admin(update: Update, context: CallbackContext,
-                       *args, **kwargs):
+    async def is_admin(update: Update, context: CallbackContext, *args,
+                       **kwargs):
         chat = update.effective_chat
         update_chat_title = chat.title
         message_chat_title = update.effective_message.chat.title
@@ -328,8 +323,8 @@ def bot_admin(func):
 def bot_can_delete(func):
 
     @wraps(func)
-    async def delete_rights(update: Update, context: CallbackContext,
-                            *args, **kwargs):
+    async def delete_rights(update: Update, context: CallbackContext, *args,
+                            **kwargs):
         bot = context.bot
         chat = update.effective_chat
         update_chat_title = chat.title
@@ -351,8 +346,7 @@ def bot_can_delete(func):
 def can_promote(func):
 
     @wraps(func)
-    async def promote_rights(update: Update,
-                             context: CallbackContext, *args,
+    async def promote_rights(update: Update, context: CallbackContext, *args,
                              **kwargs):
         chat = update.effective_chat
         update_chat_title = chat.title
@@ -377,8 +371,7 @@ def can_promote(func):
 def connection_status(func):
 
     @wraps(func)
-    async def connected_status(update: Update,
-                               context: CallbackContext, *args,
+    async def connected_status(update: Update, context: CallbackContext, *args,
                                **kwargs):
         if update.effective_chat is None or update.effective_user is None:
             return
