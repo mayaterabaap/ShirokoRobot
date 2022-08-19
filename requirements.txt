@@ -43,12 +43,12 @@ git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
 pydub==0.25.1
 bs4==0.0.1
 multicolorcaptcha==1.2.0
-jikanpy==4.3.2
+jikanpy
 future==0.18.2
 geopy==2.2.0
 humanize==4.3.0
 pyrogram==2.0.40
-python-arq==6.0.5
+python-arq
 aiohttp
 carbonnow
 search_engine_parser
